@@ -1,7 +1,7 @@
-# Light Xue的个人维基
+# Light Xue's Personal Wiki
 
 ## Language
-----
+
 * [[C | Language/C/C]]
 * [[C++ | Language/Cpp/Cpp]]
 * [[Python | Language/Python/Python]]
@@ -9,13 +9,13 @@
 * [[markdown | Language/markdown/markdown]]
 
 ## Operate System
-----
+
 * [[Linux | Operate-System/Linux/Linux]]
 * [[Mac OS X | Operate-System/Mac-OS-X/Mac-OS-X]]
 * [[Windows | Operate-System/Windows/Windows]]
 
 ## Tools
-----
+
 * [[Vim | Tools/Vim/Vim]]
 * [[awk | Tools/awk/awk]]
 * [[sed | Tools/sed/sed]]
@@ -28,19 +28,19 @@
 * [[others | Tools/others/others]]
 
 ## Books
-----
+
 
 ## Data Structure
-----
+
 
 ## Algorithm
-----
+
 * [[compiler | Algorithm/compiler/compiler]]
 * [[paxos | Algorithm/paxos/paxos]]
 
 ## Other
-----
+
 * [[ascii art | Other/ascii-art/ascii-art]]
 * [[motto | Other/motto/motto]]
 
-%title lightxue's personal wiki
+<!-- --- title: Light Xue's Personal Wiki -->

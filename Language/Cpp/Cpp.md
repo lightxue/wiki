@@ -1,25 +1,24 @@
 # C++
-----
 
-* 宏定义实现获取数组大小
+0. 宏定义实现获取数组大小
 ```cpp
 template <typename T, size_t N>
 char (&ArraySizeHelper(T (&array)[N]))[N];
 #define arraysize(array) (sizeof(ArraySizeHelper(array)))
 ```
 
-* g++打印类名的宏: `__PRETTY_FUNCTION__`
+0. g++打印类名的宏: `__PRETTY_FUNCTION__`
 
-* `map::insert`如果key已经存在，会放弃插入，返回已经存在的元素(如果返回值是已经存在的话)；`map::operator[]`如果key存在，新value会覆盖旧value
+0. `map::insert`如果key已经存在，会放弃插入，返回已经存在的元素(如果返回值是已经存在的话)；`map::operator[]`如果key存在，新value会覆盖旧value
 
-* 文件读到string里
+0. 文件读到string里
 ```cpp
 ifstream ifs("filename");
 string content(istreambuf_iterator<char>(ifs), istreambuf_iterator<char>());
 ifs.close();
 ```
 
-* 这样的一段代码是为了占用fd 0, 1, 2，免得打开的文件、管道或是socket用了0，1，2，受程序里的printf等影响
+0. 这样的一段代码是为了占用fd 0, 1, 2，免得打开的文件、管道或是socket用了0，1，2，受程序里的printf等影响
 ```cpp
 int fd = open("/dev/null", O_RDWR );
 if(fd != -1)

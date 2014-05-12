@@ -1,7 +1,6 @@
 # C
-----------------------
 
-* x2c("4c") --> '\x4c'，这里的0xdf靓了
+0. x2c("4c") --> '\x4c'，这里的0xdf靓了
 ```c
 char TC_Common::x2c(const string &sWhat)
 {
@@ -20,14 +19,14 @@ char TC_Common::x2c(const string &sWhat)
 }
 ```
 
-* 吞分号的宏，http://stackoverflow.com/questions/154136/do-while-and-if-else-statements-in-c-c-macros
+0. 吞分号的宏，http://stackoverflow.com/questions/154136/do-while-and-if-else-statements-in-c-c-macros
 ```c
 #define FOO(X) do { f(X); g(X); } while (0)
 #define FOO(X) if (1) { f(X); g(X); } else
 ```
 
-* 呆顼的do while减少if法
+0. 呆顼的do while减少if法
 
-* builtin_offsetof
+0. builtin_offsetof
 
 

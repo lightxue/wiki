@@ -1,24 +1,22 @@
 # Python
-----
 
-* [[python的epoll代码]]
-* [[python多线程例子]]
-* [[SimpleHTTPServer绑定IP]]
-* [[用python的Tkinter做的简单的MVC例子]]
-* [[logging使用]]
-* [[python的陷阱与缺陷]]
-* [[tkinter]]
-* [[python语法糖]]
+* [[python的epoll代码 | python-epoll]]
+* [[python多线程例子 | python-multithread-example]]
+* [[SimpleHTTPServer绑定IP | simple-http-server-bind-ip]]
+* [[用python的Tkinter做的简单的MVC例子 | tkinter-mvc-example]]
+* [[logging使用 | logging-usage]]
+* [[python的陷阱与缺陷 | python-traps-and-pitfalls]]
+* [[python语法糖 | python-syntactic-sugar]]
 * [[How To Write Pythonic Code | http://chrisarndt.de/talks/rupy/2008/output/slides.html]]
 * [[PEP 8 -- Style Guide for Python Code | http://www.python.org/dev/peps/pep-0008/]]
 
 ----
 
-* 最近经常在linux执行python程序，比如./server.py，会提示“: No such file or directory”，令人不解。原来是换行符是dos的话就会这样，改成unix换行符就没有问题了
+0. 最近经常在linux执行python程序，比如./server.py，会提示“: No such file or directory”，令人不解。原来是换行符是dos的话就会这样，改成unix换行符就没有问题了
 
-* 字符串经常做连接操作，用''.join()来连接效率比较高
+0. 字符串经常做连接操作，用''.join()来连接效率比较高
 
-* datetime类型对象和1970年以来的秒数互转，datetime.datetime.now()的返回值是datetime对象，time.time()返回的是1970年到现在的秒数。补充一下，UTC是世界协调时间(对于UTC这个名字的来源无力吐槽，详见维基百科)，虽然GMT时间不再用，但我YY可以把UTC和GMT等同。
+0. datetime类型对象和1970年以来的秒数互转，datetime.datetime.now()的返回值是datetime对象，time.time()返回的是1970年到现在的秒数。补充一下，UTC是世界协调时间(对于UTC这个名字的来源无力吐槽，详见维基百科)，虽然GMT时间不再用，但我YY可以把UTC和GMT等同。
 ```python
 import datetime
 import time
@@ -27,7 +25,7 @@ time.mktime(datetime.datetime.now().timetuple())
 datetime.datetime.fromtimestamp(time.time())
 ```
 
-* time、datetime、str互转
+0. time、datetime、str互转
 ```python
 # 把datetime转成字符串
 def datetime_toString(dt):
@@ -50,14 +48,14 @@ def datetime_toTimestamp(dateTim):
     return time.mktime(dateTim.timetuple())
 ```
 
-* urllib2.unquote(url)
+0. urllib2.unquote(url)
 
-* 程序环境变量
+0. 程序环境变量
 ```python
 os.environ
 ```
 
-* 子类初始化父类
+0. 子类初始化父类
 ```python
 # new style class也能用这种方法
 class B:
@@ -80,7 +78,7 @@ class C(B):
         super(C, self).__init__(s)
 ```
 
-* xml转成dict
+0. xml转成dict
 ```python
 def xml2dict(node, dic = {}):
     dic[node.tag] = ndic = {}
@@ -93,14 +91,14 @@ tree = ET.parse('test.xml')
 print xml2dict(tree.getroot())
 ```
 
-* ini to dict
+0. ini to dict
 ```python
 cf = ConfigParser.ConfigParser()
 cf.read(filename)
 return dict(cf.__dict__['_sections'].copy()) #里面有的value是orderdict
 ```
 
-* python式enum
+0. python式enum
 ```python
 ALL_TYPES = (
     TOP_LEVEL,  # The type of the 'Google Chrome' folder.
@@ -122,9 +120,9 @@ ALL_TYPES = (
     EXTENSION_SETTINGS) = range(17)
 ```
 
-* `is` will return `True` if two variables point to the same object, `==` if the objects referred to by the variables are equal.
+0. `is` will return `True` if two variables point to the same object, `==` if the objects referred to by the variables are equal.
 
-* 计算md5和sha1
+0. 计算md5和sha1
 ```python
 import hashlib
 
@@ -137,7 +135,7 @@ sha.update('string to digest')
 print sha.hexdigest()
 ```
 
-* base64编解码
+0. base64编解码
 ```python
 import base64
 s = 'this is a text'
@@ -145,14 +143,14 @@ encstr = base64.encodestring(s)
 decstr = base64.decodestring(encstr)
 ```
 
-* 随机字符
+0. 随机字符
 ```python
 import os
 length = 10
 print os.urandom(length)
 ```
 
-* getter and setter，不要在构造函数里用这个伪变量，可能会把这个函数覆盖
+0. getter and setter，不要在构造函数里用这个伪变量，可能会把这个函数覆盖
 ```python
 class C:
     def __init__:
@@ -166,18 +164,18 @@ class C:
         self._channel = channel
 ```
 
-* 脚本所在位置
+0. 脚本所在位置
 ```python
 __file__
 
-* 这种方法能打出行号
+# 这种方法能打出行号
 from inspect import currentframe, getframeinfo
 
 frameinfo = getframeinfo(currentframe())
 print frameinfo.filename, frameinfo.lineno
 ```
 
-* 异常所在的行号
+0. 异常所在的行号
 ```python
 import sys, os
 
@@ -190,7 +188,7 @@ except Exception as e:
 
 ```
 
-* 列表拷贝
+0. 列表拷贝
 ```python
     new_list = old_list[:] # 可语性不太好
 
@@ -205,7 +203,7 @@ except Exception as e:
     new_list = [x for x in old_list]
 ```
 
-* 列表清空
+0. 列表清空
 ```python
     old_list = [1, 2, 3, 4]
 
@@ -217,17 +215,17 @@ except Exception as e:
     del new_list[:]
 ```
 
-* 字典格式化字符串
+0. 字典格式化字符串
 ```python
     d = {'name' : 'lightxue', 'gender' : 'male'}
     print 'your name is %(name)s, gender is %(gender)s' % d
 ```
 
-* id(object)唯一标识一个对象
+0. id(object)唯一标识一个对象
 
-* 变量作用域：LEGB(Local->函数，def和lambda；Enclosing->闭包，def和lambda；Global->全局，在module里；Buid-in->内置)
+0. 变量作用域：LEGB(Local->函数，def和lambda；Enclosing->闭包，def和lambda；Global->全局，在module里；Buid-in->内置)
 
-* binary <-> hex string
+0. binary <-> hex string
 ```python
 >>> s = '\x01\xff'
 >>> s.encode('hex_codec')
@@ -236,32 +234,32 @@ except Exception as e:
 '\x01\xff'
 ```
 
-* 矩阵转置
+0. 矩阵转置
 ```python
 arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
 print map(list, zip(*arr))
 ```
 
-* unicode unescape
+0. unicode unescape
 ```python
 s = r'\u751f\u547d'
 print s.decode('unicode-escape')
 ```
 
-* string unescape
+0. string unescape
 ```python
 s = r'\xe7\x94\x9f\xe5\x91\xbd'
 print s.decode('string-escape')
 ```
 
-* list有函数叫count，比较实用
+0. list有函数叫count，比较实用
 
-* 显示某个文件的汇编代码
+0. 显示某个文件的汇编代码
 ```python
 python -m dis file.py
 ```
 
-* 看函数/类的汇编代码
+0. 看函数/类的汇编代码
 ```python
 #!/usr/bin/env python
 # encoding: utf-8
@@ -287,7 +285,7 @@ if __name__ == '__main__':
     dis.dis(MyObject)
 ```
 
-* 用dis调试
+0. 用dis调试
 ```python
 #!/usr/bin/env python
 # encoding: utf-8
@@ -307,17 +305,17 @@ except:
     dis.distb(exc_tb)
 ```
 
-* 把py编译成pyc
+0. 把py编译成pyc
 ```python
 python -m py_compile file.py
 ```
 
-* 最深代码块限制，在python27源代码里看到这段代码
+0. 最深代码块限制，在python27源代码里看到这段代码
 ```c
 #define CO_MAXBLOCKS 20 /* Max static block nesting within a function */
 ```
 
-* 合并两个dict
+0. 合并两个dict
 ```c
 d = {'a' : 1, 'b' : 2}
 d.update({'a' : 4, 'c' : 3})
@@ -325,13 +323,13 @@ print d
 #{'a' : 4, 'b' : 2, 'c' : 3}
 ```
 
-* dict.setdefault非常实用
+0. dict.setdefault非常实用
 
-* 在交互界面里，`_`保存了最后打印的变量
+0. 在交互界面里，`_`保存了最后打印的变量
 
-* `class.__mro__`继承关系，方法调用顺序
+0. `class.__mro__`继承关系，方法调用顺序
 
-* proto buf的encoder.py里的一段注释
+0. proto buf的encoder.py里的一段注释
 ```
 * We copy any needed global functions to local variables, so that we do not need
   to do costly global table lookups at runtime.
@@ -351,12 +349,12 @@ print d
   result of the last statement.  It looks funny but it helps.
 ```
 
-* py文件编译成pyc
+0. py文件编译成pyc
 ```
 python -m py_compile file.py
 ```
 
-* re.sub, \g<1>
-* python ini, json parse
+0. re.sub, \g<1>
+0. python ini, json parse
 
 
