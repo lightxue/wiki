@@ -1,4 +1,4 @@
-app_directory = '/home/lightxue/www/log/wiki'
+app_directory = "/home/lightxue/www/log/wiki"
 
 worker_processes 1
 
@@ -8,7 +8,7 @@ listen "unix:#{app_directory}/unicorn/wiki.sock", :backlog => 1024
 
 timeout 60
 
-user 'www-data', 'www-data'
+user 'lightxue', 'root'
 
 File.umask(027)
 
