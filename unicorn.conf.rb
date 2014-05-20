@@ -11,7 +11,7 @@ timeout 60
 
 user 'www-data', 'www-data'
 
-File.umask(027)
+File.umask(000)
 
 preload_app true
 
