@@ -4,3 +4,4 @@
 * [[Linux下安装GoogleTest | linux-install-google-test]]
 * [[putty]]
 
+test
