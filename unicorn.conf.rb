@@ -15,7 +15,7 @@ File.umask(027)
 
 preload_app true
 
-pid "#{log_directory}/unicorn/wiki.pid"
+pid "#{log_directory}/wiki.pid"
 
-stderr_path "#{log_directory}/unicorn/wiki.stderr.log"
-stdout_path "#{log_directory}/unicorn/wiki.stdout.log"
+stderr_path "#{log_directory}/wiki.stderr.log"
+stdout_path "#{log_directory}/wiki.stdout.log"
