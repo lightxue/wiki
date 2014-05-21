@@ -42,5 +42,6 @@
 
 * [[ascii art | Other/ascii-art/ascii-art]]
 * [[motto | Other/motto/motto]]
+* [[draft | Other/draft]]
 
 <!-- --- title: Light Xue's Personal Wiki -->
