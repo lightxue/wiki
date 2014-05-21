@@ -5,13 +5,13 @@ worker_processes 1
 
 working_directory app_directory
 
-listen "0.0.0.0:13131", :backlog => 1024
+listen "127.0.0.1:10101", :backlog => 1024
 
 timeout 60
 
 user 'www-data', 'www-data'
 
-File.umask(000)
+File.umask(027)
 
 preload_app true
 
