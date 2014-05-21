@@ -5,7 +5,7 @@ worker_processes 1
 
 working_directory app_directory
 
-listen "127.0.0.1:10101", :backlog => 1024
+listen "unix:#{log_directory}/wiki.sock", :backlog => 1024
 
 timeout 60
 
