@@ -36,3 +36,11 @@ else
 ```
 
 0. stl的copy，用的时候要自己保证第三个参数空间够大
+
+0. stringstream的清空方式
+```
+stringstream ss;
+ss.str("");
+# 这样效率更高，少一次构造，但是可主读性不如上面
+ss.str(std::string());
+```
