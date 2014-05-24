@@ -44,4 +44,6 @@
 * [[motto | Other/motto/motto]]
 * [[draft | Other/draft]]
 
+* [[test]]
+
 <!-- --- title: Light Xue's Personal Wiki -->
