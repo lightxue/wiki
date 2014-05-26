@@ -1,10 +1,15 @@
-require 'gollum/frontend/app'
+# VOIDMAIN
+# Accroding to `http://senften.wordpress.com/2013/07/04/loaderror-cannot-load-such-file-gollumfrontendapp/`, change 'gollum/frontend/app' to 'gollum/app'
+require 'gollum/app'
 require 'digest/sha1'
 
 class App < Precious::App
   User = Struct.new(:name, :email, :password_hash, :can_write)
 
-  before { authenticate! }
+  # VOIDMAIN
+  # Don't need to authenticate for readers
+  #before { authenticate! }
+
   before /^\/(edit|create|delete|livepreview|revert)/ do authorize_write! ; end
 
   helpers do
@@ -22,6 +27,10 @@ class App < Precious::App
     end
 
     def authorize_write!
+      # VOIDMAIN
+      # Since we've comment out the `before {authenticate!}` code,
+      # We have to invoke explicitly here to get `@user` variable set
+      authenticate!
       throw(:halt, [403, "Forbidden\n"]) unless @user.can_write
     end
 
@@ -31,6 +40,7 @@ class App < Precious::App
 
     def detected_user(credentials)
       users.detect do |u|
+          print u.email
         [u.email, u.password_hash] ==
         [credentials[0], Digest::SHA1.hexdigest(credentials[1])]
       end
