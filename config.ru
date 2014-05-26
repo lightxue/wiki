@@ -12,7 +12,8 @@ App.set(:default_markup, :markdown) # set your favorite markup language
 App.set(:wiki_options, {
     :universal_toc => false,
     :mathjax => true,
-    :live_preview => true
+    :live_preview => true,
+    :h1_title => true
 })
 App.set(:authorized_users, YAML.load_file('/var/www/users.yml'))
 run App
