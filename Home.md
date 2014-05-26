@@ -1,7 +1,5 @@
 # Light Xue's Personal Wiki
 
-233
-
 ## Language
 
 * [[C | Language/C/C]]
