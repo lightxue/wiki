@@ -7,10 +7,9 @@ GIT_PATH=/var/www/wiki
 
 while true; do
 
-  inotifywait -qq -e CLOSE_WRITE $GIT_PATH
+    inotifywait -qq -e CLOSE_WRITE $GIT_PATH
 
-  cd $GIT_PATH; git commit -a -m 'autocommit on change'
-
-git pull && git add -A && git commit -m "minor changes" && git push
+    cd $GIT_PATH
+    git pull && git add -A && git commit -m "minor changes" && git push
 
 done
