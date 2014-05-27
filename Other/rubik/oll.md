@@ -2,4 +2,4 @@
 
 图案         | 公式
 ------------ | ----
-[[image/oll1.png | width=300px]] | ururur
+[[image/oll1.png | width=100px]] | ururur
