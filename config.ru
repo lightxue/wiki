@@ -13,7 +13,8 @@ App.set(:wiki_options, {
     :universal_toc => false,
     :mathjax => true,
     :live_preview => true,
-    :h1_title => true
+    :h1_title => true,
+    :allow_uploads => true
 })
 App.set(:authorized_users, YAML.load_file('/var/www/users.yml'))
 run App
