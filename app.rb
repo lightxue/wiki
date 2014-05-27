@@ -10,7 +10,7 @@ class App < Precious::App
   # Don't need to authenticate for readers
   #before { authenticate! }
 
-  before /^\/(edit|create|delete|livepreview|revert|rename)/ do authorize_write! ; end
+  before /^\/(edit|create|delete|livepreview|revert|rename|uploadFile)/ do authorize_write! ; end
 
   helpers do
     def authenticate!
