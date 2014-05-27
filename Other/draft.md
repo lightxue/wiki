@@ -6,15 +6,13 @@ MathJax数学公式
 \dot{z} & = -\beta z + xy
 \end{aligned}
 
-# 一级标题
+```cpp
 
-* fjdksf
-* kdjslfj
-* fjsdlfjsl
+#include <stdio.h>
 
-0. jfksldjfs
-1. fklsjdflksj
-2. fjslkdfjs
-3. sfklsdjfks
-4. fasfas
-5. asdfdsfsaf
+int main()
+{
+    return 0;
+}
+
+```
