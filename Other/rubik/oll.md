@@ -1,6 +1,61 @@
 # oll
 
-图案         | 公式
------------- | ----
-1. [[image/oll1.png | width=100px]] | 待定
-2. [[image/oll1.png | width=100px]] | 待定
+ 图案                                 | 公式
+------------------------------------- | ----
+1.  [[image/oll1.png  | width=100px]] | 待定
+2.  [[image/oll1.png  | width=100px]] | 待定
+3.  [[image/oll3.png  | width=100px]] | 待定
+4.  [[image/oll4.png  | width=100px]] | 待定
+5.  [[image/oll5.png  | width=100px]] | 待定
+6.  [[image/oll6.png  | width=100px]] | 待定
+7.  [[image/oll7.png  | width=100px]] | 待定
+8.  [[image/oll8.png  | width=100px]] | 待定
+9.  [[image/oll9.png  | width=100px]] | 待定
+10. [[image/oll10.png | width=100px]] | 待定
+11. [[image/oll11.png | width=100px]] | 待定
+12. [[image/oll12.png | width=100px]] | 待定
+13. [[image/oll13.png | width=100px]] | 待定
+14. [[image/oll14.png | width=100px]] | 待定
+15. [[image/oll15.png | width=100px]] | 待定
+16. [[image/oll16.png | width=100px]] | 待定
+17. [[image/oll17.png | width=100px]] | 待定
+18. [[image/oll18.png | width=100px]] | 待定
+19. [[image/oll19.png | width=100px]] | 待定
+20. [[image/oll20.png | width=100px]] | 待定
+21. [[image/oll21.png | width=100px]] | 待定
+22. [[image/oll22.png | width=100px]] | 待定
+23. [[image/oll23.png | width=100px]] | 待定
+24. [[image/oll24.png | width=100px]] | 待定
+25. [[image/oll25.png | width=100px]] | 待定
+26. [[image/oll26.png | width=100px]] | 待定
+27. [[image/oll27.png | width=100px]] | 待定
+28. [[image/oll28.png | width=100px]] | 待定
+29. [[image/oll29.png | width=100px]] | 待定
+30. [[image/oll30.png | width=100px]] | 待定
+31. [[image/oll31.png | width=100px]] | 待定
+32. [[image/oll32.png | width=100px]] | 待定
+33. [[image/oll33.png | width=100px]] | 待定
+34. [[image/oll34.png | width=100px]] | 待定
+35. [[image/oll35.png | width=100px]] | 待定
+36. [[image/oll36.png | width=100px]] | 待定
+37. [[image/oll37.png | width=100px]] | 待定
+38. [[image/oll38.png | width=100px]] | 待定
+39. [[image/oll39.png | width=100px]] | 待定
+40. [[image/oll40.png | width=100px]] | 待定
+41. [[image/oll41.png | width=100px]] | 待定
+42. [[image/oll42.png | width=100px]] | 待定
+43. [[image/oll43.png | width=100px]] | 待定
+44. [[image/oll44.png | width=100px]] | 待定
+45. [[image/oll45.png | width=100px]] | 待定
+46. [[image/oll46.png | width=100px]] | 待定
+47. [[image/oll47.png | width=100px]] | 待定
+48. [[image/oll48.png | width=100px]] | 待定
+49. [[image/oll49.png | width=100px]] | 待定
+50. [[image/oll50.png | width=100px]] | 待定
+51. [[image/oll51.png | width=100px]] | 待定
+52. [[image/oll52.png | width=100px]] | 待定
+53. [[image/oll53.png | width=100px]] | 待定
+54. [[image/oll54.png | width=100px]] | 待定
+55. [[image/oll55.png | width=100px]] | 待定
+56. [[image/oll56.png | width=100px]] | 待定
+57. [[image/oll57.png | width=100px]] | 待定
