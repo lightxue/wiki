@@ -2,4 +2,5 @@
 
 图案         | 公式
 ------------ | ----
-[[image/oll1.png | width=100px]] | ururur
+1. [[image/oll1.png | width=100px]] | 待定
+2. [[image/oll1.png | width=100px]] | 待定
