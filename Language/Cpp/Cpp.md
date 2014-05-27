@@ -35,7 +35,7 @@ else
 }
 ```
 
-0. stl的copy，用的时候要自己保证第三个参数空间够大
+0. stl的copy，用的时候要自己保证第三个参数空间够大。不然就用inserter或back_inserter
 
 0. stringstream的清空方式
 ```
