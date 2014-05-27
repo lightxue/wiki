@@ -19,3 +19,4 @@ pid "#{log_directory}/wiki.pid"
 
 stderr_path "#{log_directory}/wiki.stderr.log"
 stdout_path "#{log_directory}/wiki.stdout.log"
+
