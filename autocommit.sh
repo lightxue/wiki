@@ -10,6 +10,6 @@ while true; do
     inotifywait -qq -e CLOSE_WRITE $GIT_PATH
 
     cd $GIT_PATH
-    git pull && git add -A && git commit -m "minor changes" && git push
+    git pull && git add -A && git commit -m "auto commit" && git push
 
 done
