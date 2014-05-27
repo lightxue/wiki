@@ -22,7 +22,7 @@
 18. [[image/oll18.png | width=100px]] | 待定
 19. [[image/oll19.png | width=100px]] | 待定
 20. [[image/oll20.png | width=100px]] | 待定
-21. [[image/oll21.png | width=100px]] | R U2 R' U' R U R' U' R U' R'
+21. [[image/oll21.png | width=100px]] | (R U2) R' U' R U R' U' R U' R'
 22. [[image/oll22.png | width=100px]] | 待定
 23. [[image/oll23.png | width=100px]] | 待定
 24. [[image/oll24.png | width=100px]] | 待定
