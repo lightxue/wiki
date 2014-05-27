@@ -4,8 +4,8 @@
 ------------------------------------- | ----
 1.  [[image/oll1.png  | width=100px]] | (R U' U') (R2' F R F') U2 (R' F R F')
 2.  [[image/oll1.png  | width=100px]] | (F R U R' U' F') (f R U R' U' f')
-3.  [[image/oll3.png  | width=100px]] | (f RU R' U' f') U' (F R U R' U') F'
-4.  [[image/oll4.png  | width=100px]] | 待定
+3.  [[image/oll3.png  | width=100px]] | (f RU R' U' f') U' (F R U R' U' F')
+4.  [[image/oll4.png  | width=100px]] | (f R U R' U') U (F R U R' U' F')
 5.  [[image/oll5.png  | width=100px]] | 待定
 6.  [[image/oll6.png  | width=100px]] | 待定
 7.  [[image/oll7.png  | width=100px]] | 待定
