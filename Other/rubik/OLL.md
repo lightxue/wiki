@@ -2,7 +2,7 @@
 
  图案                                 | 公式
 ------------------------------------- | ----
-1.  [[image/oll1.png  | width=100px]] | 待定
+1.  [[image/oll1.png  | width=100px]] | (R U' U') (R2' F R F') U2 (R' F R F')
 2.  [[image/oll1.png  | width=100px]] | 待定
 3.  [[image/oll3.png  | width=100px]] | 待定
 4.  [[image/oll4.png  | width=100px]] | 待定
