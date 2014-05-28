@@ -24,7 +24,7 @@
 20. [[image/oll20.png | width=100px ]] | r' (R U) (R U R' U' r2) (R2' U) (R U') r'
 21. [[image/oll21.png | width=100px ]] | (R U' U') (R' U' R U R' U') (R U' R')
 22. [[image/oll22.png | width=100px ]] | R U' U' (R'2 U') (R2 U') R'2 U' U' R
-23. [[image/oll23.png | width=100px ]] | (R2 D') (R U' U') (R' D) (R U' U' R)
+23. [[image/oll23.png | width=100px ]] | (R' U2) (R F U') (R' U' R U F') <br> (R2 D') (R U' U') (R' D) (R U' U' R)
 24. [[image/oll24.png | width=100px ]] | (r U R' U') (r' F R F')
 25. [[image/oll25.png | width=100px ]] | F' (r U R' U') (r' F R)
 26. [[image/oll26.png | width=100px ]] | R U' U' R' U' R U' R'
