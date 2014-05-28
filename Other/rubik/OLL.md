@@ -57,5 +57,5 @@
 53. [[image/oll53.png | width=100px]] | (r' U2)(R U R'U')(R U R'U)r
 54. [[image/oll54.png | width=100px]] | (r U'U')(R' U' R UR' U')(R U' r')
 55. [[image/oll55.png | width=100px]] | (R U'U')(R'2 U')R U' R'U2(F R F')
-56. [[image/oll56.png | width=100px]] | F (R U R'U')(R F')(r UR'U')r'=(r' U' r U')(R' U R U' R' U)(R r' U r)＝(r U r')(U R U' R')2(r U' r')
+56. [[image/oll56.png | width=100px]] | F (R U R'U')(R F')(r UR'U')r'<br>(r' U' r U')(R' U R U' R' U)(R r' U r)<br>(r U r')(U R U' R')2(r U' r')
 57. [[image/oll57.png | width=100px]] | (R U R' U' r)(R' U)(R U' r')
