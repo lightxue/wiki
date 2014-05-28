@@ -1,7 +1,7 @@
 # PLL
 
  图案                                         | 公式
--------------------------------------         | ----
+----                                          | ----
 1    <br> [[image/pll1.png    | width=100px]] | (R U' R) (U R U R) (U' R' U' R 2)
 1-2  <br> [[image/pll1-2.png  | width=100px]] | (R 2 U') (R' U' R U R U) (R U' R)
 2    <br> [[image/pll2.png    | width=100px]] | (R 2' U) (R U R' U') (R' U') (R' U R')
