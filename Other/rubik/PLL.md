@@ -9,7 +9,7 @@
 3    <br> [[image/pll3.png    | width=100px]] | M 2 U M 2 U 2 M 2 U M 2
 4    <br> [[image/pll4.png    | width=100px]] | (U R' U') (R U' R) (U R U') (R' U R U) (R 2 U') (R' U)
 5    <br> [[image/pll5.png    | width=100px]] | x' R 2 D 2 (R' U' R) D 2 (R' U R')
-6    <br> [[image/pll6.png    | width=100px]] | x' (R U' R) z' (R' 2 U' L U R 2' x y R 2)
+6    <br> [[image/pll6.png    | width=100px]] | x' (R U' R) z' (R' 2 U' L U R 2' x y R 2) <br> R2' x y是同时进行的
 7    <br> [[image/pll7.png    | width=100px]] | x' (R U' R' D) (R U R') u 2' (R' U R) D (R' U' R)
 8    <br> [[image/pll8.png    | width=100px]] | (R U R' U') (R' F) (R 2 U' R' U') (R U R' F')
 9-2  <br> [[image/pll9-2.png  | width=100px]] | z (R U R' U' R U' U') (x' z') (R U R' U') x (U' R' U R U' U')
