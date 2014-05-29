@@ -4,6 +4,8 @@
 
 [[PLL]]
 
+[[gan的公式 | gan]]
+
 [[二阶 | mini-cube]]
 
 [[四阶 | revenge]]

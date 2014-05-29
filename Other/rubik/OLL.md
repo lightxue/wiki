@@ -32,7 +32,7 @@
 28 <br> [[image/oll28.png | width=100px ]] | (r U R' U') (r' R U) (R U' R')
 29 <br> [[image/oll29.png | width=100px ]] | x' (U' R U') x (R'2 U) (R U R' U') x' R U' U'
 30 <br> [[image/oll30.png | width=100px ]] | (R2 U R' B') (R U') (R2' U) (R B R')
-31 <br> [[image/oll31.png | width=100px ]] | (r' F' U F) (L F' L' U' r)
+31 <br> [[image/oll31.png | width=100px ]] | (r' F' U F) (r U' r' U' r)
 32 <br> [[image/oll32.png | width=100px ]] | (R U) (B' U') (R' U R B R')
 33 <br> [[image/oll33.png | width=100px ]] | (R U R' U') (R' F R F')
 34 <br> [[image/oll34.png | width=100px ]] | (R' U' R U) y (r U R' U') r' R
