@@ -2,10 +2,8 @@
 
  图案                                         | 公式
 ----                                          | ----
-1    <br> [[image/pll1.png    | width=100px]] | (R U' R) (U R U R) (U' R' U' R2)
-1-2  <br> [[image/pll1-2.png  | width=100px]] | (R2 U') (R' U' R U R U) (R U' R)
-2    <br> [[image/pll2.png    | width=100px]] | (R2' U) (R U R' U') (R' U') (R' U R')
-2-2  <br> [[image/pll2-2.png  | width=100px]] | (R' U R' U') (R' U') (R' U) (R U R'2)
+1    <br> [[image/pll1.png    | width=100px]] | M'2 U M U2 M'U M'2
+2    <br> [[image/pll2.png    | width=100px]] | M'2 U' M U2 M' U' M'2
 3    <br> [[image/pll3.png    | width=100px]] | M2 U M2 U2 M2 U M2
 4    <br> [[image/pll4.png    | width=100px]] | M' U (M'2 U)2 M' U2 M'2 U'
 5    <br> [[image/pll5.png    | width=100px]] | x' R2 D2 (R' U' R) D2 (R' U R')

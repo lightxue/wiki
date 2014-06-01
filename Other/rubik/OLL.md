@@ -5,7 +5,7 @@
 1  <br> [[image/oll1.png  | width=100px ]] | (R U' U') (R2' F R F') U2 (R' F R F')
 2  <br> [[image/oll2.png  | width=100px ]] | (F R U R' U' F') (f R U R' U' f')
 3  <br> [[image/oll3.png  | width=100px ]] | f (R U R' U') f' U' F (R U R' U') F'
-4  <br> [[image/oll4.png  | width=100px ]] | f (R U R' U') y x (R ’ F) (R U R' U') F'
+4  <br> [[image/oll4.png  | width=100px ]] | f (R U R' U') f' U F (R U R' U') F'
 5  <br> [[image/oll5.png  | width=100px ]] | (r' U2) (R U R' U) r
 6  <br> [[image/oll6.png  | width=100px ]] | (r U' U') (R' U' R U' r')
 7  <br> [[image/oll7.png  | width=100px ]] | r U R' U R U' U' r'
