@@ -8,12 +8,10 @@
 4    <br> [[image/pll4.png    | width=100px]] | M' U (M'2 U)2 M' U2 M'2 U'
 5    <br> [[image/pll5.png    | width=100px]] | x' R2 D2 (R' U' R) D2 (R' U R')
 6    <br> [[image/pll6.png    | width=100px]] | x' (R U' R) z' (R'2 U' L U R2' x y R2) <br> R2' x y是同时进行的
-7    <br> [[image/pll7.png    | width=100px]] | x' (R U' R' D) (R U R') u2' (R' U R) D (R' U' R)
+7    <br> [[image/pll7.png    | width=100px]] | (R2 U R' U') y (R U R' U')2 (R U R') y' (R U' R2)
 8    <br> [[image/pll8.png    | width=100px]] | (R U R' U') (R' F) (R2 U' R' U') (R U R' F')
 9    <br> [[image/pll9.png    | width=100px]] | U' (R' U R U' R'2 b') x (R' U R) y' (R U R' U' R2)
-9-2  <br> [[image/pll9-2.png  | width=100px]] | z (R U R' U' R U' U') (x' z') (R U R' U') x (U' R' U R U' U')
 10   <br> [[image/pll10.png   | width=100px]] | (R' U R' U') y x2 (R' U R' U' R2) x z' (R' U' R U R)
-10-2 <br> [[image/pll10-2.png | width=100px]] | z (U' R U' l') z (R' U R' U') (l R) (U' R' U R U)
 11   <br> [[image/pll11.png   | width=100px]] | F (R U' R' U') (R U R' F') (R U R' U') (R' F R F')
 12   <br> [[image/pll12.png   | width=100px]] | z (U' R D') (R2 U R' U' R2 U) z' (R U')
 13   <br> [[image/pll13.png   | width=100px]] | (R U R' F') (R U R' U') (R' F R2 U' R' U')
