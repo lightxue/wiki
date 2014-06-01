@@ -21,5 +21,5 @@
 17   <br> [[image/pll17.png   | width=100px]] | (R U R') y' (R2' u' R U') (R' U R' u R2)
 18   <br> [[image/pll18.png   | width=100px]] | (R2 u) (R' U R' U') (R u') (R2' F' U F)
 19   <br> [[image/pll19.png   | width=100px]] | (R' d' F) (R2 u) (R' U) (R U' R u' R2)
-20   <br> [[image/pll20.png   | width=100px]] | z (R' U R') z' (R U2 L' U R') z (U R') z' (R U2 L' U R')
+20   <br> [[image/pll20.png   | width=100px]] | (R U R' U) (R U R' F') (R U R' U') (R' F) (R2 U' R' U2) (R U' R)
 21   <br> [[image/pll21.png   | width=100px]] | (R' U R U') (R' F' U') (F R U R' F) (R' F' R U' R)
