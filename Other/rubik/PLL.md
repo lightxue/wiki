@@ -13,7 +13,7 @@
 9    <br> [[image/pll9.png    | width=100px]] | (R' U R U') (R2' F' U') (F U R U') x' (R2 U' R' U)
 10   <br> [[image/pll10.png   | width=100px]] | (R' U R' U') y x2 (R' U R' U' R2) x z' (R' U' R U R)
 11   <br> [[image/pll11.png   | width=100px]] | F (R U' R' U') (R U R' F') (R U R' U') (R' F R F')
-12   <br> [[image/pll12.png   | width=100px]] | z (U' R D') (R2 U R' U' R2 U) z' (R U')
+12   <br> [[image/pll12.png   | width=100px]] | x U2 (r' U' r U2) (l' U R' U' R2)
 13   <br> [[image/pll13.png   | width=100px]] | (R U R' F') (R U R' U') (R' F R2 U' R' U')
 14   <br> [[image/pll14.png   | width=100px]] | (R' U2) (R U' U') (R' F R U R' U') (R' F' R2 U')
 15   <br> [[image/pll15.png   | width=100px]] | (R U' U') (R' U2) (R B' R' U') (R U R B R2' U)
