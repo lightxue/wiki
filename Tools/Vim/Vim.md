@@ -164,6 +164,10 @@ ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
             --enable-fontset
 ```
 
+0. vimscript用户手册
+```sh
+:help usr_41.txt
+```
 
 ## 学习资料
 
