@@ -354,6 +354,28 @@ print d
 python -m py_compile file.py
 ```
 
+0. any不很错
+```python
+# ugly
+if needle.endswith('ly') or needle.endswith('ed') or 
+    needle.endswith('ing') or needle.endswith('ers'):
+    print('Is valid')
+else:
+    print('Invalid')
+
+# pretty
+if any([needle.endswith(e) for e in ('ly', 'ed', 'ing', 'ers')]):
+    print('Is valid')
+else:
+    print('Invalid')
+
+# better
+if needle.endswith(('ly', 'ed', 'ing', 'ers')):
+    print('Is valid')
+else:
+    print('Invalid')
+```
+
 0. re.sub, \g<1>
 0. python ini, json parse
 
