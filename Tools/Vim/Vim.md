@@ -176,6 +176,11 @@ ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 :r !cmd
 ```
 
+0. 从右到左展示，字符为单位左右翻转
+```sh
+:set rl!
+```
+
 ## 幽默
 
 1.
