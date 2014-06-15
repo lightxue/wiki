@@ -19,7 +19,7 @@ Emacs是神的编辑器，Vim是编辑器之神
 
 0. [[显示vim当前环境变量 | vim-current-env]]
 
-0. 发现g是很好用的命令。:h g可以看到不少好玩的东西，比如ga，gd，gf，g^，g$，gu，gj，gk，gq，gv，g-，g+。如果忘了哪个就看help吧。
+0. 发现g是很好用的命令。:h g可以看到不少好玩的东西，比如gi，ga，gd，gf，g^，g$，gu，gj，gk，gq，gv，g-，g+。如果忘了哪个就看help吧。
 
 0. 同样，\[也是个很好用的命令。:h \[可以看到不少好玩的东西，比如\[(，\[\[，\[{。有趣的是]是与\[对应的。
 
@@ -169,8 +169,12 @@ ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 :help usr_41.txt
 ```
 
-## 学习资料
+0. 命令模式下`<C-R><C-W>`, 输出当前光标所在的单词
 
+0. 外部命令的输出导到当前的buffer
+```sh
+:r !cmd
+```
 
 ## 幽默
 
@@ -196,3 +200,76 @@ ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 > Q: How to generate a random string?
 > A: Put a fresh student in front of vi and tell him to quit.
 
+5.[[vi之歌 | http://www.gnu.org/fun/jokes/vi.song.html]]
+> Addicted To vi
+> (with apologies to Robert Palmer)
+>
+> You press the keys with no effect,
+> Your mode is not correct.
+> The screen blurs, your fingers shake;
+> You forgot to press escape.
+> Can't insert, can't delete,
+> Cursor keys won't repeat.
+> You try to quit, but can't leave,
+> An extra "bang" is all you need.
+>
+> You think it's neat to type an "a" or an "i"--
+> Oh yeah?
+> You won't look at emacs, no you'd just rather die
+> You know you're gonna have to face it;
+> You're addicted to vi!
+>
+> You edit files one at a time;
+> That doesn't seem too out of line?
+> You don't think of keys to bind--
+> A meta key would blow your mind.
+> H, J, K, L?  You're not annoyed?
+> Expressions must be a Joy!
+> Just press "f", or is it "t"?
+> Maybe "n", or just "g"?
+>
+> Oh--You think it's neat to type an "a" or an "i"--
+> Oh yeah?
+> You won't look at emacs, no you'd just rather die
+> You know you're gonna have to face it;
+> You're addicted to vi!
+>
+> Might as well face it,
+> You're addicted to vi!
+>
+> You press the keys without effect,
+> Your life is now a wreck.
+> What a waste!  Such a shame!
+> And all you have is vi to blame.
+>
+> Oh--You think it's neat to type an "a" or an "i"--
+> Oh yeah?
+> You won't look at emacs, no you'd just rather die
+> You know you're gonna have to face it;
+> You're addicted to vi!
+>
+> Might as well face it,
+> You're addicted to vi!
+>
+> Copyright 1989, by Chuck Musciano.  All Rights Reserved
+
+6.
+> From: Alex Lopez-Ortiz
+> Subject:VI manual pages
+> Date: 27 Feb 91 11:30:04 GMT
+>
+> A few days ago, we were trying to explain to a MS-DOS user how the VI editor works. Here's what we come up with:
+>
+> Vi is an editor with two distinguished modes:
+>
+> In Edit mode you have all the capabilities of grandma's typewriter right under your finger tips! You can make the very same mistakes as you did with grany's typewriter (and your possibilities to correct them are about the same).
+>
+> That's why Vi was provided with a second mode, namely the Beep mode. On a vt100 terminal or compatible you can get into Beep mode by pressing an arrow or escape function key. In this powerful Beep mode even the more inocuos keystroke will promptly produce a Beep sound. As an example, arrows, return, blankspaces and most capital letters will produce beeps in the most arbitrary places of the screen. Just think about the whole world of possibilities that this mode gives to you:
+>
+> Compose a monotonic symphony or rap while editing your thesis!
+> Send messages in morse code to the secretary next door!
+> Keep yourself awake with the clear sound of the Beep tone!
+> The possibilities are up to you!
+
+7.
+> I have been using Vim for about 2 years now, mostly because I can't figure out how to exit it.
