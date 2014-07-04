@@ -376,8 +376,7 @@ else:
     print('Invalid')
 ```
 
-0. 列表分组
-Dividing a list into groups of n:
+0. 列表分成n个元素一组
 ```python
 >>> l = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8]
 >>> zip(*([iter(l)] * 3))
