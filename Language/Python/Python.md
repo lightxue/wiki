@@ -383,6 +383,22 @@ else:
 [(3, 1, 4), (1, 5, 9), (2, 6, 5), (3, 5, 8)]
 ```
 
+0. 找出文件最长行
+```python
+max(open('test.txt'), key=len)
+```
+
+0. 整数所有数字相加之和
+```python
+sum(map(int, str(n)))
+```
+
+0. 正无穷和负无穷
+```python
+float('Inf')
+float('-Inf')
+```
+
 0. re.sub, \g<1>
 0. python ini, json parse
 
