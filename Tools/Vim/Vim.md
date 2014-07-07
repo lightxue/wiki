@@ -181,7 +181,7 @@ ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 :set rl!
 ```
 
-0. 列合并
+0. 列合并(参考[这里](http://stackoverflow.com/questions/10760326/merge-multiple-lines-two-blocks-in-vim/10760494#10760494))
 ```sh
 " 把第5-8行的文本作为第1-4行的最后一列
 :5,8del | let l=split(@") | 1,4s/$/\=remove(l,0)/
