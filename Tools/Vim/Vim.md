@@ -181,6 +181,13 @@ ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 :set rl!
 ```
 
+0. 列合并
+```sh
+" 把第5-8行的文本作为第1-4行的最后一列
+:5,8del | let l=split(@") | 1,4s/$/\=remove(l,0)/
+```
+
+
 ## 幽默
 
 1.
