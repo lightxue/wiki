@@ -186,5 +186,8 @@ date +%s
 ```sh
 export PS1="\[\e[31;1m\]64bit_\[\e[31;1m\]\u\[\e[0m\]@\[\e[32;1m\]`/sbin/ifconfig eth1|grep "inet addr:"|cut -d: -f 2|cut -d" " -f1`\[\e[0m\]:\[\e[35;1m\]\w\[\e[0m\]\\$ "
 ```
+0. 软件连接最终指向的文件
+```sh
+readlink -f symbol-link-file-name
+```
 
-#
