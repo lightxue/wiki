@@ -7,6 +7,7 @@
 * [[Python | Language/Python/Python]]
 * [[regex | Language/regex/regex]]
 * [[markdown | Language/markdown/markdown]]
+* [[ruby | Language/Ruby/Ruby]]
 
 ## Operate System
 
@@ -43,6 +44,7 @@
 * [[ascii art | Other/ascii-art/ascii-art]]
 * [[motto | Other/motto/motto]]
 * [[rubik | Other/rubik/rubik]]
+* [[mnemonics | Other/mnemonics/mnemonics]]
 * [[draft | Other/draft]]
 
 <!-- --- title: Light Xue's Personal Wiki -->

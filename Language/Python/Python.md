@@ -9,6 +9,7 @@
 * [[python语法糖 | python-syntactic-sugar]]
 * [[How To Write Pythonic Code | http://chrisarndt.de/talks/rupy/2008/output/slides.html]]
 * [[PEP 8 -- Style Guide for Python Code | http://www.python.org/dev/peps/pep-0008/]]
+* [[asyncio笔记 | asyncio-note]]
 
 ----
 
@@ -397,6 +398,17 @@ sum(map(int, str(n)))
 ```python
 float('Inf')
 float('-Inf')
+```
+
+0. `__all__`，列表或元组，指出该模块import的时候可以使用哪些对象
+
+0. 显示import指定目录的包
+```python
+# import当前目录的包
+from . import tasks
+from .log import logger
+# 上一级目录的包
+from .. import tasks
 ```
 
 0. re.sub, \g<1>
