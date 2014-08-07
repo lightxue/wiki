@@ -411,7 +411,15 @@ from .log import logger
 from .. import tasks
 ```
 
+0. [Why are Python strings immutable?](https://docs.python.org/2/faq/design.html#why-are-python-strings-immutable)
+    There are several advantages.
+
+    One is performance: knowing that a string is immutable means we can allocate space for it at creation time, and the storage requirements are fixed and unchanging. This is also one of the reasons for the distinction between tuples and lists.
+
+    Another advantage is that strings in Python are considered as “elemental” as numbers. No amount of activity will change the value 8 to anything else, and in Python, no amount of activity will change the string “eight” to anything else.
+
 0. re.sub, \g<1>
 0. python ini, json parse
+
 
 
