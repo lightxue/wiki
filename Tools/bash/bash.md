@@ -191,3 +191,7 @@ export PS1="\[\e[31;1m\]64bit_\[\e[31;1m\]\u\[\e[0m\]@\[\e[32;1m\]`/sbin/ifconfi
 readlink -f symbol-link-file-name
 ```
 
+0. 本地语言修改
+```sh
+export LC_ALL=zh_CN.UTF-8
+```
