@@ -167,3 +167,7 @@ git config --list
 ```
 git diff --staged
 ```
+
+0. git文件状态
+
+[[image/git-status.png | align=center]]
