@@ -238,3 +238,11 @@ source ~/.git-completion.bash
 
 0. 分支是一个可移动的指针，指向commit对象
 [[image/commit-branch.png | align=center]]
+
+0. HEAD指针指向当前使用的分支
+[[image/HEAD-branch.png | align=center]]
+
+0. 创建分支testing
+```
+git branch testing
+```
