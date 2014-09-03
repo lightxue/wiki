@@ -1,5 +1,9 @@
 # git
 
+0. git文件状态
+
+[[image/git-status.png | align=center]]
+
 0. 项目初始化
 ```
 git init
@@ -17,7 +21,7 @@ git commit -m 'comment'
 
 0. 克隆
 ```
-git clone https://github.com/lightxue/vim_config.git
+git clone https://github.com/lightxue/vim_config.git vim_config
 ```
 
 0. 查看状态
@@ -38,6 +42,7 @@ git diff
 0. 查看已提交的文件与上次提交时的快照之间的差异
 ```
 git diff --cached
+git diff --staged
 ```
 
 0. 移除，从暂存区移除
@@ -45,7 +50,7 @@ git diff --cached
 git rm file
 ```
 
-0. 移除跟踪但不删除文件
+0. 移除跟踪(track)但不删除文件
 ```
 git rm --cached file
 ```
@@ -58,14 +63,19 @@ git mv filea fileb
 0. 查看log
 ```
 git log
-// 查看内容差异
+
+// 查看提交内容的diff，这个不错
 git -p
+
 // 最近两次更新
 git -2
+
 // 增改行数统计
 git log --stat
+
 // 指定展示样式，有online, short, full, fuller
 git log --pretty=online
+
 // 限制输出长度，有since, until, author, committer
 git log --since=2.weeks
 ```
@@ -163,11 +173,39 @@ git config --global merge.tool vimdiff
 git config --list
 ```
 
-0. 查看staged状态的diff
+0. 不需要`git add`，直接把track的文件放到staged里并提交
 ```
-git diff --staged
+git commit -a
 ```
 
-0. git文件状态
+0. 增加远程仓库
+```
+git remote add pb git://github.com/paulboone/ticgit.git
+```
+0. 查看远程仓库信息
+```
+git remote show origin
+```
 
-[[image/git-status.png | align=center]]
+0. 重命令远程仓库
+```
+git remote rename
+```
+
+0. 列出现有tag
+```
+git tag
+git tag -l 'v1.4.2.*'
+```
+
+0. Git 使用的标签有两种类型：轻量级的（lightweight）和含附注的（annotated）。轻量
+级标签就像是个不会变化的分支，实际上它就是个指向特定提交对象的引用。而含附注标
+签，实际上是存储在仓库中的一个独立对象，它有自身的校验和信息，包含着标签的名字，
+电子邮件地址和日期，以及标签说明，标签本身也允许使用GNU Privacy Guard (GPG) 来
+签署或验证。一般我们都建议使用含附注型的标签，以便保留相关信息；当然，如果只是临
+时性加注标签，或者不需要旁注额外信息，用轻量级标签也没问题。
+
+0. 创建一个含附注类型的标签
+```
+git tag -a v1.4 -m 'my version 1.4'
+```
