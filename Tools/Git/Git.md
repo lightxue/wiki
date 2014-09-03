@@ -234,4 +234,7 @@ source ~/.git-completion.bash
 ```
 
 0. 提交3个文件，会建立三个文件的blob对象，文件所在目录的tree对象和一个commit对象
-[[image/git-status.png | align=center]]
+[[image/commit-tree-blob.png | align=center]]
+
+0. 分支是一个可移动的指针，指向commit对象
+[[image/commit-branch.png | align=center]]
