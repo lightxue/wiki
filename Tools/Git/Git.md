@@ -153,4 +153,17 @@ git config --global credential.helper 'cache --timeout 3600'
 git ls-files
 ```
 
+0. 指定合并编辑器
+```
+git config --global merge.tool vimdiff
+```
 
+0. 检查已有配置信息
+```
+git config --list
+```
+
+0. 查看staged状态的diff
+```
+git diff --staged
+```
