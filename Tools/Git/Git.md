@@ -246,3 +246,33 @@ source ~/.git-completion.bash
 ```
 git branch testing
 ```
+
+0. 切换到testing分支
+```
+git checkout testing
+```
+
+0. 删除分支hotfix
+```
+git branch -d hotfix
+```
+
+0. 把issue53分支的代码合并到当前分支
+```
+git merge issue53
+// 如果有冲突，解决完后git add表示冲突解决
+```
+
+0. 列表当前分支列表
+```
+git branch
+
+// 详细信息
+git branch -v
+
+// 哪些分支已经合到当前分支
+git branch --merged
+
+// 还没合并的分支
+git branch --no-merged
+```
