@@ -140,7 +140,7 @@ git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.unstage 'reset HEAD --'
-git config --global alias.last 'log -1 HEAD'
+git config --global alias.last 'log -3 HEAD'
 ```
 
 0. 默认编辑器选择
@@ -208,4 +208,30 @@ git tag -l 'v1.4.2.*'
 0. 创建一个含附注类型的标签
 ```
 git tag -a v1.4 -m 'my version 1.4'
+git tag -a v1.2 9fceb02 // commit校验和
 ```
+
+0. 创建一个轻量级的标签
+```
+git tag v1.4
+```
+
+0. 查看相应标签的版本信息
+```
+git show v1.4
+```
+
+0. 默认情况下，git push 并不会把标签传送到远端服务器上，只有通过显式命令才能分享标签到远端仓库
+```
+git push origin v1.5
+// 一次推送所有（本地新增的）标签上去
+git push origin --tags
+```
+
+0. 给git加自动补全功能
+```
+source ~/.git-completion.bash
+```
+
+0. 提交3个文件，会建立三个文件的blob对象，文件所在目录的tree对象和一个commit对象
+[[image/git-status.png | align=center]]
