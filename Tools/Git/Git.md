@@ -78,6 +78,9 @@ git log --pretty=online
 
 // 限制输出长度，有since, until, author, committer
 git log --since=2.weeks
+
+// 看分支分化衍合情况
+git log --graph
 ```
 
 0. 撤消最后一次提交
