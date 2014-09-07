@@ -23,6 +23,7 @@
 * [[bash | Tools/bash/bash]]
 * [[gdb | Tools/gdb/gdb]]
 * [[mysql | Tools/mysql/mysql]]
+* [[postgresql | Tools/postgresql/postgresql]]
 * [[nginx | Tools/nginx/nginx]]
 * [[Graphviz | Tools/Graphviz/Graphviz]]
 * [[Git | Tools/Git/Git]]
