@@ -18,3 +18,20 @@
 ```
 psql -U dbuser -d exampledb -h 127.0.0.1 -p 5432
 ```
+
+# ubuntu安装
+```
+sudo apt-get install postgresql-client
+sudo apt-get install postgresql
+```
+
+# 新建用户
+```
+create user dbuser with password 'password';
+```
+
+# 新建数据库
+```
+create database exampledb owner dbuser;
+grant all privileges on database exampledb to dbuser;
+```
