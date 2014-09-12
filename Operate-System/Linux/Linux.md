@@ -46,5 +46,11 @@
 
 [[image/linux_tools.png]]
 
+[[image/performance_observability-tools.jpg]]
+
+[[image/performance_benchmark_tools.jpg]]
+
+[[image/performance_tunning_tools.jpg]]
+
 * Ceph
 
