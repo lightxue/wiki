@@ -426,6 +426,13 @@ from .. import tasks
 >        the value 8 to anything else, and in Python, no amount of
 >        activity will change the string “eight” to anything else.
 
+0. 修改默认的ascii编码转换unicode和str
+```python
+import sys
+reload(sys)
+sys.setdefaultencoding('UTF-8')
+```
+
 0. re.sub, \g<1>
 0. python ini, json parse
 
