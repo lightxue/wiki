@@ -433,6 +433,12 @@ reload(sys)
 sys.setdefaultencoding('UTF-8')
 ```
 
+0. 给utf8文件写入BOM
+```
+import codecs
+fd.write(codecs.BOM_UTF8)
+```
+
 0. re.sub, \g<1>
 0. python ini, json parse
 
