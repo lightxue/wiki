@@ -195,3 +195,11 @@ readlink -f symbol-link-file-name
 ```sh
 export LC_ALL=zh_CN.UTF-8
 ```
+
+0. 当前脚本所在目录
+```
+cwd=$(dirname ${BASH_SOURCE[0]})
+echo $cwd
+```
+
+0. excect脚本如果不是交互下运行，最后不能用`interact`，要用`expect eof`
