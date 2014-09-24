@@ -279,3 +279,6 @@ git branch --merged
 // 还没合并的分支
 git branch --no-merged
 ```
+
+0. 恢复删除的分支
+> Yes, you should be able to do `git reflog` and find the SHA1 for the commit at the tip of your deleted branch, then just `git checkout [sha]`. And once you're at that commit, you can just `git checkout -b [branchname]` to make a recreate the branch from there.
