@@ -56,3 +56,8 @@
 
 * Ceph
 
+* 默认最大打开文件数限制。在/etc/security/limits.conf里增加下面内容
+```
+* soft nofile 64000
+* hard nofile 64000
+```
