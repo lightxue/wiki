@@ -203,3 +203,8 @@ echo $cwd
 ```
 
 0. excect脚本如果不是交互下运行，最后不能用`interact`，要用`expect eof`
+
+0. top显示单个进程信息
+```
+top -p `pgrep process-name | tr "\\n" "," | sed 's/,$//'`
+```
