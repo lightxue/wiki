@@ -197,7 +197,7 @@ export LC_ALL=zh_CN.UTF-8
 ```
 
 0. 当前脚本所在目录
-```
+```sh
 cwd=$(dirname ${BASH_SOURCE[0]})
 echo $cwd
 ```
@@ -205,6 +205,40 @@ echo $cwd
 0. excect脚本如果不是交互下运行，最后不能用`interact`，要用`expect eof`
 
 0. top显示单个进程信息
-```
+```sh
 top -p `pgrep process-name | tr "\\n" "," | sed 's/,$//'`
+```
+
+0. for loop
+```sh
+#!/bin/bash
+for i in 1 2 3 4 5
+do
+   echo "Welcome $i times"
+done
+
+#!/bin/bash
+for i in {1..5}
+do
+   echo "Welcome $i times"
+done
+
+#!/bin/bash
+echo "Bash version ${BASH_VERSION}..."
+for i in {0..10..2}
+  do
+     echo "Welcome $i times"
+ done
+
+#!/bin/bash
+for i in $(seq 1 2 20)
+do
+   echo "Welcome $i times"
+done
+
+#!/bin/bash
+for (( c=1; c<=5; c++ ))
+do
+   echo "Welcome $c times"
+done
 ```
