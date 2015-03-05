@@ -439,6 +439,8 @@ import codecs
 fd.write(codecs.BOM_UTF8)
 ```
 
+0. 神奇的`__debug__`变量能实现`#ifdef`，看[这里](http://stackoverflow.com/questions/12524570/how-do-you-implement-ifdef-in-python)
+
 0. re.sub, \g<1>
 0. python ini, json parse
 
