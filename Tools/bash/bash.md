@@ -242,3 +242,14 @@ do
    echo "Welcome $c times"
 done
 ```
+
+0. 用python实现`urldecode`和`urlencode`命令
+```sh
+$ alias urldecode='python -c "import sys, urllib as ul; \
+    print ul.unquote_plus(sys.argv[1])"'
+
+$ alias urlencode='python -c "import sys, urllib as ul; \
+    print ul.quote_plus(sys.argv[1])"'
+```
+
+
