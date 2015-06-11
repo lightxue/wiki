@@ -17,7 +17,7 @@
 
 0. ALTER TABLE tbl_name ADD col_name tinyint NOT NULL DEFAULT '0';
 
-0. 
+0. 不存在就插入，存在就更新
 ```sql
 INSERT INTO t_homepage_device
   (a, b) VALUES(1, 2)
