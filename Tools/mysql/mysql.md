@@ -9,11 +9,13 @@
   set character_set_results = utf8 服务器返回查询结果时使用的字符集 <br>
   set character_set_connection = utf8 mysql服务器把客户端传来的数据，从character_set_client字符集转换成character_set_connection字符集
 
-0. update tle_name set col_name1 = exp1, col_name2 = exp2;
+0. UPDATE tbl_name SET col_name1 = exp1, col_name2 = exp2;
 
-0. delete from tbl_name where col_name1 = exp1;
+0. DELETE FROM tbl_name WHERE col_name1 = exp1;
 
-0. insert into tbl_name(col_name1, col_name2) values(exp1, exp2);
+0. INSERT INTO tbl_name(col_name1, col_name2) VALUES(exp1, exp2);
+
+0. ALTER TABLE tbl_name ADD col_name tinyint NOT NULL DEFAULT '0';
 
 0. mysql连unix domain socket
 ```sh
