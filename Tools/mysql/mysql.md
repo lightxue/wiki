@@ -17,6 +17,14 @@
 
 0. ALTER TABLE tbl_name ADD col_name tinyint NOT NULL DEFAULT '0';
 
+0. 
+```sql
+INSERT INTO t_homepage_device
+  (a, b) VALUES(1, 2)
+  ON DUPLICATE KEY UPDATE b=1;
+```
+
+
 0. mysql连unix domain socket
 ```sh
 mysql -S /tmp/mysql*.sock
