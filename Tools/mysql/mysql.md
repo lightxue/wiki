@@ -42,3 +42,14 @@ mysql -S /tmp/mysql*.sock
     select * INTO OUTFILE 'file_name' from tbl_name;
     ```
 
+0. 自动更新时间
+```sql
+CREATE TABLE `t_table`
+(
+             `id`   INT(11) NOT NULL DEFAULT '0',
+             `modify_time`    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+       PRIMARY KEY (`user_id`),
+       UNIQUE KEY `id` (`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+```
