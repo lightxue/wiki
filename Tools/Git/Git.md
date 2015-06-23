@@ -156,6 +156,11 @@ git config --global core.editor vim
 git config --global color.ui true
 ```
 
+0. 查看配置信息
+```
+git config --list
+```
+
 0. 记住密码1小时
 ```
 git config --global credential.helper 'cache --timeout 3600'
