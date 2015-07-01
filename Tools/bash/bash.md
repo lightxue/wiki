@@ -8,6 +8,8 @@
 
 0. [[ssh免密码 | ssh-without-password]]
 
+0. [[logrotate例子 | logrotate-examples]]
+
 0. 发现find的-print0配上xargs -0不错
 ```sh
     find . -name "*.cpp" -print0 | xargs -0 grep hello
