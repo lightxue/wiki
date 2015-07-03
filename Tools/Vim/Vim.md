@@ -189,6 +189,7 @@ ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 
 0. `:h magic`，用`\v`、`\m`、`\M`、`\M`，控制使用正则的程度，very magic, magic, no magic, very no magic
 
+0. http://vimawesome.com/ 淘插件的好地方
 
 ## 幽默
 
