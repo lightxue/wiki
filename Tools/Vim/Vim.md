@@ -191,6 +191,11 @@ ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 
 0. http://vimawesome.com/ 淘插件的好地方
 
+0. 垂直diff
+```sh
+vert diffsplit file2
+```
+
 ## 幽默
 
 1.
