@@ -1,21 +1,31 @@
 # mysql
 
-0. select * from table \G; 加了\G，列名就变成竖着放的。
+0. `select * from table \G` 加了\G，列名就变成竖着放的。
 
-0. show variables like '%char%'; 显示字符集设置
+0. `show variables like '%char%';` 显示字符集设置
 
-0. set names utf8相当于 <br>
-  set character_set_client = utf8 用来设置客户端送给mysql服务器的数据的字符集 <br>
-  set character_set_results = utf8 服务器返回查询结果时使用的字符集 <br>
-  set character_set_connection = utf8 mysql服务器把客户端传来的数据，从character_set_client字符集转换成character_set_connection字符集
+0. `set names utf8`相当于
+```sql
+set character_set_client = utf8 用来设置客户端送给mysql服务器的数据的字符集 <br>
+set character_set_results = utf8 服务器返回查询结果时使用的字符集 <br>
+set character_set_connection = utf8 mysql服务器把客户端传来的数据，从character_set_client字符集转换成character_set_connection字符集
+```
 
-0. UPDATE tbl_name SET col_name1 = exp1, col_name2 = exp2;
+0. `UPDATE tbl_name SET col_name1 = exp1, col_name2 = exp2;`
 
-0. DELETE FROM tbl_name WHERE col_name1 = exp1;
+0. `DELETE FROM tbl_name WHERE col_name1 = exp1;`
 
-0. INSERT INTO tbl_name(col_name1, col_name2) VALUES(exp1, exp2);
+0. `INSERT INTO tbl_name(col_name1, col_name2) VALUES(exp11, exp21), (exp12, exp22);`
 
-0. ALTER TABLE tbl_name ADD col_name tinyint NOT NULL DEFAULT '0';
+0. `ALTER TABLE tbl_name ADD col_name tinyint NOT NULL DEFAULT '0';`
+
+0. `ALTER TABLE tbl_name DROP COLUMN col_name;`
+
+0. `ALTER TABLE tbl_name MODIFY COLUMN col_name tinyint NOT NULL DEFAULT '0';`
+
+0. `ALTER TABLE tbl_name RENAME COLUMN old_name to new_name;`
+
+0. `ALTER TABLE tbl_name CHANGE COLUMN old_name new_name tinyint NOT NULL DEFAULT '0';`
 
 0. 不存在就插入，存在就更新
 ```sql

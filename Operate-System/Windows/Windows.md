@@ -7,6 +7,6 @@
 ; 查看当前的连接
 net use
 ; 删除
-net * /delete
+net use * /delete
 ```
 
