@@ -65,3 +65,10 @@ CREATE TABLE `t_table`
 ```
 
 0. `last_insert_id`只会返回当前链接的insert id，多链接并发操作不会互相影响。`last_insert_id`只会返回自动生成的id，比如`auto-increment`，自己插入的id不算。
+
+0. 查找多个key
+```sql
+SELECT *
+FROM tbl_name
+WHERE col_name IN (1, 2, 3, 4, 5);
+```

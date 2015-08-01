@@ -256,4 +256,7 @@ $ alias urlencode='python -c "import sys, urllib as ul; \
     print ul.quote_plus(sys.argv[1])"'
 ```
 
-
+0. 删除第一行
+```sh
+tail -n +2 "$FILE"
+```
