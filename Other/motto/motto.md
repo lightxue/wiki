@@ -2,11 +2,9 @@
 
 * [[大老师]]
 
-```
-If you are out to describe the truth,
-leave elegance to the tailor.
-                    Albert Einstein
-```
+> If you are out to describe the truth,
+> leave elegance to the tailor.
+>                     Albert Einstein
 
 ```
 Could you please lend me the thing that you put in
