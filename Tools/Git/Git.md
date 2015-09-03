@@ -121,7 +121,7 @@ git remote show remote-name
 0. 远程仓库删除和重命名
 ```
 git remote rename remote-name-old remote-name-new
-git remote rm rename
+git remote rm remote-name
 ```
 
 0. 标签
@@ -132,8 +132,10 @@ git tag
 git tag -a v1.4 -m 'my version 1.4'
 // 查看标签的版本信息
 git show v1.4
-// 把所有tag push到远程仓库
+// 把所有tag push到远程仓库(默认情况push是不会把标签推到远程服务器)
 git push --tags
+// 创建轻量级标签
+git tag v1.4-1w
 ```
 
 0. alias
