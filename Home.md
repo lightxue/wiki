@@ -43,7 +43,7 @@
 ## Other
 
 * [[ascii art | Other/ascii-art/ascii-art]]
-* [[motto | Other/motto/motto]]
+* [[quotes | Other/quotes/quotes]]
 * [[rubik | Other/rubik/rubik]]
 * [[mnemonics | Other/mnemonics/mnemonics]]
 * [[draft | Other/draft]]

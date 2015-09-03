@@ -1,4 +1,4 @@
-# Motto
+# Quotes
 
 * [[大老师 | hikigaya-hachiman]]
 
