@@ -2,8 +2,6 @@
 
 * [[大老师 | hikigaya-hachiman]]
 
-* [[program-think]]
-
 <!-- -->
 
 > If you are out to describe the truth,  
