@@ -2,16 +2,16 @@
 
 * [[大老师]]
 
-> If you are out to describe the truth,
-> leave elegance to the tailor.
->                     Albert Einstein
+> If you are out to describe the truth, 
+> leave elegance to the tailor. 
+>                     Albert Einstein 
 
 ```
-Could you please lend me the thing that you put in
-the wall when you want to turn on the hairdryer and
-the hairdryer comes from a different country?
-
-Could you please lend me a power adapter?
+Could you please lend me the thing that you put in 
+the wall when you want to turn on the hairdryer and 
+the hairdryer comes from a different country? 
+ 
+Could you please lend me a power adapter? 
 ```
 
 ```
