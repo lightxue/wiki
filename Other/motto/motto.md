@@ -1,6 +1,6 @@
 # Motto
 
-* [[大老师 | hikigaya-haqiman]]
+* [[大老师 | hikigaya-hachiman]]
 
 * [[program-think]]
 
