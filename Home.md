@@ -31,6 +31,7 @@
 
 ## Books
 
+[[哲学家们都干了些什么？ | Books/mind/what-did-philosophers-do]]
 
 ## Data Structure
 
