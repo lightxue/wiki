@@ -56,10 +56,10 @@ mysql -S /tmp/mysql*.sock
 ```sql
 CREATE TABLE `t_table`
 (
-             `id`   INT(11) NOT NULL DEFAULT '0',
-             `modify_time`    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-       PRIMARY KEY (`user_id`),
-       UNIQUE KEY `id` (`user_id`)
+    `id`   INT(11) NOT NULL DEFAULT '0',
+    `modify_time`    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`user_id`),
+    UNIQUE KEY `id` (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 ```
