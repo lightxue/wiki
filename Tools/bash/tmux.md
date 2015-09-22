@@ -22,3 +22,11 @@ tmux attach -t session
 ```sh
 tmux kill-session -t basic
 ```
+
+## window
+
+0. rename window `prefix` `,`
+
+0. find window `prefix` `f`
+
+0. display window menu `prefix` `w`
