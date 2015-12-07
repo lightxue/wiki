@@ -27,6 +27,7 @@
 * [[nginx | Tools/nginx/nginx]]
 * [[Graphviz | Tools/Graphviz/Graphviz]]
 * [[Git | Tools/Git/Git]]
+* [[tmux | Tools/tmux/tmux]]
 * [[others | Tools/others/others]]
 
 ## Books
