@@ -72,3 +72,8 @@ SELECT *
 FROM tbl_name
 WHERE col_name IN (1, 2, 3, 4, 5);
 ```
+
+0. 查询当前事务级别
+```sql
+show variables like '%isola%';
+```
