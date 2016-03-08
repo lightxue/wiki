@@ -262,3 +262,12 @@ $ alias urlencode='python -c "import sys, urllib as ul; \
 ```sh
 tail -n +2 "$FILE"
 ```
+
+0. 多行字符串
+```sh
+read -r -d '' MULTILINE << EOM
+one
+two
+three
+EOM
+```

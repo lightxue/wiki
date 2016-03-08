@@ -449,6 +449,11 @@ reload(sys)
 sys.setdefaultencoding('UTF-8')
 ```
 
-0. re.sub, \g<1>
-0. python ini, json parse
-
+0. mysql按列名取值
+```python
+cursor = conn.cursor(MySQLdb.cursors.DictCursor)
+cursor.execute("SELECT name, category FROM animal")
+result_set = cursor.fetchall()
+for row in result_set:
+    print "%s, %s" % (row["name"], row["category"])
+```
