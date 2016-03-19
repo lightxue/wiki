@@ -27,6 +27,8 @@ set character_set_connection = utf8 mysql服务器把客户端传来的数据，
 
 0. `ALTER TABLE tbl_name CHANGE COLUMN old_name new_name tinyint NOT NULL DEFAULT '0';`
 
+0. `ALTER TABLE tbl_name ADD INDEX idx_name(col1, col2, col2); `
+
 0. 不存在就插入，存在就更新
 ```sql
 INSERT INTO tbl_name
@@ -59,6 +61,7 @@ CREATE TABLE `t_table`
     `id`   INT(11) NOT NULL DEFAULT '0',
     `modify_time`    TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     PRIMARY KEY (`user_id`),
+    KEY `idx_name` (`id`,`modify_time`,`modify_time`),
     UNIQUE KEY `id` (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
