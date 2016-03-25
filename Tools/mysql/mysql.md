@@ -27,7 +27,9 @@ set character_set_connection = utf8 mysql服务器把客户端传来的数据，
 
 0. `ALTER TABLE tbl_name CHANGE COLUMN old_name new_name tinyint NOT NULL DEFAULT '0';`
 
-0. `ALTER TABLE tbl_name ADD INDEX idx_name(col1, col2, col2); `
+0. `ALTER TABLE tbl_name ADD INDEX idx_name(col1, col2, col2);`
+
+0. `ALTER TABLE tbl_name ENGINE=InnoDB;`
 
 0. 不存在就插入，存在就更新
 ```sql
@@ -80,3 +82,7 @@ WHERE col_name IN (1, 2, 3, 4, 5);
 ```sql
 show variables like '%isola%';
 ```
+
+0. 各种`join`的图
+
+[[image/mysql-joins.png | align=center]]
