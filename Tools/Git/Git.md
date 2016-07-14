@@ -295,3 +295,8 @@ git branch --no-merged
 git config --global user.name 'lightxue'
 git config --global user.email 'bkmgtp@gmail.com'
 ```
+
+0. Windows上pull和push不了的问题解决
+```
+git config --global sendpack.sideband false
+```

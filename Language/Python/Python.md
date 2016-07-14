@@ -47,6 +47,9 @@ def timestamp_toString(stamp):
 # 把datetime类型转外时间戳形式
 def datetime_toTimestamp(dateTim):
     return time.mktime(dateTim.timetuple())
+
+def timestamp_toDatetime(timestamp):
+    return datetime.datetime.fromtimestamp(timestamp)
 ```
 
 0. urllib2.unquote(url)
