@@ -1,4 +1,0 @@
-# graphviz
-
-* xlabel
-* headlabel, taillabel
