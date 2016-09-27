@@ -91,7 +91,7 @@ td {
 
 /* Optimization for pre and code tag */
 pre, code { 
-    font-family: Consolas, "DejaVu Sans Mono", "Lucida Console", Monaco, Andale Mono, "MS Gothic", monospace;
+    font-family: Monaco, "DejaVu Sans Mono", "Lucida Console", Andale Mono, "MS Gothic", monospace, Consolas;
     font-size: 13px;
     border-radius: 3px;
     -moz-border-radius: 3px;
