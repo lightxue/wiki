@@ -20,16 +20,14 @@ title: Linux
   这个信号的缺省处理方法是退出进程，大多数时候这都不是我们期望的。<br>
   因此我们需要重载这个信号的处理方法。调用以下代码，即可安全的屏蔽SIGPIPE：
 ```c
+struct sigaction sig;
 
-    struct sigaction sig;
+memset(&sig, 0, sizeof(struct sigaction));
 
-    memset(&sig, 0, sizeof(struct sigaction));
-
-    sig.sa_handler = SIG_IGN;
-    sig.sa_flags = 0;
-    sigemptyset(&sig.sa_mask);
-    sigaction(SIGPIPE, &sig, NULL);
-
+sig.sa_handler = SIG_IGN;
+sig.sa_flags = 0;
+sigemptyset(&sig.sa_mask);
+sigaction(SIGPIPE, &sig, NULL);
 ```
 
 * linux常用工具
@@ -47,6 +45,7 @@ title: Linux
 * Ceph
 
 * 默认最大打开文件数限制。在/etc/security/limits.conf里增加下面内容
+
 ```
 * soft nofile 64000
 * hard nofile 64000
