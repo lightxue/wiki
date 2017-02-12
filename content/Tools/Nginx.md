@@ -1,4 +1,7 @@
-# Nginx
+---
+title: Nginx
+---
+
 
 * 通过`X-Forwarded-For`获取真实IP
 
