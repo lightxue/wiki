@@ -449,3 +449,12 @@ result_set = cursor.fetchall()
 for row in result_set:
     print "%s, %s" % (row["name"], row["category"])
 ```
+
+0. pip源改成阿里云的镜像源
+```ini
+; ~/.pip/pip.conf
+
+[global]
+trusted-host =  mirrors.aliyun.com
+index-url = http://mirrors.aliyun.com/pypi/simple
+```
