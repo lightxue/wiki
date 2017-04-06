@@ -458,3 +458,9 @@ for row in result_set:
 trusted-host =  mirrors.aliyun.com
 index-url = http://mirrors.aliyun.com/pypi/simple
 ```
+
+0. jupyter同时使用Python2和Python3
+```bash
+ipython  kernelspec install-self
+ipython3 kernelspec install-self
+```
