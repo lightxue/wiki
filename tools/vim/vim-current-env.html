@@ -1,0 +1,994 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>环境变量 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../awk.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Language</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../language/python/">
+            
+                <a href="../../language/python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../language/c-cpp/">
+            
+                <a href="../../language/c-cpp/">
+            
+                    
+                    C/C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">System</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../system/linux/">
+            
+                <a href="../../system/linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../../system/linux/coredump.html">
+            
+                <a href="../../system/linux/coredump.html">
+            
+                    
+                    coredump
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../../system/linux/epool-intro.md">
+            
+                <span>
+            
+                    
+                    epool初步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../../system/linux/fight-with-garbled-characters.html">
+            
+                <a href="../../system/linux/fight-with-garbled-characters.html">
+            
+                    
+                    乱码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../../system/linux/linux-performance-note.html">
+            
+                <a href="../../system/linux/linux-performance-note.html">
+            
+                    
+                    linux性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../../system/linux/thinking-in-epoll.html">
+            
+                <a href="../../system/linux/thinking-in-epoll.html">
+            
+                    
+                    epoll
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../system/mac/">
+            
+                <a href="../../system/mac/">
+            
+                    
+                    Mac OS X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../../system/windows/">
+            
+                <a href="../../system/windows/">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../shell/">
+            
+                <a href="../shell/">
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../shell/dd-speed-test.html">
+            
+                <a href="../shell/dd-speed-test.html">
+            
+                    
+                    dd硬盘测试速度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../shell/string-escape.html">
+            
+                <a href="../shell/string-escape.html">
+            
+                    
+                    bash的字符串转义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../shell/logrotate-examples.html">
+            
+                <a href="../shell/logrotate-examples.html">
+            
+                    
+                    logrotate示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../shell/ssh-without-password.html">
+            
+                <a href="../shell/ssh-without-password.html">
+            
+                    
+                    ssh免密码登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../shell/samba.html">
+            
+                <a href="../shell/samba.html">
+            
+                    
+                    samba配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="4.2.1" data-path="vim-current-env.html">
+            
+                <a href="vim-current-env.html">
+            
+                    
+                    环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../awk.html">
+            
+                <a href="../awk.html">
+            
+                    
+                    AWK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../gdb.html">
+            
+                <a href="../gdb.html">
+            
+                    
+                    GDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../git.html">
+            
+                <a href="../git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../mysql.html">
+            
+                <a href="../mysql.html">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="../nginx.html">
+            
+                <a href="../nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.8" data-path="../sed.html">
+            
+                <a href="../sed.html">
+            
+                    
+                    sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="../tmux.html">
+            
+                <a href="../tmux.html">
+            
+                    
+                    tmux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Rubik</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../../rubik/">
+            
+                <a href="../../rubik/">
+            
+                    
+                    通用转法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../../rubik/gan.html">
+            
+                <a href="../../rubik/gan.html">
+            
+                    
+                    gan转法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../../rubik/oll.html">
+            
+                <a href="../../rubik/oll.html">
+            
+                    
+                    OLL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../../rubik/pll.html">
+            
+                <a href="../../rubik/pll.html">
+            
+                    
+                    PLL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../../rubik/mini-cube.html">
+            
+                <a href="../../rubik/mini-cube.html">
+            
+                    
+                    二阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../../rubik/revenge.html">
+            
+                <a href="../../rubik/revenge.html">
+            
+                    
+                    四阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../../rubik/2x2x3-cube.html">
+            
+                <a href="../../rubik/2x2x3-cube.html">
+            
+                    
+                    2x2x3
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Books</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../../books/what-did-philosophers-do.html">
+            
+                <a href="../../books/what-did-philosophers-do.html">
+            
+                    
+                    哲学家们都干了些什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Other</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../../other/ascii-art.html">
+            
+                <a href="../../other/ascii-art.html">
+            
+                    
+                    Ascii art
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >环境变量</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x663E;&#x793A;vim&#x5F53;&#x524D;&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x663E;&#x793A;vim&#x5F53;&#x524D;&#x73AF;&#x5883;&#x53D8;&#x91CF;</h1>
+<table>
+<thead>
+<tr>
+<th>&#x547D;&#x4EE4;</th>
+<th>&#x5C55;&#x793A;&#x5185;&#x5BB9;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>:abbreviate</td>
+<td>list abbreviations</td>
+</tr>
+<tr>
+<td>:args</td>
+<td>argument list</td>
+</tr>
+<tr>
+<td>:augroup</td>
+<td>augroups</td>
+</tr>
+<tr>
+<td>:autocmd</td>
+<td>list auto-commands</td>
+</tr>
+<tr>
+<td>:buffers</td>
+<td>list buffers</td>
+</tr>
+<tr>
+<td>:breaklist</td>
+<td>list current breakpoints</td>
+</tr>
+<tr>
+<td>:cabbrev</td>
+<td>list command mode abbreviations</td>
+</tr>
+<tr>
+<td>:changes</td>
+<td>changes</td>
+</tr>
+<tr>
+<td>:cmap</td>
+<td>list command mode maps</td>
+</tr>
+<tr>
+<td>:command</td>
+<td>list commands</td>
+</tr>
+<tr>
+<td>:compiler</td>
+<td>list compiler scripts</td>
+</tr>
+<tr>
+<td>:digraphs</td>
+<td>digraphs</td>
+</tr>
+<tr>
+<td>:file</td>
+<td>print filename, cursor position and status (like Ctrl-G)</td>
+</tr>
+<tr>
+<td>:filetype</td>
+<td>on/off settings for filetype detect/plugins/indent</td>
+</tr>
+<tr>
+<td>:function</td>
+<td>list user-defined functions (names and argument lists but not the full code)</td>
+</tr>
+<tr>
+<td>:function Foo</td>
+<td>user-defined function Foo() (full code list)</td>
+</tr>
+<tr>
+<td>:highlight</td>
+<td>highlight groups</td>
+</tr>
+<tr>
+<td>:history c</td>
+<td>command history</td>
+</tr>
+<tr>
+<td>:history =</td>
+<td>expression history</td>
+</tr>
+<tr>
+<td>:history s</td>
+<td>search history</td>
+</tr>
+<tr>
+<td>:history</td>
+<td>your commands</td>
+</tr>
+<tr>
+<td>:iabbrev</td>
+<td>list insert mode abbreviations</td>
+</tr>
+<tr>
+<td>:imap</td>
+<td>list insert mode maps</td>
+</tr>
+<tr>
+<td>:intro</td>
+<td>the Vim splash screen, with summary version info</td>
+</tr>
+<tr>
+<td>:jumps</td>
+<td>your movements</td>
+</tr>
+<tr>
+<td>:language</td>
+<td>current language settings</td>
+</tr>
+<tr>
+<td>:let</td>
+<td>all variables</td>
+</tr>
+<tr>
+<td>:let FooBar</td>
+<td>variable FooBar</td>
+</tr>
+<tr>
+<td>:let g:</td>
+<td>global variables</td>
+</tr>
+<tr>
+<td>:let v:</td>
+<td>Vim variables</td>
+</tr>
+<tr>
+<td>:list</td>
+<td>buffer lines (many similar commands)</td>
+</tr>
+<tr>
+<td>:lmap</td>
+<td>language mappings (set by keymap or by lmap)</td>
+</tr>
+<tr>
+<td>:ls</td>
+<td>buffers</td>
+</tr>
+<tr>
+<td>:ls!</td>
+<td>buffers, including &quot;unlisted&quot; buffers</td>
+</tr>
+<tr>
+<td>:map!</td>
+<td>Insert and Command-line mode maps (imap, cmap)</td>
+</tr>
+<tr>
+<td>:map</td>
+<td>Normal and Visual mode maps (nmap, vmap, xmap, smap, omap)</td>
+</tr>
+<tr>
+<td>:map<buffer></buffer></td>
+<td>buffer local Normal and Visual mode maps</td>
+</tr>
+<tr>
+<td>:map!<buffer></buffer></td>
+<td>buffer local Insert and Command-line mode maps</td>
+</tr>
+<tr>
+<td>:marks</td>
+<td>marks</td>
+</tr>
+<tr>
+<td>:menu</td>
+<td>menu items</td>
+</tr>
+<tr>
+<td>:messages</td>
+<td>message history</td>
+</tr>
+<tr>
+<td>:nmap</td>
+<td>Normal-mode mappings only</td>
+</tr>
+<tr>
+<td>:omap</td>
+<td>Operator-pending mode mappings only</td>
+</tr>
+<tr>
+<td>:print</td>
+<td>display buffer lines (useful after :g or with a range)</td>
+</tr>
+<tr>
+<td>:reg</td>
+<td>registers</td>
+</tr>
+<tr>
+<td>:scriptnames</td>
+<td>all scripts sourced so far</td>
+</tr>
+<tr>
+<td>:set all</td>
+<td>all options, including defaults</td>
+</tr>
+<tr>
+<td>:setglobal</td>
+<td>global option values</td>
+</tr>
+<tr>
+<td>:setlocal</td>
+<td>local option values</td>
+</tr>
+<tr>
+<td>:set</td>
+<td>options with non-default value</td>
+</tr>
+<tr>
+<td>:set termcap</td>
+<td>list terminal codes and terminal keys</td>
+</tr>
+<tr>
+<td>:smap</td>
+<td>Select-mode mappings only</td>
+</tr>
+<tr>
+<td>:spellinfo</td>
+<td>spellfiles used</td>
+</tr>
+<tr>
+<td>:syntax</td>
+<td>syntax items</td>
+</tr>
+<tr>
+<td>:syn sync</td>
+<td>current syntax sync mode</td>
+</tr>
+<tr>
+<td>:tabs</td>
+<td>tab pages</td>
+</tr>
+<tr>
+<td>:tags</td>
+<td>tag stack contents</td>
+</tr>
+<tr>
+<td>:undolist</td>
+<td>leaves of the undo tree</td>
+</tr>
+<tr>
+<td>:verbose</td>
+<td>show info about where a map or autocmd or function is defined</td>
+</tr>
+<tr>
+<td>:version</td>
+<td>list version and build options</td>
+</tr>
+<tr>
+<td>:vmap</td>
+<td>Visual and Select mode mappings only</td>
+</tr>
+<tr>
+<td>:winpos</td>
+<td>Vim window position (gui)</td>
+</tr>
+<tr>
+<td>:xmap</td>
+<td>visual mode maps only</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Vim">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../awk.html" class="navigation navigation-next " aria-label="Next page: AWK">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"环境变量","level":"4.2.1","depth":2,"next":{"title":"AWK","level":"4.3","depth":1,"path":"tools/awk.md","ref":"tools/awk.md","articles":[]},"previous":{"title":"Vim","level":"4.2","depth":1,"path":"tools/vim/index.md","ref":"tools/vim/index.md","articles":[{"title":"环境变量","level":"4.2.1","depth":2,"path":"tools/vim/vim-current-env.md","ref":"tools/vim/vim-current-env.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tools/vim/vim-current-env.md","mtime":"2017-04-23T16:20:39.135Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-23T16:32:08.825Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,806 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>sed · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tmux.html" />
+    
+    
+    <link rel="prev" href="nginx.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Language</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../language/python/">
+            
+                <a href="../language/python/">
+            
+                    
+                    Python
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../language/c-cpp/">
+            
+                <a href="../language/c-cpp/">
+            
+                    
+                    C/C++
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">System</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../system/linux/">
+            
+                <a href="../system/linux/">
+            
+                    
+                    Linux
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../system/linux/coredump.html">
+            
+                <a href="../system/linux/coredump.html">
+            
+                    
+                    coredump
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" data-path="../system/linux/epool-intro.md">
+            
+                <span>
+            
+                    
+                    epool初步
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" data-path="../system/linux/fight-with-garbled-characters.html">
+            
+                <a href="../system/linux/fight-with-garbled-characters.html">
+            
+                    
+                    乱码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../system/linux/linux-performance-note.html">
+            
+                <a href="../system/linux/linux-performance-note.html">
+            
+                    
+                    linux性能
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../system/linux/thinking-in-epoll.html">
+            
+                <a href="../system/linux/thinking-in-epoll.html">
+            
+                    
+                    epoll
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../system/mac/">
+            
+                <a href="../system/mac/">
+            
+                    
+                    Mac OS X
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../system/windows/">
+            
+                <a href="../system/windows/">
+            
+                    
+                    Windows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Tools</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="shell/">
+            
+                <a href="shell/">
+            
+                    
+                    shell
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="shell/dd-speed-test.html">
+            
+                <a href="shell/dd-speed-test.html">
+            
+                    
+                    dd硬盘测试速度
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="shell/string-escape.html">
+            
+                <a href="shell/string-escape.html">
+            
+                    
+                    bash的字符串转义
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="shell/logrotate-examples.html">
+            
+                <a href="shell/logrotate-examples.html">
+            
+                    
+                    logrotate示例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="shell/ssh-without-password.html">
+            
+                <a href="shell/ssh-without-password.html">
+            
+                    
+                    ssh免密码登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="shell/samba.html">
+            
+                <a href="shell/samba.html">
+            
+                    
+                    samba配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="vim/">
+            
+                <a href="vim/">
+            
+                    
+                    Vim
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="vim/vim-current-env.html">
+            
+                <a href="vim/vim-current-env.html">
+            
+                    
+                    环境变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="awk.html">
+            
+                <a href="awk.html">
+            
+                    
+                    AWK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="gdb.html">
+            
+                <a href="gdb.html">
+            
+                    
+                    GDB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="git.html">
+            
+                <a href="git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="mysql.html">
+            
+                <a href="mysql.html">
+            
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="nginx.html">
+            
+                <a href="nginx.html">
+            
+                    
+                    Nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.8" data-path="sed.html">
+            
+                <a href="sed.html">
+            
+                    
+                    sed
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.9" data-path="tmux.html">
+            
+                <a href="tmux.html">
+            
+                    
+                    tmux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Rubik</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../rubik/">
+            
+                <a href="../rubik/">
+            
+                    
+                    通用转法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../rubik/gan.html">
+            
+                <a href="../rubik/gan.html">
+            
+                    
+                    gan转法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="../rubik/oll.html">
+            
+                <a href="../rubik/oll.html">
+            
+                    
+                    OLL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="../rubik/pll.html">
+            
+                <a href="../rubik/pll.html">
+            
+                    
+                    PLL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="../rubik/mini-cube.html">
+            
+                <a href="../rubik/mini-cube.html">
+            
+                    
+                    二阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="../rubik/revenge.html">
+            
+                <a href="../rubik/revenge.html">
+            
+                    
+                    四阶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="../rubik/2x2x3-cube.html">
+            
+                <a href="../rubik/2x2x3-cube.html">
+            
+                    
+                    2x2x3
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Books</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../books/what-did-philosophers-do.html">
+            
+                <a href="../books/what-did-philosophers-do.html">
+            
+                    
+                    哲学家们都干了些什么
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Other</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../other/ascii-art.html">
+            
+                <a href="../other/ascii-art.html">
+            
+                    
+                    Ascii art
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >sed</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="sed&#x7684;pattern-space&#x548C;hold-space">sed&#x7684;pattern space&#x548C;hold space</h1>
+<h2 id="&#x7528;&#x9014;">&#x7528;&#x9014;</h2>
+<ul>
+<li>pattern space&#x662F;&#x5B58;&#x50A8;&#x5F53;&#x524D;&#x5904;&#x7406;&#x7684;&#x884C;&#x7684;&#x7F13;&#x51B2;&#x533A;</li>
+<li>hold space&#x53EF;&#x4EE5;&#x62FF;&#x6765;&#x5F53;&#x4E34;&#x65F6;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;</li>
+</ul>
+<h2 id="sed&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">sed&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h2>
+<ol>
+<li>sed&#x5148;&#x8BFB;&#x5165;&#x4E00;&#x884C;&#xFF0C;&#x53BB;&#x6389;&#x5C3E;&#x90E8;&#x6362;&#x884C;&#x7B26;&#xFF0C;&#x5B58;&#x5165;pattern space&#xFF0C;&#x6267;&#x884C;&#x7F16;&#x8F91;&#x547D;&#x4EE4;&#x3002;</li>
+<li>&#x5904;&#x7406;&#x5B8C;&#x6BD5;&#xFF0C;&#x9664;&#x975E;&#x52A0;&#x4E86;-n&#x53C2;&#x6570;&#xFF0C;&#x628A;&#x73B0;&#x5728;&#x7684;pattern space&#x6253;&#x5370;&#x51FA;&#x6765;&#xFF0C;&#x5728;&#x540E;&#x8FB9;&#x6253;&#x5370;&#x66FE;&#x53BB;&#x6389;&#x7684;&#x6362;&#x884C;&#x7B26;&#x3002;</li>
+<li>&#x628A;pattern space&#x7F6E;&#x7A7A;&#x3002;</li>
+<li>&#x63A5;&#x7740;&#x8BFB;&#x4E0B;&#x4E00;&#x884C;&#xFF0C;&#x5904;&#x7406;&#x4E0B;&#x4E00;&#x884C;&#x3002;</li>
+</ol>
+<p>&#x7279;&#x6B8A;&#x60C5;&#x51B5;&#xFF0C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4EC5;&#x4E00;&#x884C;&#xFF0C;&#x5C3E;&#x90E8;&#x6CA1;&#x6362;&#x884C;&#xFF0C;sed&#x53EA;&#x6253;&#x5370;&#xFF0C;&#x4E0D;&#x4F1A;&#x5C3E;&#x90E8;&#x52A0;&#x6362;&#x884C;&#xFF0C;&#x4F46;&#x82E5;&#x5728;&#x5C3E;&#x90E8;&#x53C8;&#x9644;&#x52A0;&#x4E86;&#x8F93;&#x51FA;&#xFF0C;&#x4ED6;&#x4F1A;&#x518D;&#x8865;&#x4E0A;&#x90A3;&#x4E2A;&#x6362;&#x884C;&#x3002;</p>
+<h2 id="&#x64CD;&#x4F5C;">&#x64CD;&#x4F5C;</h2>
+<table>
+<thead>
+<tr>
+<th>&#x529F;&#x80FD;</th>
+<th>&#x547D;&#x4EE4;</th>
+<th>&#x4ECB;&#x7ECD;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hold</td>
+<td>h or H</td>
+<td>Copy or append contents of pattern space to hold space.</td>
+</tr>
+<tr>
+<td>Get</td>
+<td>g or G</td>
+<td>Copy or append contents of hold space to pattern space.</td>
+</tr>
+<tr>
+<td>Exchange</td>
+<td>x</td>
+<td>Swap contents of hold space and pattern space.</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>d</td>
+<td>Delete pattern space.  <em>Start next cycle</em>.</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>D</td>
+<td>Delete  up  to  the  first  embedded newline in the pattern space.</td>
+</tr>
+<tr>
+<td>\/</td>
+<td>\/</td>
+<td><em>Start next cycle</em>, but skip reading from the input if there is still data in the pattern space.</td>
+</tr>
+<tr>
+<td>Next</td>
+<td>n or N</td>
+<td>Read/append the next line of input into the pattern space.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h2>
+<ul>
+<li>&#x4EA4;&#x6362;&#x7B2C;1&#x884C;&#x548C;&#x7B2C;2&#x884C;&#x7684;&#x5185;&#x5BB9;</li>
+</ul>
+<pre><code class="lang-sh">sed -n <span class="hljs-string">&apos;1{h;n;x;H;x};p&apos;</span> filename
+</code></pre>
+<ul>
+<li>&#x7528;sed&#x5B9E;&#x73B0;tac&#x7684;&#x529F;&#x80FD;</li>
+</ul>
+<pre><code class="lang-sh">sed -n <span class="hljs-_">-e</span> <span class="hljs-string">&apos;1!G;h;$p&apos;</span> filename
+sed <span class="hljs-_">-e</span> <span class="hljs-string">&apos;1!G;h;$!d&apos;</span> filename
+</code></pre>
+<p><code>1!G</code>&#x8868;&#x793A;&#x9664;&#x4E86;&#x7B2C;&#x4E00;&#x884C;&#x4E4B;&#x5916;&#xFF0C;&#x90FD;&#x6267;&#x884C;G&#x64CD;&#x4F5C;&#x3002;</p>
+<p><code>$p</code>&#x8868;&#x793A;&#x5BF9;&#x6700;&#x540E;&#x4E00;&#x884C;&#x76F4;&#x63A5;&#x6253;&#x5370;pattern space&#x91CC;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x76F4;&#x63A5;&#x6253;&#x5370;&#x6700;&#x540E;&#x4E00;&#x884C;&#x7684;&#x539F;&#x6587;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="nginx.html" class="navigation navigation-prev " aria-label="Previous page: Nginx">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tmux.html" class="navigation navigation-next " aria-label="Next page: tmux">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"sed","level":"4.8","depth":1,"next":{"title":"tmux","level":"4.9","depth":1,"path":"tools/tmux.md","ref":"tools/tmux.md","articles":[]},"previous":{"title":"Nginx","level":"4.7","depth":1,"path":"tools/nginx.md","ref":"tools/nginx.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tools/sed.md","mtime":"2017-04-23T16:20:39.135Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-04-23T16:32:08.825Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
