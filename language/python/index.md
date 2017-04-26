@@ -495,3 +495,9 @@ index-url = http://mirrors.aliyun.com/pypi/simple
 ipython  kernelspec install-self
 ipython3 kernelspec install-self
 ```
+
+* jsonp转json
+
+```python
+apijson = jsonp[ jsonp.index("(") + 1 : jsonp.rindex(")") ]
+```
