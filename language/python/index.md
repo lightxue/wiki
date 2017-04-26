@@ -13,6 +13,7 @@ datetime.datetime.fromtimestamp(time.time())
 ```
 
 * time、datetime、str互转
+
 ```python
 # 把datetime转成字符串
 def datetime_toString(dt):
@@ -41,11 +42,13 @@ def timestamp_toDatetime(timestamp):
 * urllib2.unquote(url)
 
 * 程序环境变量
+
 ```python
 os.environ
 ```
 
 * 子类初始化父类
+
 ```python
 # new style class也能用这种方法
 class B:
@@ -69,6 +72,7 @@ class C(B):
 ```
 
 * xml转成dict
+
 ```python
 def xml2dict(node, dic = {}):
     dic[node.tag] = ndic = {}
@@ -82,6 +86,7 @@ print xml2dict(tree.getroot())
 ```
 
 * ini to dict
+
 ```python
 cf = ConfigParser.ConfigParser()
 cf.read(filename)
@@ -89,6 +94,7 @@ return dict(cf.__dict__['_sections'].copy()) #里面有的value是orderdict
 ```
 
 * python式enum
+
 ```python
 ALL_TYPES = (
     TOP_LEVEL,  # The type of the 'Google Chrome' folder.
@@ -113,6 +119,7 @@ ALL_TYPES = (
 * `is` will return `True` if two variables point to the same object, `==` if the objects referred to by the variables are equal.
 
 * 计算md5和sha1
+
 ```python
 import hashlib
 
@@ -126,6 +133,7 @@ print sha.hexdigest()
 ```
 
 * base64编解码
+
 ```python
 import base64
 s = 'this is a text'
@@ -134,6 +142,7 @@ decstr = base64.decodestring(encstr)
 ```
 
 * 随机字符
+
 ```python
 import os
 length = 10
@@ -141,6 +150,7 @@ print os.urandom(length)
 ```
 
 * getter and setter，不要在构造函数里用这个伪变量，可能会把这个函数覆盖
+
 ```python
 class C:
     def __init__:
@@ -155,6 +165,7 @@ class C:
 ```
 
 * 脚本所在位置
+
 ```python
 __file__
 
@@ -166,6 +177,7 @@ print frameinfo.filename, frameinfo.lineno
 ```
 
 * 异常所在的行号
+
 ```python
 import sys, os
 
@@ -179,6 +191,7 @@ except Exception as e:
 ```
 
 * 列表拷贝
+
 ```python
     new_list = old_list[:] # 可语性不太好
 
@@ -194,6 +207,7 @@ except Exception as e:
 ```
 
 * 列表清空
+
 ```python
     old_list = [1, 2, 3, 4]
 
@@ -206,6 +220,7 @@ except Exception as e:
 ```
 
 * 字典格式化字符串
+
 ```python
     d = {'name' : 'lightxue', 'gender' : 'male'}
     print 'your name is %(name)s, gender is %(gender)s' % d
@@ -216,6 +231,7 @@ except Exception as e:
 * 变量作用域：LEGB(Local->函数，def和lambda；Enclosing->闭包，def和lambda；Global->全局，在module里；Buid-in->内置)
 
 * binary <-> hex string
+
 ```python
 >>> s = '\x01\xff'
 >>> s.encode('hex_codec')
@@ -225,18 +241,21 @@ except Exception as e:
 ```
 
 * 矩阵转置
+
 ```python
 arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
 print map(list, zip(*arr))
 ```
 
 * unicode unescape
+
 ```python
 s = r'\u751f\u547d'
 print s.decode('unicode-escape')
 ```
 
 * string unescape
+
 ```python
 s = r'\xe7\x94\x9f\xe5\x91\xbd'
 print s.decode('string-escape')
@@ -245,11 +264,13 @@ print s.decode('string-escape')
 * list有函数叫count，比较实用
 
 * 显示某个文件的汇编代码
+
 ```python
 python -m dis file.py
 ```
 
 * 看函数/类的汇编代码
+
 ```python
 #!/usr/bin/env python
 # encoding: utf-8
@@ -276,6 +297,7 @@ if __name__ == '__main__':
 ```
 
 * 用dis调试
+
 ```python
 #!/usr/bin/env python
 # encoding: utf-8
@@ -296,6 +318,7 @@ except:
 ```
 
 * 把py编译成pyc
+
 ```python
 python -m py_compile file.py
 ```
@@ -345,6 +368,7 @@ python -m py_compile file.py
 ```
 
 * any不很错
+
 ```python
 # ugly
 if needle.endswith('ly') or needle.endswith('ed') or 
@@ -367,6 +391,7 @@ else:
 ```
 
 * 列表分成n个元素一组
+
 ```python
 >>> l = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8]
 >>> zip(*([iter(l)] * 3))
@@ -374,16 +399,19 @@ else:
 ```
 
 * 找出文件最长行
+
 ```python
 max(open('test.txt'), key=len)
 ```
 
 * 整数所有数字相加之和
+
 ```python
 sum(map(int, str(n)))
 ```
 
 * 正无穷和负无穷
+
 ```python
 float('Inf')
 float('-Inf')
@@ -392,6 +420,7 @@ float('-Inf')
 * `__all__`，列表或元组，指出该模块import的时候可以使用哪些对象
 
 * 显示import指定目录的包
+
 ```python
 # import当前目录的包
 from . import tasks
@@ -416,6 +445,7 @@ from .. import tasks
 >        activity will change the string “eight” to anything else.
 
 * 修改默认的ascii编码转换unicode和str
+
 ```python
 import sys
 reload(sys)
@@ -431,7 +461,8 @@ fd.write(codecs.BOM_UTF8)
 * 神奇的`__debug__`变量能实现`#ifdef`，看[这里](http://stackoverflow.com/questions/12524570/how-do-you-implement-ifdef-in-python)
 
 * 修改默认的unicode和str互转的解码格式
-```
+
+```python
 import sys
 
 reload(sys)
@@ -439,6 +470,7 @@ sys.setdefaultencoding('UTF-8')
 ```
 
 * mysql按列名取值
+
 ```python
 cursor = conn.cursor(MySQLdb.cursors.DictCursor)
 cursor.execute("SELECT name, category FROM animal")
@@ -448,6 +480,7 @@ for row in result_set:
 ```
 
 * pip源改成阿里云的镜像源
+
 ```ini
 ; ~/.pip/pip.conf
 
@@ -457,6 +490,7 @@ index-url = http://mirrors.aliyun.com/pypi/simple
 ```
 
 * jupyter同时使用Python2和Python3
+
 ```bash
 ipython  kernelspec install-self
 ipython3 kernelspec install-self

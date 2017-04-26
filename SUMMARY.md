@@ -11,7 +11,7 @@
 
 * [Linux](system/linux/index.md)
     * [coredump](system/linux/coredump.md)
-    * [epool初步](system/linux/epool-intro.md)
+    * [epool初步](system/linux/epoll-intro.md)
     * [乱码](system/linux/fight-with-garbled-characters.md)
     * [linux性能](system/linux/linux-performance-note.md)
     * [epoll](system/linux/thinking-in-epoll.md)
