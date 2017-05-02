@@ -26,34 +26,24 @@ set character_set_connection = utf8 -- mysql服务器把客户端传来的数据
 ```sql
 -- 创建数据库
 CREATE DATABASE database_name DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-
 -- 更新记录
 UPDATE tbl_name SET col_name1 = exp1, col_name2 = exp2;
-
 -- 删除记录
 DELETE FROM tbl_name WHERE col_name1 = exp1;
-
 -- 插入记录
 INSERT INTO tbl_name(col_name1, col_name2) VALUES(exp11, exp21), (exp12, exp22);
-
 -- 表增加列
 ALTER TABLE tbl_name ADD col_name tinyint NOT NULL DEFAULT '0';
-
 -- 表删除列
 ALTER TABLE tbl_name DROP COLUMN col_name;
-
 -- 表修改列
 ALTER TABLE tbl_name MODIFY COLUMN col_name tinyint NOT NULL DEFAULT '0';
-
 -- 表重命名列
 ALTER TABLE tbl_name RENAME COLUMN old_name to new_name;
-
 -- 表修改列
 ALTER TABLE tbl_name CHANGE COLUMN old_name new_name tinyint NOT NULL DEFAULT '0';
-
 -- 表增加索引
 ALTER TABLE tbl_name ADD INDEX idx_name(col1, col2, col2);
-
 -- 表修改引擎
 ALTER TABLE tbl_name ENGINE=InnoDB;
 ```
