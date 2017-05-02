@@ -4,10 +4,10 @@ OUTPUTDIR=$(BASEDIR)/_book
 GITHUB_PAGES_BRANCH=master
 
 help:
-	@echo 'Makefile for a pelican Web site                                           '
+	@echo 'Makefile for Light Xue\'s personal wiki                                   '
 	@echo '                                                                          '
 	@echo 'Usage:                                                                    '
-	@echo '   make init                           initialize pelican evironment      '
+	@echo '   make init                           initialize wiki evironment         '
 	@echo '   make html                           (re)generate the web site          '
 	@echo '   make clean                          remove the generated files         '
 	@echo '   make publish                        generate using production settings '
@@ -28,9 +28,9 @@ clean:
 
 serve:
 ifdef PORT
-	cd gitbook serve --port $(PORT)
+	gitbook serve --port $(PORT)
 else
-	cd gitbook serve
+	gitbook serve
 endif
 
 publish:
