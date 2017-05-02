@@ -45,4 +45,8 @@ sed -e '1!G;h;$!d' filename
 
 `$p`表示对最后一行直接打印pattern space里的内容，其实就是直接打印最后一行的原文。
 
+* 替换所有换行符，解释在[这里](http://stackoverflow.com/questions/1251999/how-can-i-replace-a-newline-n-using-sed)
 
+```sh
+sed ':a;N;$!ba;s/\n/ /g'
+```
