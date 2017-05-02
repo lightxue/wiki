@@ -1,6 +1,7 @@
 # MySQL
 
 * 加了\G，列名就变成竖着放的。
+
 ```sql
 select * from table \G
 ```
