@@ -50,7 +50,7 @@ awk 'NF>4 {for (i=4;i<=NF;i++) {printf $i" "}printf "\n"}' file.txt
 
 ```
 
-* 按照文件1的key顺序输入文件2内容
+* 按照文件2的key顺序输入文件1内容
 
 ```sh
 awk -F, 'NR==FNR {r[$1] = $0; next} {print r[$1]}' file1 file2 > file3
