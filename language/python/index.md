@@ -501,3 +501,7 @@ ipython3 kernelspec install-self
 ```python
 apijson = jsonp[ jsonp.index("(") + 1 : jsonp.rindex(")") ]
 ```
+
+* `str.format`文档 https://pyformat.info
+
+* `strftime`文档 http://strftime.org
