@@ -674,34 +674,24 @@
 </ul>
 <pre><code class="lang-sql"><span class="hljs-comment">-- &#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;</span>
 <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">DATABASE</span> database_name <span class="hljs-keyword">DEFAULT</span> <span class="hljs-built_in">CHARACTER</span> <span class="hljs-keyword">SET</span> utf8 <span class="hljs-keyword">COLLATE</span> utf8_general_ci;
-
 <span class="hljs-comment">-- &#x66F4;&#x65B0;&#x8BB0;&#x5F55;</span>
 <span class="hljs-keyword">UPDATE</span> tbl_name <span class="hljs-keyword">SET</span> col_name1 = exp1, col_name2 = exp2;
-
 <span class="hljs-comment">-- &#x5220;&#x9664;&#x8BB0;&#x5F55;</span>
 <span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> tbl_name <span class="hljs-keyword">WHERE</span> col_name1 = exp1;
-
 <span class="hljs-comment">-- &#x63D2;&#x5165;&#x8BB0;&#x5F55;</span>
 <span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> tbl_name(col_name1, col_name2) <span class="hljs-keyword">VALUES</span>(exp11, exp21), (exp12, exp22);
-
 <span class="hljs-comment">-- &#x8868;&#x589E;&#x52A0;&#x5217;</span>
 <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> tbl_name <span class="hljs-keyword">ADD</span> col_name tinyint <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;0&apos;</span>;
-
 <span class="hljs-comment">-- &#x8868;&#x5220;&#x9664;&#x5217;</span>
 <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> tbl_name <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">COLUMN</span> col_name;
-
 <span class="hljs-comment">-- &#x8868;&#x4FEE;&#x6539;&#x5217;</span>
 <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> tbl_name <span class="hljs-keyword">MODIFY</span> <span class="hljs-keyword">COLUMN</span> col_name tinyint <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;0&apos;</span>;
-
 <span class="hljs-comment">-- &#x8868;&#x91CD;&#x547D;&#x540D;&#x5217;</span>
 <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> tbl_name <span class="hljs-keyword">RENAME</span> <span class="hljs-keyword">COLUMN</span> old_name <span class="hljs-keyword">to</span> new_name;
-
 <span class="hljs-comment">-- &#x8868;&#x4FEE;&#x6539;&#x5217;</span>
 <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> tbl_name <span class="hljs-keyword">CHANGE</span> <span class="hljs-keyword">COLUMN</span> old_name new_name tinyint <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-string">&apos;0&apos;</span>;
-
 <span class="hljs-comment">-- &#x8868;&#x589E;&#x52A0;&#x7D22;&#x5F15;</span>
 <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> tbl_name <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">INDEX</span> idx_name(col1, col2, col2);
-
 <span class="hljs-comment">-- &#x8868;&#x4FEE;&#x6539;&#x5F15;&#x64CE;</span>
 <span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> tbl_name <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span>;
 </code></pre>
@@ -803,7 +793,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MySQL","level":"4.6","depth":1,"next":{"title":"Nginx","level":"4.7","depth":1,"path":"tools/nginx.md","ref":"tools/nginx.md","articles":[]},"previous":{"title":"Git","level":"4.5","depth":1,"path":"tools/git.md","ref":"tools/git.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tools/mysql.md","mtime":"2017-05-02T06:52:50.215Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-02T06:59:47.650Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MySQL","level":"4.6","depth":1,"next":{"title":"Nginx","level":"4.7","depth":1,"path":"tools/nginx.md","ref":"tools/nginx.md","articles":[]},"previous":{"title":"Git","level":"4.5","depth":1,"path":"tools/git.md","ref":"tools/git.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"tools/mysql.md","mtime":"2017-05-02T07:01:26.014Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-02T07:02:29.690Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
