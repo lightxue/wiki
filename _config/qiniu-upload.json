@@ -1,0 +1,8 @@
+{
+   "src_dir"            :   "_book",
+   "bucket"             :   "wiki",
+   "ignore_dir"         :   false,
+   "overwrite"          :   true,
+   "rescan_local"       :   true
+}
+

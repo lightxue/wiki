@@ -3,8 +3,10 @@ OUTPUTDIR=$(BASEDIR)/_book
 
 GITHUB_PAGES_BRANCH=master
 
+QINIU_CONFIG=_config/qiniu-upload.json
+
 help:
-	@echo 'Makefile for Light Xue\'s personal wiki                                   '
+	@echo "Makefile for Light Xue's personal wiki                                    "
 	@echo '                                                                          '
 	@echo 'Usage:                                                                    '
 	@echo '   make init                           initialize wiki evironment         '
@@ -40,5 +42,11 @@ publish:
 github: publish
 	ghp-import -m "Generate Gitbook site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
 	git push origin $(GITHUB_PAGES_BRANCH)
+
+# 上传到七牛空间
+cdn: publish
+	qshell qupload $(QINIU_CONFIG)
+
+release: github cdn
 
 .PHONY: html help clean serve github
