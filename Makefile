@@ -3,7 +3,7 @@ OUTPUTDIR=$(BASEDIR)/_book
 
 GITHUB_PAGES_BRANCH=master
 
-QINIU_CONFIG=_config/qiniu-upload.json
+QINIU_CONFIG=config/qiniu-upload.json
 
 help:
 	@echo "Makefile for Light Xue's personal wiki                                      "
