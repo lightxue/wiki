@@ -650,14 +650,15 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="bash">bash</h1>
-<ol>
-<li><p>&#x53D1;&#x73B0;find&#x7684;-print0&#x914D;&#x4E0A;xargs -0&#x4E0D;&#x9519;</p>
-<pre><code class="lang-sh"> find . -name <span class="hljs-string">&quot;*.cpp&quot;</span> -print0 | xargs -0 grep hello
+<ul>
+<li>&#x53D1;&#x73B0;find&#x7684;-print0&#x914D;&#x4E0A;xargs -0&#x4E0D;&#x9519;</li>
+</ul>
+<pre><code class="lang-sh">    find . -name <span class="hljs-string">&quot;*.cpp&quot;</span> -print0 | xargs -0 grep hello
 </code></pre>
 <p>&#x5F53;&#x7136;&#x4E0A;&#x9762;&#x4E5F;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x5199;</p>
-<pre><code class="lang-sh"> find . name <span class="hljs-string">&quot;*.cpp&quot;</span> -exec grep hello {} \;
+<pre><code class="lang-sh">    find . name <span class="hljs-string">&quot;*.cpp&quot;</span> -exec grep hello {} \;
 </code></pre>
-</li>
+<ul>
 <li><p>&#x5728;&#x811A;&#x672C;&#x91CC;&#x53EF;&#x4EE5;&#x7528;$PPID&#x6765;&#x83B7;&#x53D6;&#x7236;&#x8FDB;&#x7A0B;pid</p>
 </li>
 <li><p><code>netstat -t</code>&#x91CC;&#x6709;Recv-Q Send-Q&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x770B;tcp&#x7684;&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x7F13;&#x5B58;</p>
@@ -672,7 +673,7 @@
 </li>
 <li><p>compgen &#x7528;&#x6CD5;</p>
 </li>
-</ol>
+</ul>
 <table>
 <thead>
 <tr>
@@ -707,7 +708,7 @@
 </tr>
 </tbody>
 </table>
-<ol>
+<ul>
 <li><p><code>pstree -p</code></p>
 </li>
 <li><p><code>pkill -f</code>, <code>pgrep -f</code></p>
@@ -731,92 +732,113 @@
 <li><p><code>var=10 ./echo_var.sh</code>&#xFF0C;&#x5728;&#x7A0B;&#x5E8F;echo_var.sh&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4F1A;&#x591A;&#x51FA;&#x4E00;&#x4E2A;var&#xFF0C;&#x503C;&#x662F;10</p>
 </li>
 <li><p>&#x91CD;&#x65B0;&#x52A0;&#x8F7D;fstab</p>
+</li>
+</ul>
 <pre><code class="lang-sh">mount <span class="hljs-_">-a</span>
 </code></pre>
-</li>
-<li><p>screen&#x4F7F;&#x7528;</p>
+<ul>
+<li>screen&#x4F7F;&#x7528;</li>
+</ul>
 <pre><code class="lang-sh">screen -ls      <span class="hljs-comment"># &#x663E;&#x793A;screen&#x5217;&#x8868;</span>
 screen -r &#x7F16;&#x53F7;  <span class="hljs-comment"># &#x6062;&#x590D;screen</span>
 </code></pre>
-</li>
-<li><p>&#x6839;&#x636E;inode&#x5220;&#x9664;&#x6587;&#x4EF6;</p>
+<ul>
+<li>&#x6839;&#x636E;inode&#x5220;&#x9664;&#x6587;&#x4EF6;</li>
+</ul>
 <pre><code class="lang-sh">ls -i
 find . -inum 782263 -exec rm -i {} \;
 </code></pre>
-</li>
-<li><p>&#x67E5;&#x770B;&#x7EBF;&#x7A0B;&#x6570;&#x636E;&#x7684;&#x4E09;&#x79CD;&#x65B9;&#x6CD5;
-```sh
-1&#x3001;top -H</p>
-<h1 id="&#x624B;&#x518C;&#x4E2D;&#x8BF4;&#xFF1A;-h--threads-toggle">&#x624B;&#x518C;&#x4E2D;&#x8BF4;&#xFF1A;-H : Threads toggle</h1>
-<h1 id="&#x52A0;&#x4E0A;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x542F;&#x52A8;top&#xFF0C;top&#x4E00;&#x884C;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x5B83;&#x4E00;&#x884C;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x3002;">&#x52A0;&#x4E0A;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x542F;&#x52A8;top&#xFF0C;top&#x4E00;&#x884C;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x5B83;&#x4E00;&#x884C;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x3002;</h1>
-</li>
-</ol>
-<p>2&#x3001;ps xH</p>
-<h1 id="&#x624B;&#x518C;&#x4E2D;&#x8BF4;&#xFF1A;h-show-threads-as-if-they-were-processes">&#x624B;&#x518C;&#x4E2D;&#x8BF4;&#xFF1A;H Show threads as if they were processes</h1>
-<h1 id="&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x6240;&#x6709;&#x5B58;&#x5728;&#x7684;&#x7EBF;&#x7A0B;&#x3002;">&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x6240;&#x6709;&#x5B58;&#x5728;&#x7684;&#x7EBF;&#x7A0B;&#x3002;</h1>
-<p>3&#x3001;ps -mp <pid></pid></p>
-<h1 id="&#x624B;&#x518C;&#x4E2D;&#x8BF4;&#xFF1A;m-show-threads-after-processes">&#x624B;&#x518C;&#x4E2D;&#x8BF4;&#xFF1A;m Show threads after processes</h1>
-<h1 id="&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x8D77;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x3002;">&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x8D77;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x3002;</h1>
-<pre><code>
-0. &#x65B0;&#x5EFA;&#x7528;&#x6237;
-```sh
-sudo useradd -s /bin/bash -m -d /home/lightxue -c &apos;lightxue&apos; -g root lightxue
-</code></pre><ol>
-<li><p>&#x65F6;&#x533A;&#x8BBE;&#x7F6E;</p>
+<ul>
+<li>&#x67E5;&#x770B;&#x7EBF;&#x7A0B;&#x6570;&#x636E;&#x7684;&#x4E09;&#x79CD;&#x65B9;&#x6CD5;</li>
+</ul>
+<pre><code class="lang-sh">1&#x3001;top -H
+<span class="hljs-comment"># &#x624B;&#x518C;&#x4E2D;&#x8BF4;&#xFF1A;-H : Threads toggle</span>
+<span class="hljs-comment"># &#x52A0;&#x4E0A;&#x8FD9;&#x4E2A;&#x9009;&#x9879;&#x542F;&#x52A8;top&#xFF0C;top&#x4E00;&#x884C;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x5B83;&#x4E00;&#x884C;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x3002;</span>
+
+2&#x3001;ps xH
+<span class="hljs-comment"># &#x624B;&#x518C;&#x4E2D;&#x8BF4;&#xFF1A;H Show threads as if they were processes</span>
+<span class="hljs-comment"># &#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x6240;&#x6709;&#x5B58;&#x5728;&#x7684;&#x7EBF;&#x7A0B;&#x3002;</span>
+
+3&#x3001;ps -mp &lt;PID&gt;
+<span class="hljs-comment"># &#x624B;&#x518C;&#x4E2D;&#x8BF4;&#xFF1A;m Show threads after processes</span>
+<span class="hljs-comment"># &#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x8D77;&#x7684;&#x7EBF;&#x7A0B;&#x6570;&#x3002;</span>
+</code></pre>
+<ul>
+<li>&#x65B0;&#x5EFA;&#x7528;&#x6237;</li>
+</ul>
+<pre><code class="lang-sh">sudo useradd <span class="hljs-_">-s</span> /bin/bash -m <span class="hljs-_">-d</span> /home/lightxue -c <span class="hljs-string">&apos;lightxue&apos;</span> -g root lightxue
+</code></pre>
+<ul>
+<li>&#x65F6;&#x533A;&#x8BBE;&#x7F6E;</li>
+</ul>
 <pre><code class="lang-sh">sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 </code></pre>
-</li>
-<li><p>&#x65F6;&#x95F4;&#x540C;&#x6B65;</p>
+<ul>
+<li>&#x65F6;&#x95F4;&#x540C;&#x6B65;</li>
+</ul>
 <pre><code class="lang-sh">/usr/sbin/ntpdate us.pool.ntp.org | logger -t NTP
 </code></pre>
-</li>
-<li><p>&#x65F6;&#x533A;&#x8BBE;&#x7F6E;</p>
+<ul>
+<li>&#x65F6;&#x533A;&#x8BBE;&#x7F6E;</li>
+</ul>
 <pre><code class="lang-sh">sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 </code></pre>
-</li>
-<li><p>&#x8BBE;&#x5907;uuid</p>
+<ul>
+<li>&#x8BBE;&#x5907;uuid</li>
+</ul>
 <pre><code class="lang-sh">lsblk -o UUID /dev/sda1
 </code></pre>
-</li>
+<ul>
 <li><p>cp&#x7684;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;-p&#x4FDD;&#x7559;&#x539F;&#x6765;&#x6587;&#x4EF6;&#x7684;owner, -P&#xFF0C;&#x5982;&#x679C;&#x662F;&#x8F6F;&#x8FDE;&#x63A5;&#xFF0C;&#x4FDD;&#x6301;&#x539F;&#x6837;&#x62F7;&#x8D1D;</p>
 </li>
 <li><p>&#x6240;&#x8C13;&#x7684;glob&#x6A21;&#x5F0F;&#x662F;&#x6307;shell&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7B80;&#x5316;&#x4E86;&#x7684;&#x6B63;&#x5219;&#x8868;&#x8FBE;&#x5F0F;&#x3002;&#x661F;&#x53F7;&#xFF08;*&#xFF09;&#x5339;&#x914D;&#x96F6;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#xFF1B;[abc]&#x5339;&#x914D;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x5217;&#x5728;&#x65B9;&#x62EC;&#x53F7;&#x4E2D;&#x7684;&#x5B57;&#x7B26;&#xFF08;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x8981;&#x4E48;&#x5339;&#x914D;&#x4E00;&#x4E2A;a&#xFF0C;&#x8981;&#x4E48;&#x5339;&#x914D;&#x4E00;&#x4E2A;b&#xFF0C;&#x8981;&#x4E48;&#x5339;&#x914D;&#x4E00;&#x4E2A;c&#xFF09;&#xFF1B;&#x95EE;&#x53F7;&#xFF08;?&#xFF09;&#x53EA;&#x5339;&#x914D;&#x4E00;&#x4E2A;&#x4EFB;&#x610F;&#x5B57;&#x7B26;&#xFF1B;&#x5982;&#x679C;&#x5728;&#x65B9;&#x62EC;&#x53F7;&#x4E2D;&#x4F7F;&#x7528;&#x77ED;&#x5212;&#x7EBF;&#x5206;&#x9694;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#xFF0C;&#x8868;&#x793A;&#x6240;&#x6709;&#x5728;&#x8FD9;&#x4E24;&#x4E2A;&#x5B57;&#x7B26;&#x8303;&#x56F4;&#x5185;&#x7684;&#x90FD;&#x53EF;&#x4EE5;&#x5339;&#x914D;&#xFF08;&#x6BD4;&#x5982;[0-9]&#x8868;&#x793A;&#x5339;&#x914D;&#x6240;&#x6709;0 &#x5230; 9 &#x7684;&#x6570;&#x5B57;&#xFF09;&#x3002;</p>
 </li>
 <li><p>&#x5220;&#x9664;&#x4F46;&#x662F;&#x8FDB;&#x7A0B;&#x8FD8;&#x5360;&#x7528;&#x7740;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x7531;&#x6B64;&#x53EF;&#x4EE5;&#x627E;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x8FDB;&#x7A0B;</p>
+</li>
+</ul>
 <pre><code class="lang-sh">lsof | grep deleted
 </code></pre>
-</li>
+<ul>
 <li><p>uptime&#x5F00;&#x673A;&#x65F6;&#x95F4;</p>
 </li>
 <li><p>&#x6587;&#x4EF6;&#x540D;&#x7F16;&#x7801;&#x8F6C;&#x6362;</p>
+</li>
+</ul>
 <pre><code class="lang-sh">convmv <span class="hljs-_">-f</span> gbk -t utf-8 --notest -r .
 </code></pre>
-</li>
-<li><p>ipcs&#x67E5;&#x770B;&#xFF0C;ipcrm&#x5220;&#x9664;&#xFF1A;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x3001;&#x4FE1;&#x53F7;&#x91CF;&#x3001;&#x961F;&#x5217;</p>
+<ul>
+<li>ipcs&#x67E5;&#x770B;&#xFF0C;ipcrm&#x5220;&#x9664;&#xFF1A;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x3001;&#x4FE1;&#x53F7;&#x91CF;&#x3001;&#x961F;&#x5217;</li>
+</ul>
 <pre><code class="lang-sh">convmv <span class="hljs-_">-f</span> gbk -t utf-8 --notest -r .
 </code></pre>
-</li>
-<li><p>&#x5F53;&#x524D;shell&#x7684;pid</p>
+<ul>
+<li>&#x5F53;&#x524D;shell&#x7684;pid</li>
+</ul>
 <pre><code class="lang-sh"><span class="hljs-built_in">echo</span> $$
 </code></pre>
-</li>
+<ul>
 <li><p>tar&#x628A;&#x8F6F;&#x94FE;&#x63A5;&#x6307;&#x5411;&#x7684;&#x5185;&#x5BB9;&#x4E5F;&#x5305;&#x4E0A;&#xFF0C;&#x52A0;&#x4E0A;-h&#x53C2;&#x6570;</p>
 </li>
 <li><p>&#x5217;&#x51FA;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x6240;&#x6709;&#x5B50;&#x76EE;&#x5F55;</p>
+</li>
+</ul>
 <pre><code class="lang-sh">ls <span class="hljs-_">-d</span> */
 <span class="hljs-built_in">echo</span> */, <span class="hljs-built_in">echo</span> */*/
 </code></pre>
-</li>
-<li><p>&#x7B80;&#x5355;&#x7684;&#x8BA1;&#x7B97;&#x5668;</p>
+<ul>
+<li>&#x7B80;&#x5355;&#x7684;&#x8BA1;&#x7B97;&#x5668;</li>
+</ul>
 <pre><code class="lang-sh"><span class="hljs-function"><span class="hljs-title">calc</span></span>(){ awk <span class="hljs-string">&quot;BEGIN{ print $*  }&quot;</span> ; }
 calc <span class="hljs-string">&quot;8 * 99 / 4&quot;</span>
 </code></pre>
-</li>
-<li><p>&#x4E0B;&#x8F7D;&#x6574;&#x4E2A;&#x7F51;&#x7AD9;</p>
+<ul>
+<li>&#x4E0B;&#x8F7D;&#x6574;&#x4E2A;&#x7F51;&#x7AD9;</li>
+</ul>
 <pre><code class="lang-sh">wget --random-wait -r -p <span class="hljs-_">-e</span> robots=off -U mozilla http://www.example.com
 </code></pre>
-</li>
-<li><p>date&#x547D;&#x4EE4;&#x76F8;&#x5173;</p>
+<ul>
+<li>date&#x547D;&#x4EE4;&#x76F8;&#x5173;</li>
+</ul>
 <pre><code class="lang-sh"><span class="hljs-comment"># 1381235068&#x8F6C;&#x6210;&#x65F6;&#x95F4;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6307;&#x5B9A;&#x683C;&#x5F0F;&#xFF0C;+&apos;%Y-%m-%d %H:%M:%S&apos;&#x53EF;&#x4EE5;&#x4E0D;&#x8981;</span>
 date <span class="hljs-_">-d</span> @1381235068 +<span class="hljs-string">&apos;%Y-%m-%d %H:%M:%S&apos;</span>
 <span class="hljs-comment"># &apos;2013-10-08 20:24:28&apos;&#x8F6C;&#x6210;&#x65F6;&#x95F4;&#x6233;</span>
@@ -824,7 +846,7 @@ date <span class="hljs-_">-d</span> <span class="hljs-string">&apos;2013-10-08 2
 <span class="hljs-comment"># &#x5F53;&#x524D;&#x65F6;&#x95F4;&#x7684;&#x65F6;&#x95F4;&#x6233;</span>
 date +%s
 </code></pre>
-</li>
+<ul>
 <li><p>watch&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x5468;&#x671F;&#x6027;&#x8C03;&#x7528;&#x5176;&#x4ED6;&#x7A0B;&#x5E8F;&#xFF0C;&#x5168;&#x5C4F;&#x663E;&#x793A;</p>
 </li>
 <li><p>sudo&#x521A;&#x5F00;&#x59CB;&#x51FA;&#x73B0;&#x7684;&#x8BDD;&#xFF0C;&#x5F88;&#x6709;&#x610F;&#x601D;</p>
@@ -837,82 +859,94 @@ Administrator. It usually boils down to these three things:</p>
 </code></pre></blockquote>
 </li>
 <li><p>&#x63D0;&#x793A;&#x7B26;</p>
+</li>
+</ul>
 <pre><code class="lang-sh"><span class="hljs-built_in">export</span> PS1=<span class="hljs-string">&quot;\[\e[31;1m\]64bit_\[\e[31;1m\]\u\[\e[0m\]@\[\e[32;1m\]`/sbin/ifconfig eth1|grep &quot;</span>inet addr:<span class="hljs-string">&quot;|cut -d: -f 2|cut -d&quot;</span> <span class="hljs-string">&quot; -f1`\[\e[0m\]:\[\e[35;1m\]\w\[\e[0m\]\\$ &quot;</span>
 </code></pre>
-</li>
-<li><p>&#x8F6F;&#x4EF6;&#x8FDE;&#x63A5;&#x6700;&#x7EC8;&#x6307;&#x5411;&#x7684;&#x6587;&#x4EF6;</p>
+<ul>
+<li>&#x8F6F;&#x4EF6;&#x8FDE;&#x63A5;&#x6700;&#x7EC8;&#x6307;&#x5411;&#x7684;&#x6587;&#x4EF6;</li>
+</ul>
 <pre><code class="lang-sh">readlink <span class="hljs-_">-f</span> symbol-link-file-name
 </code></pre>
-</li>
-<li><p>&#x672C;&#x5730;&#x8BED;&#x8A00;&#x4FEE;&#x6539;</p>
+<ul>
+<li>&#x672C;&#x5730;&#x8BED;&#x8A00;&#x4FEE;&#x6539;</li>
+</ul>
 <pre><code class="lang-sh"><span class="hljs-built_in">export</span> LC_ALL=zh_CN.UTF-8
 </code></pre>
-</li>
-<li><p>&#x5F53;&#x524D;&#x811A;&#x672C;&#x6240;&#x5728;&#x76EE;&#x5F55;</p>
+<ul>
+<li>&#x5F53;&#x524D;&#x811A;&#x672C;&#x6240;&#x5728;&#x76EE;&#x5F55;</li>
+</ul>
 <pre><code class="lang-sh">cwd=$(dirname <span class="hljs-variable">${BASH_SOURCE[0]}</span>)
 <span class="hljs-built_in">echo</span> <span class="hljs-variable">$cwd</span>
 </code></pre>
-</li>
+<ul>
 <li><p>excect&#x811A;&#x672C;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x4EA4;&#x4E92;&#x4E0B;&#x8FD0;&#x884C;&#xFF0C;&#x6700;&#x540E;&#x4E0D;&#x80FD;&#x7528;<code>interact</code>&#xFF0C;&#x8981;&#x7528;<code>expect eof</code></p>
 </li>
 <li><p>top&#x663E;&#x793A;&#x5355;&#x4E2A;&#x8FDB;&#x7A0B;&#x4FE1;&#x606F;</p>
+</li>
+</ul>
 <pre><code class="lang-sh">top -p `pgrep process-name | tr <span class="hljs-string">&quot;\\n&quot;</span> <span class="hljs-string">&quot;,&quot;</span> | sed <span class="hljs-string">&apos;s/,$//&apos;</span>`
 </code></pre>
-</li>
-<li><p>for loop
-```sh</p>
-<h1 id="binbash">!/bin/bash</h1>
-<p>for i in 1 2 3 4 5
-do
-echo &quot;Welcome $i times&quot;
-done</p>
-</li>
-</ol>
-<h1 id="binbash">!/bin/bash</h1>
-<p>for i in {1..5}
-do
-   echo &quot;Welcome $i times&quot;
-done</p>
-<h1 id="binbash">!/bin/bash</h1>
-<p>echo &quot;Bash version ${BASH_VERSION}...&quot;
-for i in {0..10..2}
-  do
-     echo &quot;Welcome $i times&quot;
- done</p>
-<h1 id="binbash">!/bin/bash</h1>
-<p>for i in $(seq 1 2 20)
-do
-   echo &quot;Welcome $i times&quot;
-done</p>
-<h1 id="binbash">!/bin/bash</h1>
-<p>for (( c=1; c&lt;=5; c++ ))
-do
-   echo &quot;Welcome $c times&quot;
-done</p>
-<pre><code>
-0. &#x7528;python&#x5B9E;&#x73B0;`urldecode`&#x548C;`urlencode`&#x547D;&#x4EE4;
-```sh
-$ alias urldecode=&apos;python -c &quot;import sys, urllib as ul; \
-    print ul.unquote_plus(sys.argv[1])&quot;&apos;
+<ul>
+<li>for loop</li>
+</ul>
+<pre><code class="lang-sh"><span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> 1 2 3 4 5
+<span class="hljs-keyword">do</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Welcome <span class="hljs-variable">$i</span> times&quot;</span>
+<span class="hljs-keyword">done</span>
 
-$ alias urlencode=&apos;python -c &quot;import sys, urllib as ul; \
-    print ul.quote_plus(sys.argv[1])&quot;&apos;
-</code></pre><ol>
-<li><p>&#x5220;&#x9664;&#x7B2C;&#x4E00;&#x884C;</p>
+<span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> {1..5}
+<span class="hljs-keyword">do</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Welcome <span class="hljs-variable">$i</span> times&quot;</span>
+<span class="hljs-keyword">done</span>
+
+<span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Bash version <span class="hljs-variable">${BASH_VERSION}</span>...&quot;</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> {0..10..2}
+  <span class="hljs-keyword">do</span>
+     <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Welcome <span class="hljs-variable">$i</span> times&quot;</span>
+ <span class="hljs-keyword">done</span>
+
+<span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> $(seq 1 2 20)
+<span class="hljs-keyword">do</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Welcome <span class="hljs-variable">$i</span> times&quot;</span>
+<span class="hljs-keyword">done</span>
+
+<span class="hljs-meta">#!/bin/bash</span>
+<span class="hljs-keyword">for</span> (( c=1; c&lt;=5; c++ ))
+<span class="hljs-keyword">do</span>
+   <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Welcome <span class="hljs-variable">$c</span> times&quot;</span>
+<span class="hljs-keyword">done</span>
+</code></pre>
+<ul>
+<li>&#x7528;python&#x5B9E;&#x73B0;<code>urldecode</code>&#x548C;<code>urlencode</code>&#x547D;&#x4EE4;</li>
+</ul>
+<pre><code class="lang-sh">$ <span class="hljs-built_in">alias</span> urldecode=<span class="hljs-string">&apos;python -c &quot;import sys, urllib as ul; \
+    print ul.unquote_plus(sys.argv[1])&quot;&apos;</span>
+
+$ <span class="hljs-built_in">alias</span> urlencode=<span class="hljs-string">&apos;python -c &quot;import sys, urllib as ul; \
+    print ul.quote_plus(sys.argv[1])&quot;&apos;</span>
+</code></pre>
+<ul>
+<li>&#x5220;&#x9664;&#x7B2C;&#x4E00;&#x884C;</li>
+</ul>
 <pre><code class="lang-sh">tail -n +2 <span class="hljs-string">&quot;<span class="hljs-variable">$FILE</span>&quot;</span>
 </code></pre>
-</li>
-<li><p>&#x591A;&#x884C;&#x5B57;&#x7B26;&#x4E32;</p>
+<ul>
+<li>&#x591A;&#x884C;&#x5B57;&#x7B26;&#x4E32;</li>
+</ul>
 <pre><code class="lang-sh"><span class="hljs-built_in">read</span> -r <span class="hljs-_">-d</span> <span class="hljs-string">&apos;&apos;</span> MULTILINE &lt;&lt; EOM
 one
 two
 three
 EOM
 </code></pre>
-</li>
-<li><p><code>whence</code>&#x53EF;&#x4EE5;&#x67E5;&#x770B;<code>alias</code>&#x7684;&#x5B9A;&#x4E49;</p>
-</li>
-</ol>
+<ul>
+<li><code>whence</code>&#x53EF;&#x4EE5;&#x67E5;&#x770B;<code>alias</code>&#x7684;&#x5B9A;&#x4E49;</li>
+</ul>
 
                                 
                                 </section>
@@ -956,7 +990,7 @@ EOM
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"shell","level":"4.1","depth":1,"next":{"title":"dd硬盘测试速度","level":"4.1.1","depth":2,"path":"tools/shell/dd-speed-test.md","ref":"tools/shell/dd-speed-test.md","articles":[]},"previous":{"title":"Windows","level":"3.3","depth":1,"path":"system/windows/index.md","ref":"system/windows/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/shell/index.md","mtime":"2017-05-25T04:04:03.909Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-25T04:05:27.091Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"shell","level":"4.1","depth":1,"next":{"title":"dd硬盘测试速度","level":"4.1.1","depth":2,"path":"tools/shell/dd-speed-test.md","ref":"tools/shell/dd-speed-test.md","articles":[]},"previous":{"title":"Windows","level":"3.3","depth":1,"path":"system/windows/index.md","ref":"system/windows/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/shell/index.md","mtime":"2017-05-25T05:30:30.516Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-25T05:31:05.440Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
