@@ -259,3 +259,5 @@ two
 three
 EOM
 ```
+
+0. `whence`可以查看`alias`的定义
