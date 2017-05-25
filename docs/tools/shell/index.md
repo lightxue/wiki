@@ -42,8 +42,6 @@
 
 * `uniq -u`，only print unique line; uniq -d, only print duplicate lines
 
-* `curl -I url`，显示http响应头
-
 * xargs -I 'replace-str' echo 'replace-str is an argument'
 
 * `bash -n script-filename` 检查语法错误，`bash -x script-filename` 每运行一行输出一行，设置上 `export PS4='+{$LINENO:${FUNCNAME[0]}}` 每行输出时能输出行号跟函数名
@@ -52,7 +50,7 @@
 
 * `paste file1 file2`，合并列的方式合并file1, file2
 
-* wait是内部命令，wait %1或wait $PID来等待进程退出。没给参数就等待所有子进程
+* `wait`是内部命令，wait %1或wait $PID来等待进程退出。没给参数就等待所有子进程
 
 * `var=10 ./echo_var.sh`，在程序echo_var.sh运行时，环境变量会多出一个var，值是10
 
@@ -230,32 +228,27 @@ top -p `pgrep process-name | tr "\\n" "," | sed 's/,$//'`
 * for loop
 
 ```sh
-#!/bin/bash
 for i in 1 2 3 4 5
 do
    echo "Welcome $i times"
 done
 
-#!/bin/bash
 for i in {1..5}
 do
    echo "Welcome $i times"
 done
 
-#!/bin/bash
 echo "Bash version ${BASH_VERSION}..."
 for i in {0..10..2}
   do
      echo "Welcome $i times"
  done
 
-#!/bin/bash
 for i in $(seq 1 2 20)
 do
    echo "Welcome $i times"
 done
 
-#!/bin/bash
 for (( c=1; c<=5; c++ ))
 do
    echo "Welcome $c times"
