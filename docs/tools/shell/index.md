@@ -282,3 +282,13 @@ EOM
 ```
 
 * `whence`可以查看`alias`的定义
+
+* 给用户增加sudo权限
+
+```sh
+# 方法1
+sudo usermod -aG sudo lightxue
+# 方法2
+sudo vi /etc/sudoers
+```
+
