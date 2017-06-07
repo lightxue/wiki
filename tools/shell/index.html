@@ -717,8 +717,6 @@
 </li>
 <li><p><code>uniq -u</code>&#xFF0C;only print unique line; uniq -d, only print duplicate lines</p>
 </li>
-<li><p><code>curl -I url</code>&#xFF0C;&#x663E;&#x793A;http&#x54CD;&#x5E94;&#x5934;</p>
-</li>
 <li><p>xargs -I &apos;replace-str&apos; echo &apos;replace-str is an argument&apos;</p>
 </li>
 <li><p><code>bash -n script-filename</code> &#x68C0;&#x67E5;&#x8BED;&#x6CD5;&#x9519;&#x8BEF;&#xFF0C;<code>bash -x script-filename</code> &#x6BCF;&#x8FD0;&#x884C;&#x4E00;&#x884C;&#x8F93;&#x51FA;&#x4E00;&#x884C;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E0A; <code>export PS4=&apos;+{$LINENO:${FUNCNAME[0]}}</code> &#x6BCF;&#x884C;&#x8F93;&#x51FA;&#x65F6;&#x80FD;&#x8F93;&#x51FA;&#x884C;&#x53F7;&#x8DDF;&#x51FD;&#x6570;&#x540D;</p>
@@ -727,7 +725,7 @@
 </li>
 <li><p><code>paste file1 file2</code>&#xFF0C;&#x5408;&#x5E76;&#x5217;&#x7684;&#x65B9;&#x5F0F;&#x5408;&#x5E76;file1, file2</p>
 </li>
-<li><p>wait&#x662F;&#x5185;&#x90E8;&#x547D;&#x4EE4;&#xFF0C;wait %1&#x6216;wait $PID&#x6765;&#x7B49;&#x5F85;&#x8FDB;&#x7A0B;&#x9000;&#x51FA;&#x3002;&#x6CA1;&#x7ED9;&#x53C2;&#x6570;&#x5C31;&#x7B49;&#x5F85;&#x6240;&#x6709;&#x5B50;&#x8FDB;&#x7A0B;</p>
+<li><p><code>wait</code>&#x662F;&#x5185;&#x90E8;&#x547D;&#x4EE4;&#xFF0C;wait %1&#x6216;wait $PID&#x6765;&#x7B49;&#x5F85;&#x8FDB;&#x7A0B;&#x9000;&#x51FA;&#x3002;&#x6CA1;&#x7ED9;&#x53C2;&#x6570;&#x5C31;&#x7B49;&#x5F85;&#x6240;&#x6709;&#x5B50;&#x8FDB;&#x7A0B;</p>
 </li>
 <li><p><code>var=10 ./echo_var.sh</code>&#xFF0C;&#x5728;&#x7A0B;&#x5E8F;echo_var.sh&#x8FD0;&#x884C;&#x65F6;&#xFF0C;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4F1A;&#x591A;&#x51FA;&#x4E00;&#x4E2A;var&#xFF0C;&#x503C;&#x662F;10</p>
 </li>
@@ -890,32 +888,27 @@ Administrator. It usually boils down to these three things:</p>
 <ul>
 <li>for loop</li>
 </ul>
-<pre><code class="lang-sh"><span class="hljs-meta">#!/bin/bash</span>
-<span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> 1 2 3 4 5
+<pre><code class="lang-sh"><span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> 1 2 3 4 5
 <span class="hljs-keyword">do</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Welcome <span class="hljs-variable">$i</span> times&quot;</span>
 <span class="hljs-keyword">done</span>
 
-<span class="hljs-meta">#!/bin/bash</span>
 <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> {1..5}
 <span class="hljs-keyword">do</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Welcome <span class="hljs-variable">$i</span> times&quot;</span>
 <span class="hljs-keyword">done</span>
 
-<span class="hljs-meta">#!/bin/bash</span>
 <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Bash version <span class="hljs-variable">${BASH_VERSION}</span>...&quot;</span>
 <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> {0..10..2}
   <span class="hljs-keyword">do</span>
      <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Welcome <span class="hljs-variable">$i</span> times&quot;</span>
  <span class="hljs-keyword">done</span>
 
-<span class="hljs-meta">#!/bin/bash</span>
 <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> $(seq 1 2 20)
 <span class="hljs-keyword">do</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Welcome <span class="hljs-variable">$i</span> times&quot;</span>
 <span class="hljs-keyword">done</span>
 
-<span class="hljs-meta">#!/bin/bash</span>
 <span class="hljs-keyword">for</span> (( c=1; c&lt;=5; c++ ))
 <span class="hljs-keyword">do</span>
    <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;Welcome <span class="hljs-variable">$c</span> times&quot;</span>
@@ -945,8 +938,16 @@ three
 EOM
 </code></pre>
 <ul>
-<li><code>whence</code>&#x53EF;&#x4EE5;&#x67E5;&#x770B;<code>alias</code>&#x7684;&#x5B9A;&#x4E49;</li>
+<li><p><code>whence</code>&#x53EF;&#x4EE5;&#x67E5;&#x770B;<code>alias</code>&#x7684;&#x5B9A;&#x4E49;</p>
+</li>
+<li><p>&#x7ED9;&#x7528;&#x6237;&#x589E;&#x52A0;sudo&#x6743;&#x9650;</p>
+</li>
 </ul>
+<pre><code class="lang-sh"><span class="hljs-comment"># &#x65B9;&#x6CD5;1</span>
+sudo usermod <span class="hljs-_">-a</span>G sudo lightxue
+<span class="hljs-comment"># &#x65B9;&#x6CD5;2</span>
+sudo vi /etc/sudoers
+</code></pre>
 
                                 
                                 </section>
@@ -990,7 +991,7 @@ EOM
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"shell","level":"4.1","depth":1,"next":{"title":"dd硬盘测试速度","level":"4.1.1","depth":2,"path":"tools/shell/dd-speed-test.md","ref":"tools/shell/dd-speed-test.md","articles":[]},"previous":{"title":"Windows","level":"3.3","depth":1,"path":"system/windows/index.md","ref":"system/windows/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/shell/index.md","mtime":"2017-05-25T05:30:30.516Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-05-25T05:31:05.440Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"shell","level":"4.1","depth":1,"next":{"title":"dd硬盘测试速度","level":"4.1.1","depth":2,"path":"tools/shell/dd-speed-test.md","ref":"tools/shell/dd-speed-test.md","articles":[]},"previous":{"title":"Windows","level":"3.3","depth":1,"path":"system/windows/index.md","ref":"system/windows/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/shell/index.md","mtime":"2017-06-07T08:55:12.032Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-07T09:00:33.594Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
