@@ -453,6 +453,7 @@ sys.setdefaultencoding('UTF-8')
 ```
 
 * 给utf8文件写入BOM
+
 ```
 import codecs
 fd.write(codecs.BOM_UTF8)
