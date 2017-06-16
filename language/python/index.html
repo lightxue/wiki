@@ -1076,21 +1076,23 @@ reload(sys)
 sys.setdefaultencoding(<span class="hljs-string">&apos;UTF-8&apos;</span>)
 </code></pre>
 <ul>
-<li><p>&#x7ED9;utf8&#x6587;&#x4EF6;&#x5199;&#x5165;BOM</p>
-<pre><code>import codecs
-fd.write(codecs.BOM_UTF8)
-</code></pre></li>
-<li><p>&#x795E;&#x5947;&#x7684;<code>__debug__</code>&#x53D8;&#x91CF;&#x80FD;&#x5B9E;&#x73B0;<code>#ifdef</code>&#xFF0C;&#x770B;<a href="http://stackoverflow.com/questions/12524570/how-do-you-implement-ifdef-in-python" target="_blank">&#x8FD9;&#x91CC;</a></p>
-</li>
-<li><p>&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x7684;unicode&#x548C;str&#x4E92;&#x8F6C;&#x7684;&#x89E3;&#x7801;&#x683C;&#x5F0F;</p>
-</li>
+<li>&#x7ED9;utf8&#x6587;&#x4EF6;&#x5199;&#x5165;BOM
+```
+import codecs
+fd.write(codecs.BOM_UTF8)</li>
 </ul>
-<pre><code class="lang-python"><span class="hljs-keyword">import</span> sys
+<h1 id="&#x6216;&#x7F16;&#x7801;&#x9009;&#x62E9;utf-8-sig">&#x6216;&#x7F16;&#x7801;&#x9009;&#x62E9;&apos;utf-8-sig&apos;</h1>
+<pre><code>
+* &#x795E;&#x5947;&#x7684;`__debug__`&#x53D8;&#x91CF;&#x80FD;&#x5B9E;&#x73B0;`#ifdef`&#xFF0C;&#x770B;[&#x8FD9;&#x91CC;](http://stackoverflow.com/questions/12524570/how-do-you-implement-ifdef-in-python)
+
+* &#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x7684;unicode&#x548C;str&#x4E92;&#x8F6C;&#x7684;&#x89E3;&#x7801;&#x683C;&#x5F0F;
+
+```python
+import sys
 
 reload(sys)
-sys.setdefaultencoding(<span class="hljs-string">&apos;UTF-8&apos;</span>)
-</code></pre>
-<ul>
+sys.setdefaultencoding(&apos;UTF-8&apos;)
+</code></pre><ul>
 <li>mysql&#x6309;&#x5217;&#x540D;&#x53D6;&#x503C;</li>
 </ul>
 <pre><code class="lang-python">cursor = conn.cursor(MySQLdb.cursors.DictCursor)
@@ -1168,7 +1170,7 @@ ipython3 kernelspec install-self
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Python","level":"2.1","depth":1,"next":{"title":"C/C++","level":"2.2","depth":1,"path":"language/c-cpp/index.md","ref":"language/c-cpp/index.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"language/python/index.md","mtime":"2017-05-02T11:47:57.268Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-07T09:00:33.594Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Python","level":"2.1","depth":1,"next":{"title":"C/C++","level":"2.2","depth":1,"path":"language/c-cpp/index.md","ref":"language/c-cpp/index.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"language/python/index.md","mtime":"2017-06-16T11:44:20.776Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-16T11:44:56.017Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
