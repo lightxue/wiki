@@ -50,3 +50,4 @@
 
 ### Other
 * [Ascii art](other/ascii-art.md)
+* [理论模型](other/theory.md)
