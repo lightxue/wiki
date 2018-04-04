@@ -17,7 +17,11 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -662,30 +666,30 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="tmux">tmux</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#tmux"><b></b>tmux</a></li><ul><li><span class="title-icon "></span><a href="#window"><b></b>window</a></li></ul></ul></div><a href="#tmux" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="tmux"><a name="tmux" class="anchor-navigation-ex-anchor" href="#tmux"><i class="fa fa-link" aria-hidden="true"></i></a>tmux</h1>
 <ol>
 <li><p>&#x521B;&#x5EFA;&#x65B0;session</p>
-<pre><code class="lang-sh">tmux new-session <span class="hljs-_">-s</span> basic
-tmux new <span class="hljs-_">-s</span> basic
+<pre class="language-"><code class="lang-sh">tmux new-session -s basic
+tmux new -s basic
 </code></pre>
 </li>
 <li><p>&#x5DF2;&#x6709;session</p>
-<pre><code class="lang-sh">tmux list-sessions
-tmux ls
+<pre class="language-"><code class="lang-sh">tmux list-sessions
+tmux <span class="token function">ls</span>
 </code></pre>
 </li>
 <li><p>attach session</p>
-<pre><code class="lang-sh">tmux attach
+<pre class="language-"><code class="lang-sh">tmux attach
 tmux attach -t session
 tmux a -t session
 </code></pre>
 </li>
 <li><p>kill session</p>
-<pre><code class="lang-sh">tmux <span class="hljs-built_in">kill</span>-session -t basic
+<pre class="language-"><code class="lang-sh">tmux kill-session -t basic
 </code></pre>
 </li>
 </ol>
-<h2 id="window">window</h2>
+<h2 id="window"><a name="window" class="anchor-navigation-ex-anchor" href="#window"><i class="fa fa-link" aria-hidden="true"></i></a>window</h2>
 <ol>
 <li><p>rename window <code>prefix</code> <code>,</code></p>
 </li>
@@ -737,7 +741,7 @@ tmux a -t session
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"tmux","level":"4.9","depth":1,"next":{"title":"通用转法","level":"5.1","depth":1,"path":"rubik/index.md","ref":"rubik/index.md","articles":[]},"previous":{"title":"sed","level":"4.8","depth":1,"path":"tools/sed.md","ref":"tools/sed.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/tmux.md","mtime":"2017-08-15T01:51:50.322Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T19:15:38.099Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"tmux","level":"4.9","depth":1,"next":{"title":"通用转法","level":"5.1","depth":1,"path":"rubik/index.md","ref":"rubik/index.md","articles":[]},"previous":{"title":"sed","level":"4.8","depth":1,"path":"tools/sed.md","ref":"tools/sed.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","-sharing","anchor-navigation-ex"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/tmux.md","mtime":"2017-08-15T01:51:50.322Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T20:01:48.236Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -760,10 +764,6 @@ tmux a -t session
     
         
         <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         

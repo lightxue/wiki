@@ -17,7 +17,11 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -662,7 +666,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="epoll&#x79EF;&#x7D2F;">epoll&#x79EF;&#x7D2F;</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#epoll&#x79EF;&#x7D2F;"><b></b>epoll&#x79EF;&#x7D2F;</a></li></ul></div><a href="#epoll&#x79EF;&#x7D2F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="epoll&#x79EF;&#x7D2F;"><a name="epoll&#x79EF;&#x7D2F;" class="anchor-navigation-ex-anchor" href="#epoll&#x79EF;&#x7D2F;"><i class="fa fa-link" aria-hidden="true"></i></a>epoll&#x79EF;&#x7D2F;</h1>
 <ul>
 <li><p>&#x963B;&#x585E;&#x7684;socket&#x5728;<code>epoll_wait</code>&#x540E;&#x8C03;&#x7528;<code>accept</code>&#xFF0C;&#x5728;<code>epoll_wait</code>&#x8FD4;&#x56DE;&#x5230;accept&#x8C03;&#x7528;&#x8FD9;&#x6BB5;&#x65F6;&#x95F4;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x6536;&#x5230;rst&#x62A5;&#x6587;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x8C03;&#x7528;accept&#x963B;&#x585E;&#xFF0C;&#x76F4;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#x7684;&#x5230;&#x6765;&#x3002;</p>
 </li>
@@ -712,7 +716,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"epoll","level":"3.1.5","depth":2,"next":{"title":"Mac OS X","level":"3.2","depth":1,"path":"system/mac/index.md","ref":"system/mac/index.md","articles":[]},"previous":{"title":"linux性能","level":"3.1.4","depth":2,"path":"system/linux/linux-performance-note.md","ref":"system/linux/linux-performance-note.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"system/linux/thinking-in-epoll.md","mtime":"2017-08-15T01:51:50.322Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T19:15:38.099Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"epoll","level":"3.1.5","depth":2,"next":{"title":"Mac OS X","level":"3.2","depth":1,"path":"system/mac/index.md","ref":"system/mac/index.md","articles":[]},"previous":{"title":"linux性能","level":"3.1.4","depth":2,"path":"system/linux/linux-performance-note.md","ref":"system/linux/linux-performance-note.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","-sharing","anchor-navigation-ex"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"system/linux/thinking-in-epoll.md","mtime":"2017-08-15T01:51:50.322Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T20:01:48.236Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -735,10 +739,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         

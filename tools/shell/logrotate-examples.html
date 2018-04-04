@@ -17,7 +17,11 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -662,7 +666,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="logrotate-10&#x4F8B;">logrotate 10&#x4F8B;</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#logrotate-10&#x4F8B;"><b></b>logrotate 10&#x4F8B;</a></li><ul><li><span class="title-icon "></span><a href="#1-logrotate-configuration-files"><b></b>1. Logrotate Configuration files</a></li><li><span class="title-icon "></span><a href="#2-logrotate-size-option-rotate-the-log-file-when-file-size-reaches-a-specific-limit"><b></b>2. Logrotate size option: Rotate the log file when file size reaches a specific limit</a></li><li><span class="title-icon "></span><a href="#3-logrotate-copytruncate-option-continue-to-write-the-log-information-in-the-newly-created-file-after-rotating-the-old-log-file"><b></b>3. Logrotate copytruncate option: Continue to write the log information in the newly created file after rotating the old log file.</a></li><li><span class="title-icon "></span><a href="#4-logrotate-compress-option-compress-the-rotated-log-files"><b></b>4. Logrotate compress option: Compress the rotated log files</a></li><li><span class="title-icon "></span><a href="#5-logrotate-dateext-option-rotate-the-old-log-file-with-date-in-the-log-filename"><b></b>5. Logrotate dateext option: Rotate the old log file with date in the log filename</a></li><li><span class="title-icon "></span><a href="#6-logrotate-monthly-daily-weekly-option-rotate-the-log-file-weeklydailymonthly"><b></b>6. Logrotate monthly, daily, weekly option: Rotate the log file weekly/daily/monthly</a></li><li><span class="title-icon "></span><a href="#7-logrotate-postrotate-endscript-option-run-custom-shell-scripts-immediately-after-log-rotation"><b></b>7. Logrotate postrotate endscript option: Run custom shell scripts immediately after log rotation</a></li><li><span class="title-icon "></span><a href="#8-logrotate-maxage-option-remove-older-rotated-log-files"><b></b>8. Logrotate maxage option: Remove older rotated log files</a></li><li><span class="title-icon "></span><a href="#9-logrotate-missingok-option-dont-return-error-if-the-log-file-is-missing"><b></b>9. Logrotate missingok option: Dont return error if the log file is missing</a></li><li><span class="title-icon "></span><a href="#10-logrotate-compresscmd-and-compressext-option-sspecify-compression-command-for-the-log-file-rotation"><b></b>10. Logrotate compresscmd and compressext option: Sspecify compression command for the log file rotation</a></li></ul></ul></div><a href="#logrotate-10&#x4F8B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="logrotate-10&#x4F8B;"><a name="logrotate-10&#x4F8B;" class="anchor-navigation-ex-anchor" href="#logrotate-10&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>logrotate 10&#x4F8B;</h1>
 <p>&#x8F6C;&#x81EA; <a href="http://www.thegeekstuff.com/2010/07/logrotate-examples/" target="_blank">http://www.thegeekstuff.com/2010/07/logrotate-examples/</a></p>
 <p>Managing log files effectively is an essential task for Linux sysadmin.</p>
 <p>In this article, let us discuss how to perform following log file operations using UNIX logrotate utility.</p>
@@ -675,51 +679,51 @@
 <li>Execute custom shell scripts immediately after log rotation</li>
 <li>Remove older rotated log files</li>
 </ul>
-<h2 id="1-logrotate-configuration-files">1. Logrotate Configuration files</h2>
+<h2 id="1-logrotate-configuration-files"><a name="1-logrotate-configuration-files" class="anchor-navigation-ex-anchor" href="#1-logrotate-configuration-files"><i class="fa fa-link" aria-hidden="true"></i></a>1. Logrotate Configuration files</h2>
 <p>Following are the key files that you should be aware of for logrotate to work properly.</p>
 <p><code>/usr/sbin/logrotate</code> &#x2013; The logrotate command itself.</p>
 <p><code>/etc/cron.daily/logrotate</code> &#x2013; This shell script executes the logrotate command everyday.</p>
-<pre><code class="lang-sh">$ cat /etc/cron.daily/logrotate
-<span class="hljs-meta">#!/bin/sh
-</span>
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> /etc/cron.daily/logrotate
+<span class="token comment" spellcheck="true">#!/bin/sh</span>
+
 /usr/sbin/logrotate /etc/logrotate.conf
-EXITVALUE=$?
-<span class="hljs-keyword">if</span> [ <span class="hljs-variable">$EXITVALUE</span> != 0 ]; <span class="hljs-keyword">then</span>
-    /usr/bin/logger -t logrotate <span class="hljs-string">&quot;ALERT exited abnormally with [<span class="hljs-variable">$EXITVALUE</span>]&quot;</span>
-<span class="hljs-keyword">fi</span>
-<span class="hljs-built_in">exit</span> 0
+EXITVALUE<span class="token operator">=</span><span class="token variable">$?</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$EXITVALUE</span> <span class="token operator">!=</span> 0 <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    /usr/bin/logger -t logrotate <span class="token string">&quot;ALERT exited abnormally with [<span class="token variable">$EXITVALUE</span>]&quot;</span>
+<span class="token keyword">fi</span>
+<span class="token keyword">exit</span> 0
 </code></pre>
 <p><code>/etc/logrotate.conf</code> &#x2013; Log rotation configuration for all the log files are specified in this file.</p>
-<pre><code class="lang-sh">$ cat /etc/logrotate.conf
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> /etc/logrotate.conf
 weekly
 rotate 4
 create
 include /etc/logrotate.d
-/var/<span class="hljs-built_in">log</span>/wtmp {
+/var/log/wtmp <span class="token punctuation">{</span>
     monthly
     minsize 1M
     create 0664 root utmp
     rotate 1
-}
+<span class="token punctuation">}</span>
 </code></pre>
 <p><code>/etc/logrotate.d</code> &#x2013; When individual packages are installed on the system, they drop the log rotation configuration information in this directory. For example, yum log rotate configuration information is shown below.</p>
-<pre><code class="lang-sh">$ cat /etc/logrotate.d/yum
-/var/<span class="hljs-built_in">log</span>/yum.log {
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> /etc/logrotate.d/yum
+/var/log/yum.log <span class="token punctuation">{</span>
     missingok
     notifempty
     size 30k
     yearly
     create 0600 root root
-}
+<span class="token punctuation">}</span>
 </code></pre>
-<h2 id="2-logrotate-size-option-rotate-the-log-file-when-file-size-reaches-a-specific-limit">2. Logrotate size option: Rotate the log file when file size reaches a specific limit</h2>
+<h2 id="2-logrotate-size-option-rotate-the-log-file-when-file-size-reaches-a-specific-limit"><a name="2-logrotate-size-option-rotate-the-log-file-when-file-size-reaches-a-specific-limit" class="anchor-navigation-ex-anchor" href="#2-logrotate-size-option-rotate-the-log-file-when-file-size-reaches-a-specific-limit"><i class="fa fa-link" aria-hidden="true"></i></a>2. Logrotate size option: Rotate the log file when file size reaches a specific limit</h2>
 <p>If you want to rotate a log file (for example, /tmp/output.log) for every 1KB, create the logrotate.conf as shown below.</p>
-<pre><code class="lang-sh">$ cat logrotate.conf
-/tmp/output.log {
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> logrotate.conf
+/tmp/output.log <span class="token punctuation">{</span>
         size 1k
         create 700 bala bala
         rotate 4
-}
+<span class="token punctuation">}</span>
 </code></pre>
 <p>This logrotate configuration has following three options:</p>
 <ul>
@@ -728,15 +732,15 @@ include /etc/logrotate.d
 <li>rotate &#x2013; limits the number of log file rotation. So, this would keep only the recent 4 rotated log files.</li>
 </ul>
 <p>Before the logrotation, following is the size of the output.log:</p>
-<pre><code class="lang-sh">$ ls <span class="hljs-_">-l</span> /tmp/output.log
+<pre class="language-"><code class="lang-sh">$ <span class="token function">ls</span> -l /tmp/output.log
 -rw-r--r-- 1 bala bala 25868 2010-06-09 21:19 /tmp/output.log
 </code></pre>
 <p>Now, run the logrotate command as shown below. Option -s specifies the filename to write the logrotate status.</p>
-<pre><code class="lang-sh">$ logrotate <span class="hljs-_">-s</span> /var/<span class="hljs-built_in">log</span>/logstatus logrotate.conf
+<pre class="language-"><code class="lang-sh">$ logrotate -s /var/log/logstatus logrotate.conf
 </code></pre>
 <p>Note : whenever you need of log rotation for some files, prepare the logrotate configuration and run the logroate command manually.
 After the logrotation, following is the size of the output.log:</p>
-<pre><code class="lang-sh">$ ls <span class="hljs-_">-l</span> /tmp/output*
+<pre class="language-"><code class="lang-sh">$ <span class="token function">ls</span> -l /tmp/output*
 -rw-r--r--  1 bala bala 25868 2010-06-09 21:20 output.log.1
 -rwx------ 1 bala bala        0 2010-06-09 21:20 output.log
 </code></pre>
@@ -751,81 +755,81 @@ After the logrotation, following is the size of the output.log:</p>
 <p>Please remember that after the log rotation, the log file corresponds to the service would still point to rotated file (output.log.1) and keeps on writing in it. You can use the above method, if you want to rotate the apache <code>access_log</code> or <code>error_log</code> every 5 MB.</p>
 <p>Ideally, you should modify the /etc/logrotate.conf to specify the logrotate information for a specific log file.</p>
 <p>Also, if you are having huge log files, you can use: 10 Awesome Examples for Viewing Huge Log Files in Unix</p>
-<h2 id="3-logrotate-copytruncate-option-continue-to-write-the-log-information-in-the-newly-created-file-after-rotating-the-old-log-file">3. Logrotate copytruncate option: Continue to write the log information in the newly created file after rotating the old log file.</h2>
-<pre><code class="lang-sh">$ cat logrotate.conf
-/tmp/output.log {
+<h2 id="3-logrotate-copytruncate-option-continue-to-write-the-log-information-in-the-newly-created-file-after-rotating-the-old-log-file"><a name="3-logrotate-copytruncate-option-continue-to-write-the-log-information-in-the-newly-created-file-after-rotating-the-old-log-file" class="anchor-navigation-ex-anchor" href="#3-logrotate-copytruncate-option-continue-to-write-the-log-information-in-the-newly-created-file-after-rotating-the-old-log-file"><i class="fa fa-link" aria-hidden="true"></i></a>3. Logrotate copytruncate option: Continue to write the log information in the newly created file after rotating the old log file.</h2>
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> logrotate.conf
+/tmp/output.log <span class="token punctuation">{</span>
          size 1k
          copytruncate
          rotate 4
-}
+<span class="token punctuation">}</span>
 </code></pre>
 <p>copytruncate instruct logrotate to creates the copy of the original file (i.e rotate the original log file) and truncates the original file to zero byte size. This helps the respective service that belongs to that log file can write to the proper file.</p>
 <p>While manipulating log files, you might find the sed substitute, sed delete tips helpful.</p>
-<h2 id="4-logrotate-compress-option-compress-the-rotated-log-files">4. Logrotate compress option: Compress the rotated log files</h2>
+<h2 id="4-logrotate-compress-option-compress-the-rotated-log-files"><a name="4-logrotate-compress-option-compress-the-rotated-log-files" class="anchor-navigation-ex-anchor" href="#4-logrotate-compress-option-compress-the-rotated-log-files"><i class="fa fa-link" aria-hidden="true"></i></a>4. Logrotate compress option: Compress the rotated log files</h2>
 <p>If you use the compress option as shown below, the rotated files will be compressed with gzip utility.</p>
-<pre><code class="lang-sh">$ cat logrotate.conf
-/tmp/output.log {
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> logrotate.conf
+/tmp/output.log <span class="token punctuation">{</span>
         size 1k
         copytruncate
         create 700 bala bala
         rotate 4
         compress
-}
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Output of compressed log file:</p>
-<pre><code class="lang-sh">$ ls /tmp/output*
+<pre class="language-"><code class="lang-sh">$ <span class="token function">ls</span> /tmp/output*
 output.log.1.gz output.log
 </code></pre>
-<h2 id="5-logrotate-dateext-option-rotate-the-old-log-file-with-date-in-the-log-filename">5. Logrotate dateext option: Rotate the old log file with date in the log filename</h2>
-<pre><code class="lang-sh">$ cat logrotate.conf
-/tmp/output.log {
+<h2 id="5-logrotate-dateext-option-rotate-the-old-log-file-with-date-in-the-log-filename"><a name="5-logrotate-dateext-option-rotate-the-old-log-file-with-date-in-the-log-filename" class="anchor-navigation-ex-anchor" href="#5-logrotate-dateext-option-rotate-the-old-log-file-with-date-in-the-log-filename"><i class="fa fa-link" aria-hidden="true"></i></a>5. Logrotate dateext option: Rotate the old log file with date in the log filename</h2>
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> logrotate.conf
+/tmp/output.log <span class="token punctuation">{</span>
         size 1k
         copytruncate
         create 700 bala bala
         dateext
         rotate 4
         compress
-}
+<span class="token punctuation">}</span>
 </code></pre>
 <p>After the above configuration, you&#x2019;ll notice the date in the rotated log file as shown below.</p>
-<pre><code class="lang-sh">$ ls -lrt /tmp/output*
+<pre class="language-"><code class="lang-sh">$ <span class="token function">ls</span> -lrt /tmp/output*
 -rw-r--r--  1 bala bala 8980 2010-06-09 22:10 output.log-20100609.gz
 -rwxrwxrwx 1 bala bala     0 2010-06-09 22:11 output.log
 </code></pre>
 <p>This would work only once in a day. Because when it tries to rotate next time on the same day, earlier rotated file will be having the same filename. So, the logrotate wont be successful after the first run on the same day.</p>
 <p>Typically you might use tail -f to view the output of the log file in realtime. You can even combine multiple tail -f output and display it on single terminal.</p>
-<h2 id="6-logrotate-monthly-daily-weekly-option-rotate-the-log-file-weeklydailymonthly">6. Logrotate monthly, daily, weekly option: Rotate the log file weekly/daily/monthly</h2>
+<h2 id="6-logrotate-monthly-daily-weekly-option-rotate-the-log-file-weeklydailymonthly"><a name="6-logrotate-monthly-daily-weekly-option-rotate-the-log-file-weeklydailymonthly" class="anchor-navigation-ex-anchor" href="#6-logrotate-monthly-daily-weekly-option-rotate-the-log-file-weeklydailymonthly"><i class="fa fa-link" aria-hidden="true"></i></a>6. Logrotate monthly, daily, weekly option: Rotate the log file weekly/daily/monthly</h2>
 <p>For doing the rotation monthly once,</p>
-<pre><code class="lang-sh">$ cat logrotate.conf
-/tmp/output.log {
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> logrotate.conf
+/tmp/output.log <span class="token punctuation">{</span>
         monthly
         copytruncate
         rotate 4
         compress
-}
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Add the weekly keyword as shown below for weekly log rotation.</p>
-<pre><code class="lang-sh">$ cat logrotate.conf
-/tmp/output.log {
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> logrotate.conf
+/tmp/output.log <span class="token punctuation">{</span>
         weekly
         copytruncate
         rotate 4
         compress
-}
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Add the daily keyword as shown below for every day log rotation. You can also rotate logs hourly.</p>
-<pre><code class="lang-sh">$ cat logrotate.conf
-/tmp/output.log {
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> logrotate.conf
+/tmp/output.log <span class="token punctuation">{</span>
         daily
         copytruncate
         rotate 4
         compress
-}
+<span class="token punctuation">}</span>
 </code></pre>
-<h2 id="7-logrotate-postrotate-endscript-option-run-custom-shell-scripts-immediately-after-log-rotation">7. Logrotate postrotate endscript option: Run custom shell scripts immediately after log rotation</h2>
+<h2 id="7-logrotate-postrotate-endscript-option-run-custom-shell-scripts-immediately-after-log-rotation"><a name="7-logrotate-postrotate-endscript-option-run-custom-shell-scripts-immediately-after-log-rotation" class="anchor-navigation-ex-anchor" href="#7-logrotate-postrotate-endscript-option-run-custom-shell-scripts-immediately-after-log-rotation"><i class="fa fa-link" aria-hidden="true"></i></a>7. Logrotate postrotate endscript option: Run custom shell scripts immediately after log rotation</h2>
 <p>Logrotate allows you to run your own custom shell scripts after it completes the log file rotation. The following configuration indicates that it will execute myscript.sh after the logrotation.</p>
-<pre><code class="lang-sh">$ cat logrotate.conf
-/tmp/output.log {
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> logrotate.conf
+/tmp/output.log <span class="token punctuation">{</span>
         size 1k
         copytruncate
         rotate 4
@@ -833,33 +837,33 @@ output.log.1.gz output.log
         postrotate
                /home/bala/myscript.sh
         endscript
-}
+<span class="token punctuation">}</span>
 </code></pre>
-<h2 id="8-logrotate-maxage-option-remove-older-rotated-log-files">8. Logrotate maxage option: Remove older rotated log files</h2>
+<h2 id="8-logrotate-maxage-option-remove-older-rotated-log-files"><a name="8-logrotate-maxage-option-remove-older-rotated-log-files" class="anchor-navigation-ex-anchor" href="#8-logrotate-maxage-option-remove-older-rotated-log-files"><i class="fa fa-link" aria-hidden="true"></i></a>8. Logrotate maxage option: Remove older rotated log files</h2>
 <p>Logrotate automatically removes the rotated files after a specific number of days.  The following example indicates that the rotated log files would be removed after 100 days.</p>
-<pre><code class="lang-sh">$ cat logrotate.conf
-/tmp/output.log {
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> logrotate.conf
+/tmp/output.log <span class="token punctuation">{</span>
         size 1k
         copytruncate
         rotate 4
         compress
         maxage 100
-}
+<span class="token punctuation">}</span>
 </code></pre>
-<h2 id="9-logrotate-missingok-option-dont-return-error-if-the-log-file-is-missing">9. Logrotate missingok option: Dont return error if the log file is missing</h2>
+<h2 id="9-logrotate-missingok-option-dont-return-error-if-the-log-file-is-missing"><a name="9-logrotate-missingok-option-dont-return-error-if-the-log-file-is-missing" class="anchor-navigation-ex-anchor" href="#9-logrotate-missingok-option-dont-return-error-if-the-log-file-is-missing"><i class="fa fa-link" aria-hidden="true"></i></a>9. Logrotate missingok option: Dont return error if the log file is missing</h2>
 <p>You can ignore the error message when the actual file is not available by using this option as shown below.</p>
-<pre><code class="lang-sh">$ cat logrotate.conf
-/tmp/output.log {
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> logrotate.conf
+/tmp/output.log <span class="token punctuation">{</span>
         size 1k
         copytruncate
         rotate 4
         compress
         missingok
-}
+<span class="token punctuation">}</span>
 </code></pre>
-<h2 id="10-logrotate-compresscmd-and-compressext-option-sspecify-compression-command-for-the-log-file-rotation">10. Logrotate compresscmd and compressext option: Sspecify compression command for the log file rotation</h2>
-<pre><code class="lang-sh">$ cat logrotate.conf
-/tmp/output.log {
+<h2 id="10-logrotate-compresscmd-and-compressext-option-sspecify-compression-command-for-the-log-file-rotation"><a name="10-logrotate-compresscmd-and-compressext-option-sspecify-compression-command-for-the-log-file-rotation" class="anchor-navigation-ex-anchor" href="#10-logrotate-compresscmd-and-compressext-option-sspecify-compression-command-for-the-log-file-rotation"><i class="fa fa-link" aria-hidden="true"></i></a>10. Logrotate compresscmd and compressext option: Sspecify compression command for the log file rotation</h2>
+<pre class="language-"><code class="lang-sh">$ <span class="token function">cat</span> logrotate.conf
+/tmp/output.log <span class="token punctuation">{</span>
         size 1k
         copytruncate
         create
@@ -867,7 +871,7 @@ output.log.1.gz output.log
         compresscmd /bin/bzip2
         compressext .bz2
         rotate 4
-}
+<span class="token punctuation">}</span>
 </code></pre>
 <p>Following compression options are specified above:</p>
 <ul>
@@ -918,7 +922,7 @@ output.log.1.gz output.log
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"logrotate示例","level":"4.1.3","depth":2,"next":{"title":"ssh免密码登录","level":"4.1.4","depth":2,"path":"tools/shell/ssh-without-password.md","ref":"tools/shell/ssh-without-password.md","articles":[]},"previous":{"title":"bash的字符串转义","level":"4.1.2","depth":2,"path":"tools/shell/string-escape.md","ref":"tools/shell/string-escape.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/shell/logrotate-examples.md","mtime":"2017-08-15T01:51:50.322Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T19:15:38.099Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"logrotate示例","level":"4.1.3","depth":2,"next":{"title":"ssh免密码登录","level":"4.1.4","depth":2,"path":"tools/shell/ssh-without-password.md","ref":"tools/shell/ssh-without-password.md","articles":[]},"previous":{"title":"bash的字符串转义","level":"4.1.2","depth":2,"path":"tools/shell/string-escape.md","ref":"tools/shell/string-escape.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","-sharing","anchor-navigation-ex"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/shell/logrotate-examples.md","mtime":"2017-08-15T01:51:50.322Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T20:01:48.236Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -941,10 +945,6 @@ output.log.1.gz output.log
     
         
         <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         

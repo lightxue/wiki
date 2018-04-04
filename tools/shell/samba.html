@@ -17,7 +17,11 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -662,13 +666,13 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="samba">samba</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#samba"><b></b>samba</a></li></ul></div><a href="#samba" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="samba"><a name="samba" class="anchor-navigation-ex-anchor" href="#samba"><i class="fa fa-link" aria-hidden="true"></i></a>samba</h1>
 <ol>
 <li><p>&#x589E;&#x52A0;&#x7528;&#x6237;</p>
-<pre><code>smbpasswd -a lightxue
+<pre class="language-"><code>smbpasswd -a lightxue
 </code></pre></li>
 <li><p>&#x7F16;&#x8F91;/etc/samba/smb.conf&#xFF0C;&#x589E;&#x52A0;&#x4EE5;&#x4E0B;&#x5185;&#x5BB9;</p>
-<pre><code>[lightxue]
+<pre class="language-"><code>[lightxue]
 netbios name = lightxue
 valid users = lightxue
 path = /home/lightxue
@@ -678,17 +682,17 @@ printable = no
 create mask = 0644
 </code></pre></li>
 <li><p>&#x91CD;&#x542F;samba&#x670D;&#x52A1;</p>
-<pre><code>/etc/init.d/smbd restart
+<pre class="language-"><code>/etc/init.d/smbd restart
 or
 service smb restart
 </code></pre></li>
 <li><p>&#x8FD9;&#x6837;&#x5C31;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;samba&#x7528;&#x6237;&#x5E76;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#x4E86;</p>
 </li>
 <li><p>&#x5220;&#x9664;samba&#x5BC6;&#x7801;&#x7684;&#x7F13;&#x5B58;</p>
-<pre><code class="lang-bat">; &#x67E5;&#x770B;&#x5F53;&#x524D;&#x7684;&#x8FDE;&#x63A5;
-<span class="hljs-built_in">net</span> use
+<pre class="language-"><code class="lang-bat">; &#x67E5;&#x770B;&#x5F53;&#x524D;&#x7684;&#x8FDE;&#x63A5;
+net use
 ; &#x5220;&#x9664;
-<span class="hljs-built_in">net</span> use * /delete
+net use * /delete
 </code></pre>
 </li>
 </ol>
@@ -735,7 +739,7 @@ service smb restart
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"samba配置","level":"4.1.5","depth":2,"next":{"title":"Vim","level":"4.2","depth":1,"path":"tools/vim/index.md","ref":"tools/vim/index.md","articles":[{"title":"环境变量","level":"4.2.1","depth":2,"path":"tools/vim/vim-current-env.md","ref":"tools/vim/vim-current-env.md","articles":[]}]},"previous":{"title":"ssh免密码登录","level":"4.1.4","depth":2,"path":"tools/shell/ssh-without-password.md","ref":"tools/shell/ssh-without-password.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/shell/samba.md","mtime":"2017-08-15T01:51:50.322Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T19:15:38.099Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"samba配置","level":"4.1.5","depth":2,"next":{"title":"Vim","level":"4.2","depth":1,"path":"tools/vim/index.md","ref":"tools/vim/index.md","articles":[{"title":"环境变量","level":"4.2.1","depth":2,"path":"tools/vim/vim-current-env.md","ref":"tools/vim/vim-current-env.md","articles":[]}]},"previous":{"title":"ssh免密码登录","level":"4.1.4","depth":2,"path":"tools/shell/ssh-without-password.md","ref":"tools/shell/ssh-without-password.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","-sharing","anchor-navigation-ex"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/shell/samba.md","mtime":"2017-08-15T01:51:50.322Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T20:01:48.236Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -758,10 +762,6 @@ service smb restart
     
         
         <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         

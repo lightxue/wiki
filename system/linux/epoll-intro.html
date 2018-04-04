@@ -17,7 +17,11 @@
     
             
                 
-                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -662,7 +666,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="epoll&#x521D;&#x6B65;">epoll&#x521D;&#x6B65;</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#epoll&#x521D;&#x6B65;"><b></b>epoll&#x521D;&#x6B65;</a></li></ul></div><a href="#epoll&#x521D;&#x6B65;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="epoll&#x521D;&#x6B65;"><a name="epoll&#x521D;&#x6B65;" class="anchor-navigation-ex-anchor" href="#epoll&#x521D;&#x6B65;"><i class="fa fa-link" aria-hidden="true"></i></a>epoll&#x521D;&#x6B65;</h1>
 <p>epoll&#x7684;&#x63A5;&#x53E3;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x53EA;&#x6709;3&#x4E2A;&#x51FD;&#x6570;</p>
 <ul>
 <li><code>int epoll_create(int size);</code></li>
@@ -678,10 +682,10 @@
 <li><code>EPOLL_CTL_DEL</code>&#xFF1A;&#x4ECE;epfd&#x4E2D;&#x5220;&#x9664;&#x4E00;&#x4E2A;fd&#xFF1B;</li>
 </ol>
 <p>&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x9700;&#x8981;&#x76D1;&#x542C;&#x7684;fd&#xFF0C;&#x7B2C;&#x56DB;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x544A;&#x8BC9;&#x5185;&#x6838;&#x9700;&#x8981;&#x76D1;&#x542C;&#x4EC0;&#x4E48;&#x4E8B;&#xFF0C;<code>struct epoll_event</code>&#x7ED3;&#x6784;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code class="lang-c"><span class="hljs-keyword">struct</span> epoll_event {
-    <span class="hljs-keyword">__uint32_t</span> events;  <span class="hljs-comment">/* Epoll events */</span>
-    <span class="hljs-keyword">epoll_data_t</span> data;  <span class="hljs-comment">/* User data variable */</span>
-};
+<pre class="language-"><code class="lang-c"><span class="token keyword">struct</span> epoll_event <span class="token punctuation">{</span>
+    __uint32_t events<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">/* Epoll events */</span>
+    epoll_data_t data<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">/* User data variable */</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre>
 <p>events&#x53EF;&#x4EE5;&#x662F;&#x4EE5;&#x4E0B;&#x51E0;&#x4E2A;&#x5B8F;&#x7684;&#x96C6;&#x5408;&#xFF1A;</p>
 <ol>
@@ -724,64 +728,64 @@
 <p>&#x5728;&#x8BB8;&#x591A;&#x6D4B;&#x8BD5;&#x4E2D;&#x6211;&#x4EEC;&#x4F1A;&#x770B;&#x5230;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5927;&#x91CF;&#x7684;idle -connection&#x6216;&#x8005;dead-connection&#xFF0C;epoll&#x7684;&#x6548;&#x7387;&#x5E76;&#x4E0D;&#x4F1A;&#x6BD4;select/poll&#x9AD8;&#x5F88;&#x591A;&#xFF0C;&#x4F46;&#x662F;&#x5F53;&#x6211;&#x4EEC;&#x9047;&#x5230;&#x5927;&#x91CF;&#x7684;idle- connection(&#x4F8B;&#x5982;WAN&#x73AF;&#x5883;&#x4E2D;&#x5B58;&#x5728;&#x5927;&#x91CF;&#x7684;&#x6162;&#x901F;&#x8FDE;&#x63A5;)&#xFF0C;&#x5C31;&#x4F1A;&#x53D1;&#x73B0;epoll&#x7684;&#x6548;&#x7387;&#x5927;&#x5927;&#x9AD8;&#x4E8E;select/poll&#x3002;&#xFF08;&#x672A;&#x6D4B;&#x8BD5;&#xFF09;</p>
 <p>&#x53E6;&#x5916;&#xFF0C;&#x5F53;&#x4F7F;&#x7528;epoll&#x7684;ET&#x6A21;&#x578B;&#x6765;&#x5DE5;&#x4F5C;&#x65F6;&#xFF0C;&#x5F53;&#x4EA7;&#x751F;&#x4E86;&#x4E00;&#x4E2A;EPOLLIN&#x4E8B;&#x4EF6;&#x540E;&#xFF0C;
 &#x8BFB;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x8003;&#x8651;&#x7684;&#x662F;&#x5F53;recv()&#x8FD4;&#x56DE;&#x7684;&#x5927;&#x5C0F;&#x5982;&#x679C;&#x7B49;&#x4E8E;&#x8BF7;&#x6C42;&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x90A3;&#x4E48;&#x5F88;&#x6709;&#x53EF;&#x80FD;&#x662F;&#x7F13;&#x51B2;&#x533A;&#x8FD8;&#x6709;&#x6570;&#x636E;&#x672A;&#x8BFB;&#x5B8C;&#xFF0C;&#x4E5F;&#x610F;&#x5473;&#x7740;&#x8BE5;&#x6B21;&#x4E8B;&#x4EF6;&#x8FD8;&#x6CA1;&#x6709;&#x5904;&#x7406;&#x5B8C;&#xFF0C;&#x6240;&#x4EE5;&#x8FD8;&#x9700;&#x8981;&#x518D;&#x6B21;&#x8BFB;&#x53D6;&#xFF1A;</p>
-<pre><code class="lang-c"><span class="hljs-keyword">while</span>(rs)
-{
-    buflen = recv(activeevents[i].data.fd, buf, <span class="hljs-keyword">sizeof</span>(buf), <span class="hljs-number">0</span>);
-    <span class="hljs-keyword">if</span> (buflen &lt; <span class="hljs-number">0</span>)
-    {
-        <span class="hljs-comment">// &#x7531;&#x4E8E;&#x662F;&#x975E;&#x963B;&#x585E;&#x7684;&#x6A21;&#x5F0F;,&#x6240;&#x4EE5;&#x5F53;errno&#x4E3A;EAGAIN&#x65F6;,&#x8868;&#x793A;&#x5F53;&#x524D;&#x7F13;&#x51B2;&#x533A;&#x5DF2;&#x65E0;&#x6570;&#x636E;&#x53EF;&#x8BFB;</span>
-        <span class="hljs-comment">// &#x5728;&#x8FD9;&#x91CC;&#x5C31;&#x5F53;&#x4F5C;&#x662F;&#x8BE5;&#x6B21;&#x4E8B;&#x4EF6;&#x5DF2;&#x5904;&#x7406;&#x5904;.</span>
-        <span class="hljs-keyword">if</span> (errno == EAGAIN)
-            <span class="hljs-keyword">break</span>;
-        <span class="hljs-keyword">else</span>
-            <span class="hljs-keyword">return</span>;
-    }
-    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (buflen == <span class="hljs-number">0</span>)
-    {
-        <span class="hljs-comment">// &#x8FD9;&#x91CC;&#x8868;&#x793A;&#x5BF9;&#x7AEF;&#x7684;socket&#x5DF2;&#x6B63;&#x5E38;&#x5173;&#x95ED;.</span>
-    }
-    <span class="hljs-keyword">if</span> (buflen == <span class="hljs-keyword">sizeof</span>(buf))
-        rs = <span class="hljs-number">1</span>;   <span class="hljs-comment">// &#x9700;&#x8981;&#x518D;&#x6B21;&#x8BFB;&#x53D6;</span>
-    <span class="hljs-keyword">else</span>
-        rs = <span class="hljs-number">0</span>;
-}
+<pre class="language-"><code class="lang-c"><span class="token keyword">while</span><span class="token punctuation">(</span>rs<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    buflen <span class="token operator">=</span> <span class="token function">recv</span><span class="token punctuation">(</span>activeevents<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>data<span class="token punctuation">.</span>fd<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>buflen <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// &#x7531;&#x4E8E;&#x662F;&#x975E;&#x963B;&#x585E;&#x7684;&#x6A21;&#x5F0F;,&#x6240;&#x4EE5;&#x5F53;errno&#x4E3A;EAGAIN&#x65F6;,&#x8868;&#x793A;&#x5F53;&#x524D;&#x7F13;&#x51B2;&#x533A;&#x5DF2;&#x65E0;&#x6570;&#x636E;&#x53EF;&#x8BFB;</span>
+        <span class="token comment" spellcheck="true">// &#x5728;&#x8FD9;&#x91CC;&#x5C31;&#x5F53;&#x4F5C;&#x662F;&#x8BE5;&#x6B21;&#x4E8B;&#x4EF6;&#x5DF2;&#x5904;&#x7406;&#x5904;.</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>errno <span class="token operator">==</span> EAGAIN<span class="token punctuation">)</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>buflen <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// &#x8FD9;&#x91CC;&#x8868;&#x793A;&#x5BF9;&#x7AEF;&#x7684;socket&#x5DF2;&#x6B63;&#x5E38;&#x5173;&#x95ED;.</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>buflen <span class="token operator">==</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>buf<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        rs <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// &#x9700;&#x8981;&#x518D;&#x6B21;&#x8BFB;&#x53D6;</span>
+    <span class="token keyword">else</span>
+        rs <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <p>&#x8FD8;&#x6709;&#xFF0C;&#x5047;&#x5982;&#x53D1;&#x9001;&#x7AEF;&#x6D41;&#x91CF;&#x5927;&#x4E8E;&#x63A5;&#x6536;&#x7AEF;&#x7684;&#x6D41;&#x91CF;(&#x610F;&#x601D;&#x662F;epoll&#x6240;&#x5728;&#x7684;&#x7A0B;&#x5E8F;&#x8BFB;&#x6BD4;&#x8F6C;&#x53D1;&#x7684;socket&#x8981;&#x5FEB;),&#x7531;&#x4E8E;&#x662F;&#x975E;&#x963B;&#x585E;&#x7684;socket,&#x90A3;&#x4E48;send()&#x51FD;&#x6570;&#x867D;&#x7136;&#x8FD4;&#x56DE;,&#x4F46;&#x5B9E;&#x9645;&#x7F13;&#x51B2;&#x533A;&#x7684;&#x6570;&#x636E;&#x5E76;&#x672A;&#x771F;&#x6B63;&#x53D1;&#x7ED9;&#x63A5;&#x6536;&#x7AEF;,&#x8FD9;&#x6837;&#x4E0D;&#x65AD;&#x7684;&#x8BFB;&#x548C;&#x53D1;&#xFF0C;&#x5F53;&#x7F13;&#x51B2;&#x533A;&#x6EE1;&#x540E;&#x4F1A;&#x4EA7;&#x751F;EAGAIN&#x9519;&#x8BEF;(&#x53C2;&#x8003;man send),&#x540C;&#x65F6;,&#x4E0D;&#x7406;&#x4F1A;&#x8FD9;&#x6B21;&#x8BF7;&#x6C42;&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;.&#x6240;&#x4EE5;,&#x9700;&#x8981;&#x5C01;&#x88C5;socket_send()&#x7684;&#x51FD;&#x6570;&#x7528;&#x6765;&#x5904;&#x7406;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;,&#x8BE5;&#x51FD;&#x6570;&#x4F1A;&#x5C3D;&#x91CF;&#x5C06;&#x6570;&#x636E;&#x5199;&#x5B8C;&#x518D;&#x8FD4;&#x56DE;&#xFF0C;&#x8FD4;&#x56DE;-1&#x8868;&#x793A;&#x51FA;&#x9519;&#x3002;&#x5728;socket_send()&#x5185;&#x90E8;,&#x5F53;&#x5199;&#x7F13;&#x51B2;&#x5DF2;&#x6EE1;(send()&#x8FD4;&#x56DE;-1,&#x4E14;errno&#x4E3A;EAGAIN),&#x90A3;&#x4E48;&#x4F1A;&#x7B49;&#x5F85;&#x540E;&#x518D;&#x91CD;&#x8BD5;.&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5E76;&#x4E0D;&#x5F88;&#x5B8C;&#x7F8E;,&#x5728;&#x7406;&#x8BBA;&#x4E0A;&#x53EF;&#x80FD;&#x4F1A;&#x957F;&#x65F6;&#x95F4;&#x7684;&#x963B;&#x585E;&#x5728;socket_send()&#x5185;&#x90E8;,&#x4F46;&#x6682;&#x6CA1;&#x6709;&#x66F4;&#x597D;&#x7684;&#x529E;&#x6CD5;.</p>
-<pre><code class="lang-c"><span class="hljs-keyword">ssize_t</span> socket_send(<span class="hljs-keyword">int</span> sockfd, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* buffer, <span class="hljs-keyword">size_t</span> buflen)
-{
-    <span class="hljs-keyword">ssize_t</span> tmp;
-    <span class="hljs-keyword">size_t</span> total = buflen;
-    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *p = buffer;
+<pre class="language-"><code class="lang-c">ssize_t <span class="token function">socket_send</span><span class="token punctuation">(</span><span class="token keyword">int</span> sockfd<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> buffer<span class="token punctuation">,</span> size_t buflen<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    ssize_t tmp<span class="token punctuation">;</span>
+    size_t total <span class="token operator">=</span> buflen<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token keyword">char</span> <span class="token operator">*</span>p <span class="token operator">=</span> buffer<span class="token punctuation">;</span>
 
-    <span class="hljs-keyword">while</span> (<span class="hljs-number">1</span>)
-    {
-        tmp = send(sockfd, p, total, <span class="hljs-number">0</span>);
-        <span class="hljs-keyword">if</span>(tmp &lt; <span class="hljs-number">0</span>)
-        {
-            <span class="hljs-comment">// &#x5F53;send&#x6536;&#x5230;&#x4FE1;&#x53F7;&#x65F6;,&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x5199;,&#x4F46;&#x8FD9;&#x91CC;&#x8FD4;&#x56DE;-1.</span>
-            <span class="hljs-keyword">if</span> (errno == EINTR)
-                <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
+    <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        tmp <span class="token operator">=</span> <span class="token function">send</span><span class="token punctuation">(</span>sockfd<span class="token punctuation">,</span> p<span class="token punctuation">,</span> total<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>tmp <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// &#x5F53;send&#x6536;&#x5230;&#x4FE1;&#x53F7;&#x65F6;,&#x53EF;&#x4EE5;&#x7EE7;&#x7EED;&#x5199;,&#x4F46;&#x8FD9;&#x91CC;&#x8FD4;&#x56DE;-1.</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>errno <span class="token operator">==</span> EINTR<span class="token punctuation">)</span>
+                <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
 
-            <span class="hljs-comment">// &#x5F53;socket&#x662F;&#x975E;&#x963B;&#x585E;&#x65F6;,&#x5982;&#x8FD4;&#x56DE;&#x6B64;&#x9519;&#x8BEF;,&#x8868;&#x793A;&#x5199;&#x7F13;&#x51B2;&#x961F;&#x5217;&#x5DF2;&#x6EE1;,</span>
-            <span class="hljs-comment">// &#x5728;&#x8FD9;&#x91CC;&#x505A;&#x5EF6;&#x65F6;&#x540E;&#x518D;&#x91CD;&#x8BD5;.</span>
-            <span class="hljs-keyword">if</span> (errno == EAGAIN)
-            {
-                usleep(<span class="hljs-number">1000</span>);
-                <span class="hljs-keyword">continue</span>;
-            }
+            <span class="token comment" spellcheck="true">// &#x5F53;socket&#x662F;&#x975E;&#x963B;&#x585E;&#x65F6;,&#x5982;&#x8FD4;&#x56DE;&#x6B64;&#x9519;&#x8BEF;,&#x8868;&#x793A;&#x5199;&#x7F13;&#x51B2;&#x961F;&#x5217;&#x5DF2;&#x6EE1;,</span>
+            <span class="token comment" spellcheck="true">// &#x5728;&#x8FD9;&#x91CC;&#x505A;&#x5EF6;&#x65F6;&#x540E;&#x518D;&#x91CD;&#x8BD5;.</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>errno <span class="token operator">==</span> EAGAIN<span class="token punctuation">)</span>
+            <span class="token punctuation">{</span>
+                <span class="token function">usleep</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">continue</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
 
-            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
-        }
+            <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
 
-        <span class="hljs-keyword">if</span> ((<span class="hljs-keyword">size_t</span>)tmp == total)
-            <span class="hljs-keyword">return</span> buflen;
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>size_t<span class="token punctuation">)</span>tmp <span class="token operator">==</span> total<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> buflen<span class="token punctuation">;</span>
 
-        total -= tmp;
-        p += tmp;
-    }
+        total <span class="token operator">-</span><span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+        p <span class="token operator">+</span><span class="token operator">=</span> tmp<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-    <span class="hljs-keyword">return</span> tmp;
-}
+    <span class="token keyword">return</span> tmp<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 
                                 
@@ -826,7 +830,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"epool初步","level":"3.1.2","depth":2,"next":{"title":"乱码","level":"3.1.3","depth":2,"path":"system/linux/fight-with-garbled-characters.md","ref":"system/linux/fight-with-garbled-characters.md","articles":[]},"previous":{"title":"coredump","level":"3.1.1","depth":2,"path":"system/linux/coredump.md","ref":"system/linux/coredump.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"system/linux/epoll-intro.md","mtime":"2017-08-15T01:51:50.318Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T19:15:38.099Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"epool初步","level":"3.1.2","depth":2,"next":{"title":"乱码","level":"3.1.3","depth":2,"path":"system/linux/fight-with-garbled-characters.md","ref":"system/linux/fight-with-garbled-characters.md","articles":[]},"previous":{"title":"coredump","level":"3.1.1","depth":2,"path":"system/linux/coredump.md","ref":"system/linux/coredump.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","-sharing","anchor-navigation-ex"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"system/linux/epoll-intro.md","mtime":"2017-08-15T01:51:50.318Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T20:01:48.236Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
@@ -849,10 +853,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         

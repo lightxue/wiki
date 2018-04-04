@@ -17,7 +17,11 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -662,98 +666,98 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="gdb">gdb</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#gdb"><b></b>gdb</a></li></ul></div><a href="#gdb" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="gdb"><a name="gdb" class="anchor-navigation-ex-anchor" href="#gdb"><i class="fa fa-link" aria-hidden="true"></i></a>gdb</h1>
 <ol>
 <li><p>core dump&#x5927;&#x5C0F;&#x4E0D;&#x9650;&#x5236;</p>
-<pre><code class="lang-sh"><span class="hljs-built_in">ulimit</span> -c unlimited
+<pre class="language-"><code class="lang-sh"><span class="token function">ulimit</span> -c unlimited
 </code></pre>
 </li>
 <li><p>&#x663E;&#x793A;&#x6808;&#x5E27;</p>
-<pre><code class="lang-sh">bt full <span class="hljs-comment">#&#x663E;&#x793A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;</span>
-bt 3 <span class="hljs-comment"># &#x5F00;&#x5934;3&#x4E2A;&#x6808;&#x5E27;</span>
-bt -3 <span class="hljs-comment"># &#x6700;&#x540E;3&#x4E2A;&#x6808;&#x5E27;</span>
+<pre class="language-"><code class="lang-sh">bt full <span class="token comment" spellcheck="true">#&#x663E;&#x793A;&#x5C40;&#x90E8;&#x53D8;&#x91CF;</span>
+bt 3 <span class="token comment" spellcheck="true"># &#x5F00;&#x5934;3&#x4E2A;&#x6808;&#x5E27;</span>
+bt -3 <span class="token comment" spellcheck="true"># &#x6700;&#x540E;3&#x4E2A;&#x6808;&#x5E27;</span>
 </code></pre>
 </li>
 <li><p>&#x663E;&#x793A;&#x5BC4;&#x5B58;&#x5668;eax&#x5185;&#x5BB9;</p>
-<pre><code class="lang-sh">p <span class="hljs-variable">$eax</span>
+<pre class="language-"><code class="lang-sh">p <span class="token variable">$eax</span>
 </code></pre>
 </li>
 <li><p>&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;</p>
-<pre><code class="lang-sh">p/x <span class="hljs-variable">$eax</span> <span class="hljs-comment"># &#x5341;&#x516D;&#x8FDB;&#x5236;</span>
-p/d <span class="hljs-variable">$eax</span> <span class="hljs-comment"># &#x5341;&#x8FDB;&#x5236;</span>
-p/u <span class="hljs-variable">$eax</span> <span class="hljs-comment"># &#x65E0;&#x7B26;&#x53F7;</span>
-p/o <span class="hljs-variable">$eax</span> <span class="hljs-comment"># &#x516B;&#x8FDB;&#x5236;</span>
-p/t <span class="hljs-variable">$eax</span> <span class="hljs-comment"># &#x4E8C;&#x8FDB;&#x5236;(two)</span>
-p/a <span class="hljs-variable">$eax</span> <span class="hljs-comment"># &#x5730;&#x5740;</span>
-p/c <span class="hljs-variable">$eax</span> <span class="hljs-comment"># &#x5B57;&#x7B26;(ASCII)</span>
-p/f <span class="hljs-variable">$eax</span> <span class="hljs-comment"># &#x6D6E;&#x70B9;&#x5C0F;&#x6570;</span>
-p/s <span class="hljs-variable">$eax</span> <span class="hljs-comment"># &#x5B57;&#x7B26;&#x4E32;</span>
-p/i <span class="hljs-variable">$eax</span> <span class="hljs-comment"># &#x673A;&#x5668;&#x8BED;&#x8A00;(&#x4EC5;&#x5728;&#x663E;&#x793A;&#x5185;&#x5B58;&#x7684;x&#x547D;&#x4EE4;(eXamining)&#x4E2D;&#x53EF;&#x7528;)</span>
+<pre class="language-"><code class="lang-sh">p/x <span class="token variable">$eax</span> <span class="token comment" spellcheck="true"># &#x5341;&#x516D;&#x8FDB;&#x5236;</span>
+p/d <span class="token variable">$eax</span> <span class="token comment" spellcheck="true"># &#x5341;&#x8FDB;&#x5236;</span>
+p/u <span class="token variable">$eax</span> <span class="token comment" spellcheck="true"># &#x65E0;&#x7B26;&#x53F7;</span>
+p/o <span class="token variable">$eax</span> <span class="token comment" spellcheck="true"># &#x516B;&#x8FDB;&#x5236;</span>
+p/t <span class="token variable">$eax</span> <span class="token comment" spellcheck="true"># &#x4E8C;&#x8FDB;&#x5236;(two)</span>
+p/a <span class="token variable">$eax</span> <span class="token comment" spellcheck="true"># &#x5730;&#x5740;</span>
+p/c <span class="token variable">$eax</span> <span class="token comment" spellcheck="true"># &#x5B57;&#x7B26;(ASCII)</span>
+p/f <span class="token variable">$eax</span> <span class="token comment" spellcheck="true"># &#x6D6E;&#x70B9;&#x5C0F;&#x6570;</span>
+p/s <span class="token variable">$eax</span> <span class="token comment" spellcheck="true"># &#x5B57;&#x7B26;&#x4E32;</span>
+p/i <span class="token variable">$eax</span> <span class="token comment" spellcheck="true"># &#x673A;&#x5668;&#x8BED;&#x8A00;(&#x4EC5;&#x5728;&#x663E;&#x793A;&#x5185;&#x5B58;&#x7684;x&#x547D;&#x4EE4;(eXamining)&#x4E2D;&#x53EF;&#x7528;)</span>
 </code></pre>
 </li>
 <li><p>&#x663E;&#x793A;&#x6C47;&#x7F16;&#x6307;&#x4EE4;</p>
-<pre><code class="lang-sh">x/10i <span class="hljs-variable">$pc</span> <span class="hljs-comment"># pc&#x6240;&#x6307;&#x5730;&#x5740;&#x5F00;&#x59CB;&#x7684;10&#x6761;&#x6307;&#x4EE4;</span>
-disassemble <span class="hljs-comment"># &#x5F53;&#x524D;&#x6574;&#x4E2A;&#x51FD;&#x6570;</span>
-disassemble <span class="hljs-variable">$pc</span> <span class="hljs-comment"># &#x8BA1;&#x6570;&#x5668;&#x6240;&#x5728;&#x51FD;&#x6570;&#x7684;&#x6574;&#x4E2A;&#x51FD;&#x6570;</span>
-disassemble <span class="hljs-variable">$pc</span> <span class="hljs-variable">$pc</span>+50 <span class="hljs-comment"># &#x5F00;&#x59CB;&#x5230;&#x7ED3;&#x675F;&#x4E4B;&#x95F4;&#x7684;&#x90E8;&#x5206;</span>
+<pre class="language-"><code class="lang-sh">x/10i <span class="token variable">$pc</span> <span class="token comment" spellcheck="true"># pc&#x6240;&#x6307;&#x5730;&#x5740;&#x5F00;&#x59CB;&#x7684;10&#x6761;&#x6307;&#x4EE4;</span>
+disassemble <span class="token comment" spellcheck="true"># &#x5F53;&#x524D;&#x6574;&#x4E2A;&#x51FD;&#x6570;</span>
+disassemble <span class="token variable">$pc</span> <span class="token comment" spellcheck="true"># &#x8BA1;&#x6570;&#x5668;&#x6240;&#x5728;&#x51FD;&#x6570;&#x7684;&#x6574;&#x4E2A;&#x51FD;&#x6570;</span>
+disassemble <span class="token variable">$pc</span> <span class="token variable">$pc</span>+50 <span class="token comment" spellcheck="true"># &#x5F00;&#x59CB;&#x5230;&#x7ED3;&#x675F;&#x4E4B;&#x95F4;&#x7684;&#x90E8;&#x5206;</span>
 </code></pre>
 </li>
 <li><p>ni(nexti)&#x548C;si(stepi)&#x9010;&#x6761;&#x62DB;&#x884C;&#x6C47;&#x7F16;&#x6307;&#x4EE4;&#xFF0C;ni&#x4E0D;&#x8FDB;&#x5165;&#x51FD;&#x6570;&#x4F53;</p>
 </li>
 <li><p>c(continue)&#x53EF;&#x4EE5;&#x52A0;&#x6B21;&#x6570;&#x4F5C;&#x53C2;&#x6570;</p>
-<pre><code class="lang-sh">c 5 <span class="hljs-comment"># &#x9047;&#x5230;&#x65AD;&#x70B9;5&#x6B21;&#x4E0D;&#x505C;&#x6B62;</span>
+<pre class="language-"><code class="lang-sh">c 5 <span class="token comment" spellcheck="true"># &#x9047;&#x5230;&#x65AD;&#x70B9;5&#x6B21;&#x4E0D;&#x505C;&#x6B62;</span>
 </code></pre>
 </li>
 <li><p>watch &lt;&#x8868;&#x8FBE;&#x5F0F;&gt;&#xFF0C;&#x8868;&#x8FBE;&#x5F0F;&#x6307;&#x5E38;&#x91CF;&#x6216;&#x53D8;&#x91CF;&#x7B49;</p>
-<pre><code class="lang-sh">watch var   <span class="hljs-comment"># stop if change(write)</span>
-awatch var  <span class="hljs-comment"># stop if access(read or write)</span>
-rwatch var  <span class="hljs-comment"># stop if read</span>
+<pre class="language-"><code class="lang-sh"><span class="token function">watch</span> var   <span class="token comment" spellcheck="true"># stop if change(write)</span>
+awatch var  <span class="token comment" spellcheck="true"># stop if access(read or write)</span>
+rwatch var  <span class="token comment" spellcheck="true"># stop if read</span>
 </code></pre>
 </li>
 <li><p>&#x5220;&#x9664;&#x65AD;&#x70B9;&#x548C;&#x76D1;&#x89C6;</p>
-<pre><code class="lang-sh">i b <span class="hljs-comment"># info break</span>
-d 2 <span class="hljs-comment"># delete 2</span>
+<pre class="language-"><code class="lang-sh">i b <span class="token comment" spellcheck="true"># info break</span>
+d 2 <span class="token comment" spellcheck="true"># delete 2</span>
 </code></pre>
 </li>
 <li><p>&#x6539;&#x53D8;&#x53D8;&#x91CF;&#x7684;&#x503C;&#xFF1A;set variable &lt;&#x53D8;&#x91CF;&gt;=&lt;&#x8868;&#x8FBE;&#x5F0F;&gt;</p>
-<pre><code class="lang-sh"><span class="hljs-built_in">set</span> variable var = 10
-<span class="hljs-built_in">set</span> variable var = var2 + 10
-<span class="hljs-built_in">set</span> variable var = func(100) + 10
+<pre class="language-"><code class="lang-sh"><span class="token keyword">set</span> variable var <span class="token operator">=</span> 10
+<span class="token keyword">set</span> variable var <span class="token operator">=</span> var2 + 10
+<span class="token keyword">set</span> variable var <span class="token operator">=</span> func<span class="token punctuation">(</span>100<span class="token punctuation">)</span> + 10
 </code></pre>
 </li>
 <li><p>&#x751F;&#x6210;core dump&#xFF0C;&#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x8C03;&#x8BD5;&#x955C;&#x50CF;</p>
-<pre><code class="lang-sh">generate-core-file filename
+<pre class="language-"><code class="lang-sh">generate-core-file filename
 </code></pre>
 </li>
 <li><p>&#x67E5;&#x770B;&#x8FDB;&#x7A0B;&#x4FE1;&#x606F;</p>
-<pre><code class="lang-sh">info proc
+<pre class="language-"><code class="lang-sh">info proc
 </code></pre>
 </li>
 <li><p>attach&#x5230;&#x8FDB;&#x7A0B;</p>
-<pre><code class="lang-sh">attach 17606 <span class="hljs-comment"># attach&#x5230;pid&#x4E3A;17606&#x7684;&#x8FDB;&#x7A0B;&#x4E0A;</span>
-detach <span class="hljs-comment"># &#x7528;&#x5B8C;&#x5206;&#x79BB;</span>
+<pre class="language-"><code class="lang-sh">attach 17606 <span class="token comment" spellcheck="true"># attach&#x5230;pid&#x4E3A;17606&#x7684;&#x8FDB;&#x7A0B;&#x4E0A;</span>
+detach <span class="token comment" spellcheck="true"># &#x7528;&#x5B8C;&#x5206;&#x79BB;</span>
 </code></pre>
 </li>
 <li><p>&#x6761;&#x4EF6;&#x65AD;&#x70B9;</p>
-<pre><code class="lang-sh">b main <span class="hljs-keyword">if</span> var == func(argc)
-condition 3 <span class="hljs-keyword">if</span> var == func(args) <span class="hljs-comment"># &#x7ED9;&#x65AD;&#x70B9;3&#x52A0;&#x4E0A;&#x89E6;&#x53D1;&#x6761;&#x4EF6;</span>
+<pre class="language-"><code class="lang-sh">b main <span class="token keyword">if</span> var <span class="token operator">==</span> func<span class="token punctuation">(</span>argc<span class="token punctuation">)</span>
+condition 3 <span class="token keyword">if</span> var <span class="token operator">==</span> func<span class="token punctuation">(</span>args<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># &#x7ED9;&#x65AD;&#x70B9;3&#x52A0;&#x4E0A;&#x89E6;&#x53D1;&#x6761;&#x4EF6;</span>
 </code></pre>
 </li>
 <li><p>&#x5FFD;&#x7565;&#x65AD;&#x70B9;</p>
-<pre><code class="lang-sh">ignore 3 4 <span class="hljs-comment"># &#x5FFD;&#x7565;&#x65AD;&#x70B9;3 4&#x6B21;</span>
+<pre class="language-"><code class="lang-sh">ignore 3 4 <span class="token comment" spellcheck="true"># &#x5FFD;&#x7565;&#x65AD;&#x70B9;3 4&#x6B21;</span>
 </code></pre>
 </li>
 <li><p>&#x8DF3;&#x51FA;&#x5F53;&#x524D;&#x4EE3;&#x7801;&#x5757;</p>
-<pre><code class="lang-sh">until
-until func <span class="hljs-comment"># &#x76F4;&#x5230;&#x6267;&#x884C;&#x5B8C;func</span>
+<pre class="language-"><code class="lang-sh"><span class="token keyword">until</span>
+<span class="token keyword">until</span> func <span class="token comment" spellcheck="true"># &#x76F4;&#x5230;&#x6267;&#x884C;&#x5B8C;func</span>
 </code></pre>
 </li>
 <li><p>&#x6267;&#x884C;&#x5B8C;&#x5F53;&#x524D;&#x51FD;&#x6570;&#x540E;&#x6682;&#x505C;</p>
-<pre><code class="lang-sh">finish
+<pre class="language-"><code class="lang-sh">finish
 </code></pre>
 </li>
 <li><p>&#x53CD;&#x590D;&#x6267;&#x884C;</p>
-<pre><code class="lang-sh"><span class="hljs-built_in">continue</span> &#x6B21;&#x6570;
+<pre class="language-"><code class="lang-sh"><span class="token keyword">continue</span> &#x6B21;&#x6570;
 step &#x6B21;&#x6570;
 stepi &#x6B21;&#x6570;
 next &#x6B21;&#x6570;
@@ -761,37 +765,37 @@ nexti &#x6B21;&#x6570;
 </code></pre>
 </li>
 <li><p>clear&#x8303;&#x56F4;&#x5220;&#x9664;&#x65AD;&#x70B9;</p>
-<pre><code class="lang-sh">clear func
-clear lineno
-clear file:lineno
-clear file:func
-clear breakno
+<pre class="language-"><code class="lang-sh"><span class="token function">clear</span> func
+<span class="token function">clear</span> lineno
+<span class="token function">clear</span> file:lineno
+<span class="token function">clear</span> file:func
+<span class="token function">clear</span> breakno
 </code></pre>
 </li>
 <li><p>enable, disable&#x542F;&#x7528;&#x548C;&#x7981;&#x7528;&#x65AD;&#x70B9;</p>
 </li>
 <li><p>&#x65AD;&#x70B9;&#x547D;&#x4EE4;</p>
-<pre><code class="lang-sh"><span class="hljs-built_in">command</span> 2 <span class="hljs-comment"># 2&#x662F;&#x65AD;&#x70B9;&#x7684;&#x7F16;&#x53F7;</span>
-&gt;p var <span class="hljs-comment"># &#x5404;&#x79CD;&#x547D;&#x4EE4;</span>
-&gt;end
+<pre class="language-"><code class="lang-sh"><span class="token function">command</span> 2 <span class="token comment" spellcheck="true"># 2&#x662F;&#x65AD;&#x70B9;&#x7684;&#x7F16;&#x53F7;</span>
+<span class="token operator">&gt;</span>p var <span class="token comment" spellcheck="true"># &#x5404;&#x79CD;&#x547D;&#x4EE4;</span>
+<span class="token operator">&gt;</span>end
 </code></pre>
 </li>
 <li><p>&#x67E5;&#x770B;&#x5E27;&#x4FE1;&#x606F;</p>
-<pre><code class="lang-sh">frame    <span class="hljs-comment"># &#x67E5;&#x770B;&#x5F53;&#x524D;&#x5E27;</span>
-frame 3  <span class="hljs-comment"># &#x67E5;&#x770B;&#x7F16;&#x53F7;&#x4E3A;3&#x7684;&#x5E27;</span>
-i frame 3 <span class="hljs-comment"># &#x67E5;&#x770B;&#x7F16;&#x53F7;&#x4E3A;3&#x7684;&#x5E27;</span>
+<pre class="language-"><code class="lang-sh">frame    <span class="token comment" spellcheck="true"># &#x67E5;&#x770B;&#x5F53;&#x524D;&#x5E27;</span>
+frame 3  <span class="token comment" spellcheck="true"># &#x67E5;&#x770B;&#x7F16;&#x53F7;&#x4E3A;3&#x7684;&#x5E27;</span>
+i frame 3 <span class="token comment" spellcheck="true"># &#x67E5;&#x770B;&#x7F16;&#x53F7;&#x4E3A;3&#x7684;&#x5E27;</span>
 </code></pre>
 </li>
 <li><p>&#x8FDB;&#x7A0B;&#x5185;&#x5B58;&#x6620;&#x5C04;</p>
-<pre><code class="lang-sh">i proc mapping
+<pre class="language-"><code class="lang-sh">i proc mapping
 </code></pre>
 </li>
 <li><p>&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;</p>
-<pre><code class="lang-sh"><span class="hljs-built_in">printf</span> <span class="hljs-string">&quot;%d\n&quot;</span>, var
+<pre class="language-"><code class="lang-sh"><span class="token function">printf</span> <span class="token string">&quot;%d\n&quot;</span>, var
 </code></pre>
 </li>
 <li><p>&#x663E;&#x793A;&#x53D8;&#x91CF;</p>
-<pre><code class="lang-sh">info variables
+<pre class="language-"><code class="lang-sh">info variables
 </code></pre>
 </li>
 </ol>
@@ -838,7 +842,7 @@ i frame 3 <span class="hljs-comment"># &#x67E5;&#x770B;&#x7F16;&#x53F7;&#x4E3A;3
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"GDB","level":"4.4","depth":1,"next":{"title":"Git","level":"4.5","depth":1,"path":"tools/git.md","ref":"tools/git.md","articles":[]},"previous":{"title":"AWK","level":"4.3","depth":1,"path":"tools/awk.md","ref":"tools/awk.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/gdb.md","mtime":"2017-08-15T01:51:50.322Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T19:15:38.099Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"GDB","level":"4.4","depth":1,"next":{"title":"Git","level":"4.5","depth":1,"path":"tools/git.md","ref":"tools/git.md","articles":[]},"previous":{"title":"AWK","level":"4.3","depth":1,"path":"tools/awk.md","ref":"tools/awk.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","-sharing","anchor-navigation-ex"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/gdb.md","mtime":"2017-08-15T01:51:50.322Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T20:01:48.236Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -861,10 +865,6 @@ i frame 3 <span class="hljs-comment"># &#x67E5;&#x770B;&#x7F16;&#x53F7;&#x4E3A;3
     
         
         <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         

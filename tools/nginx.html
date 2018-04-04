@@ -17,7 +17,11 @@
     
             
                 
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
                 
             
                 
@@ -662,25 +666,25 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="nginx">Nginx</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#nginx"><b></b>Nginx</a></li></ul></div><a href="#nginx" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="nginx"><a name="nginx" class="anchor-navigation-ex-anchor" href="#nginx"><i class="fa fa-link" aria-hidden="true"></i></a>Nginx</h1>
 <ul>
 <li>&#x901A;&#x8FC7;<code>X-Forwarded-For</code>&#x83B7;&#x53D6;&#x771F;&#x5B9E;IP</li>
 </ul>
-<pre><code class="lang-nginx">## &#x8FD9;&#x91CC;&#x53D6;&#x5F97;&#x539F;&#x59CB;&#x7528;&#x6237;&#x7684;IP&#x5730;&#x5740;
-map $http_x_forwarded_for  $clientRealIp {
-    &quot;&quot;  $remote_addr;
-    ~^(?P&lt;firstAddr&gt;[0-9\.]+),?.*$  $firstAddr;
-}
+<pre class="language-"><code class="lang-nginx"><span class="token comment" spellcheck="true">## &#x8FD9;&#x91CC;&#x53D6;&#x5F97;&#x539F;&#x59CB;&#x7528;&#x6237;&#x7684;IP&#x5730;&#x5740;</span>
+<span class="token keyword">map</span> <span class="token variable">$http_x_forwarded_for</span>  <span class="token variable">$clientRealIp</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;&quot;</span>  <span class="token variable">$remote_addr</span><span class="token punctuation">;</span>
+    <span class="token operator">~</span><span class="token operator">^</span><span class="token punctuation">(</span><span class="token operator">?</span>P<span class="token operator">&lt;</span>firstAddr<span class="token operator">&gt;</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">-</span><span class="token number">9</span>\<span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token operator">+</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token operator">?</span><span class="token punctuation">.</span><span class="token operator">*</span>$  <span class="token variable">$firstAddr</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 </code></pre>
 <ul>
 <li>&#x8BE6;&#x7EC6;&#x65E5;&#x5FD7;</li>
 </ul>
-<pre><code class="lang-nginx"><span class="hljs-attribute">log_format</span> detailed <span class="hljs-string">&apos;<span class="hljs-variable">$time_iso8601</span> | <span class="hljs-variable">$remote_addr</span> | <span class="hljs-variable">$request_method</span> | &apos;</span>
-                    <span class="hljs-string">&apos;<span class="hljs-variable">$scheme</span> | <span class="hljs-variable">$host</span> | <span class="hljs-variable">$request_uri</span> | <span class="hljs-variable">$server_protocol</span> | &apos;</span>
-                    <span class="hljs-string">&apos;<span class="hljs-variable">$status</span> | <span class="hljs-variable">$body_bytes_sent</span> | <span class="hljs-variable">$http_referer</span> | &apos;</span>
-                    <span class="hljs-string">&apos;<span class="hljs-variable">$http_user_agent</span>&apos;</span>;
+<pre class="language-"><code class="lang-nginx"><span class="token keyword">log_format</span> detailed <span class="token string">&apos;$time_iso8601 | $remote_addr | $request_method | &apos;</span>
+                    <span class="token string">&apos;$scheme | $host | $request_uri | $server_protocol | &apos;</span>
+                    <span class="token string">&apos;$status | $body_bytes_sent | $http_referer | &apos;</span>
+                    <span class="token string">&apos;$http_user_agent&apos;</span><span class="token punctuation">;</span>
 
-<span class="hljs-attribute">access_log</span> logs/access.log detailed;
+<span class="token keyword">access_log</span> logs<span class="token operator">/</span>access<span class="token punctuation">.</span>log detailed<span class="token punctuation">;</span>
 </code></pre>
 
                                 
@@ -725,7 +729,7 @@ map $http_x_forwarded_for  $clientRealIp {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Nginx","level":"4.7","depth":1,"next":{"title":"sed","level":"4.8","depth":1,"path":"tools/sed.md","ref":"tools/sed.md","articles":[]},"previous":{"title":"MySQL","level":"4.6","depth":1,"path":"tools/mysql.md","ref":"tools/mysql.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/nginx.md","mtime":"2017-08-15T01:51:50.322Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T19:15:38.099Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Nginx","level":"4.7","depth":1,"next":{"title":"sed","level":"4.8","depth":1,"path":"tools/sed.md","ref":"tools/sed.md","articles":[]},"previous":{"title":"MySQL","level":"4.6","depth":1,"path":"tools/mysql.md","ref":"tools/mysql.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","-sharing","anchor-navigation-ex"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/nginx.md","mtime":"2017-08-15T01:51:50.322Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T20:01:48.236Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -748,10 +752,6 @@ map $http_x_forwarded_for  $clientRealIp {
     
         
         <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
         
     
         
