@@ -22,6 +22,7 @@ help:
 init:
 	sudo npm -g install gitbook-cli
 	sudo apt-get install -y ghp-import
+	gitbook install
 
 html:
 	gitbook build
@@ -41,6 +42,7 @@ publish:
 	gitbook build
 
 github: publish
+	echo 'wiki.lightxue.com' > $(OUTPUTDIR)/CNAME
 	ghp-import -m "Generate Gitbook site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
 	git push origin $(GITHUB_PAGES_BRANCH)
 
