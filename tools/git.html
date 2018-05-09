@@ -7,7 +7,7 @@
         <title>Git · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.2">
+        <meta name="generator" content="GitBook 3.2.3">
         
         
         
@@ -667,26 +667,31 @@
                                 <section class="normal markdown-section">
                                 
                                 <div id="anchor-navigation-ex-navbar"><i class="fa fa-anchor"></i><ul><li><span class="title-icon "></span><a href="#git"><b></b>git</a></li></ul></div><a href="#git" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="git"><a name="git" class="anchor-navigation-ex-anchor" href="#git"><i class="fa fa-link" aria-hidden="true"></i></a>git</h1>
-<ol>
+<ul>
 <li>git&#x6587;&#x4EF6;&#x72B6;&#x6001;</li>
-</ol>
+</ul>
 <p><img src="../attach/git/git-status.png" alt=""></p>
-<ol>
-<li><p>&#x9879;&#x76EE;&#x521D;&#x59CB;&#x5316;</p>
+<ul>
+<li>&#x9879;&#x76EE;&#x521D;&#x59CB;&#x5316;</li>
+</ul>
 <pre class="language-"><code>git init
-</code></pre></li>
-<li><p>&#x589E;&#x52A0;&#x6587;&#x4EF6;</p>
+</code></pre><ul>
+<li>&#x589E;&#x52A0;&#x6587;&#x4EF6;</li>
+</ul>
 <pre class="language-"><code>git add README.md
-</code></pre></li>
-<li><p>&#x63D0;&#x4EA4;</p>
+</code></pre><ul>
+<li>&#x63D0;&#x4EA4;</li>
+</ul>
 <pre class="language-"><code>git commit -m &apos;comment&apos;
-</code></pre></li>
-<li><p>&#x514B;&#x9686;</p>
+</code></pre><ul>
+<li>&#x514B;&#x9686;</li>
+</ul>
 <pre class="language-"><code>git clone https://github.com/lightxue/vim_config.git vim_config
-</code></pre></li>
-<li><p>&#x67E5;&#x770B;&#x72B6;&#x6001;</p>
+</code></pre><ul>
+<li>&#x67E5;&#x770B;&#x72B6;&#x6001;</li>
+</ul>
 <pre class="language-"><code>git status
-</code></pre></li>
+</code></pre><ul>
 <li><p>.gitignore&#x5217;&#x51FA;&#x5FFD;&#x7565;&#x7684;&#x6587;&#x4EF6;&#x6A21;&#x5F0F;</p>
 <ul>
 <li>&#x7A7A;&#x884C;&#x548C;#&#x6253;&#x5934;&#x7684;&#x884C;&#x88AB;git&#x5FFD;&#x7565;</li>
@@ -695,66 +700,85 @@
 </ul>
 </li>
 <li><p>&#x67E5;&#x770B;unstage&#x7684;&#x6587;&#x4EF6;&#x7684;&#x4FEE;&#x6539;&#x90E8;&#x5206;</p>
+</li>
+</ul>
 <pre class="language-"><code>git diff
-</code></pre></li>
-<li><p>&#x67E5;&#x770B;&#x5DF2;&#x63D0;&#x4EA4;&#x7684;&#x6587;&#x4EF6;&#x4E0E;&#x4E0A;&#x6B21;&#x63D0;&#x4EA4;&#x65F6;&#x7684;&#x5FEB;&#x7167;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;</p>
+</code></pre><ul>
+<li>&#x67E5;&#x770B;&#x5DF2;&#x63D0;&#x4EA4;&#x7684;&#x6587;&#x4EF6;&#x4E0E;&#x4E0A;&#x6B21;&#x63D0;&#x4EA4;&#x65F6;&#x7684;&#x5FEB;&#x7167;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;</li>
+</ul>
 <pre class="language-"><code>git diff --cached
 git diff --staged
-</code></pre></li>
-<li><p>&#x79FB;&#x9664;&#xFF0C;&#x4ECE;&#x6682;&#x5B58;&#x533A;&#x79FB;&#x9664;</p>
+</code></pre><ul>
+<li>&#x79FB;&#x9664;&#xFF0C;&#x4ECE;&#x6682;&#x5B58;&#x533A;&#x79FB;&#x9664;</li>
+</ul>
 <pre class="language-"><code>git rm file
-</code></pre></li>
-<li><p>&#x79FB;&#x9664;&#x8DDF;&#x8E2A;(track)&#x4F46;&#x4E0D;&#x5220;&#x9664;&#x6587;&#x4EF6;</p>
+</code></pre><ul>
+<li>&#x79FB;&#x9664;&#x8DDF;&#x8E2A;(track)&#x4F46;&#x4E0D;&#x5220;&#x9664;&#x6587;&#x4EF6;</li>
+</ul>
 <pre class="language-"><code>git rm --cached file
-</code></pre></li>
-<li><p>&#x91CD;&#x547D;&#x540D;</p>
+</code></pre><ul>
+<li>&#x91CD;&#x547D;&#x540D;</li>
+</ul>
 <pre class="language-"><code>git mv filea fileb
-</code></pre></li>
-<li><p>&#x67E5;&#x770B;log
-```
-git log</p>
-</li>
-</ol>
-<p>// &#x67E5;&#x770B;&#x63D0;&#x4EA4;&#x5185;&#x5BB9;&#x7684;diff&#xFF0C;&#x8FD9;&#x4E2A;&#x4E0D;&#x9519;
-git -p</p>
-<p>// &#x6700;&#x8FD1;&#x4E24;&#x6B21;&#x66F4;&#x65B0;
-git -2</p>
-<p>// &#x589E;&#x6539;&#x884C;&#x6570;&#x7EDF;&#x8BA1;
-git log --stat</p>
-<p>// &#x6307;&#x5B9A;&#x5C55;&#x793A;&#x6837;&#x5F0F;&#xFF0C;&#x6709;online, short, full, fuller
-git log --pretty=online</p>
-<p>// &#x9650;&#x5236;&#x8F93;&#x51FA;&#x957F;&#x5EA6;&#xFF0C;&#x6709;since, until, author, committer
-git log --since=2.weeks</p>
-<p>// &#x770B;&#x5206;&#x652F;&#x5206;&#x5316;&#x884D;&#x5408;&#x60C5;&#x51B5;
-git log --graph</p>
-<pre class="language-"><code>
-0. &#x64A4;&#x6D88;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;
-</code></pre><p>git commit --amend</p>
-<pre class="language-"><code>
-0. &#x53D6;&#x6D88;&#x5DF2;&#x7ECF;&#x6682;&#x5B58;&#x7684;&#x6587;&#x4EF6;
-</code></pre><p>git reset HEAD file</p>
-<pre class="language-"><code>
-0. &#x53D6;&#x6D88;&#x5BF9;&#x6587;&#x4EF6;&#x7684;&#x4FEE;&#x6539;
-</code></pre><p>git checkout -- file</p>
-<pre class="language-"><code>
-0. &#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;
-</code></pre><p>git remote add pb git://github.com/paulboone/ticgit.git</p>
-<pre class="language-"><code>
-0. &#x8FDC;&#x7A0B;&#x6293;&#x53D6;&#x6570;&#x636E;
-</code></pre><p>git fetch remote-name</p>
-<pre class="language-"><code>
-0. &#x63A8;&#x9001;&#x6570;&#x636E;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;
-</code></pre><p>git push origin master</p>
-<pre class="language-"><code>
-0. &#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4FE1;&#x606F;
-</code></pre><p>git remote show remote-name</p>
-<pre class="language-"><code>
-0. &#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5220;&#x9664;&#x548C;&#x91CD;&#x547D;&#x540D;
-</code></pre><p>git remote rename remote-name-old remote-name-new
-git remote rm remote-name</p>
-<pre class="language-"><code>
-0. &#x6807;&#x7B7E;
-</code></pre><p>// &#x67E5;&#x770B;&#x6807;&#x7B7E;
+</code></pre><ul>
+<li>&#x67E5;&#x770B;log</li>
+</ul>
+<pre class="language-"><code>git log
+
+// &#x67E5;&#x770B;&#x63D0;&#x4EA4;&#x5185;&#x5BB9;&#x7684;diff&#xFF0C;&#x8FD9;&#x4E2A;&#x4E0D;&#x9519;
+git -p
+
+// &#x6700;&#x8FD1;&#x4E24;&#x6B21;&#x66F4;&#x65B0;
+git -2
+
+// &#x589E;&#x6539;&#x884C;&#x6570;&#x7EDF;&#x8BA1;
+git log --stat
+
+// &#x6307;&#x5B9A;&#x5C55;&#x793A;&#x6837;&#x5F0F;&#xFF0C;&#x6709;online, short, full, fuller
+git log --pretty=online
+
+// &#x9650;&#x5236;&#x8F93;&#x51FA;&#x957F;&#x5EA6;&#xFF0C;&#x6709;since, until, author, committer
+git log --since=2.weeks
+
+// &#x770B;&#x5206;&#x652F;&#x5206;&#x5316;&#x884D;&#x5408;&#x60C5;&#x51B5;
+git log --graph
+</code></pre><ul>
+<li>&#x64A4;&#x6D88;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x63D0;&#x4EA4;</li>
+</ul>
+<pre class="language-"><code>git commit --amend
+</code></pre><ul>
+<li>&#x53D6;&#x6D88;&#x5DF2;&#x7ECF;&#x6682;&#x5B58;&#x7684;&#x6587;&#x4EF6;</li>
+</ul>
+<pre class="language-"><code>git reset HEAD file
+</code></pre><ul>
+<li>&#x53D6;&#x6D88;&#x5BF9;&#x6587;&#x4EF6;&#x7684;&#x4FEE;&#x6539;</li>
+</ul>
+<pre class="language-"><code>git checkout -- file
+</code></pre><ul>
+<li>&#x6DFB;&#x52A0;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</li>
+</ul>
+<pre class="language-"><code>git remote add pb git://github.com/paulboone/ticgit.git
+</code></pre><ul>
+<li>&#x8FDC;&#x7A0B;&#x6293;&#x53D6;&#x6570;&#x636E;</li>
+</ul>
+<pre class="language-"><code>git fetch remote-name
+</code></pre><ul>
+<li>&#x63A8;&#x9001;&#x6570;&#x636E;&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</li>
+</ul>
+<pre class="language-"><code>git push origin master
+</code></pre><ul>
+<li>&#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4FE1;&#x606F;</li>
+</ul>
+<pre class="language-"><code>git remote show remote-name
+</code></pre><ul>
+<li>&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5220;&#x9664;&#x548C;&#x91CD;&#x547D;&#x540D;</li>
+</ul>
+<pre class="language-"><code>git remote rename remote-name-old remote-name-new
+git remote rm remote-name
+</code></pre><ul>
+<li>&#x6807;&#x7B7E;</li>
+</ul>
+<pre class="language-"><code>// &#x67E5;&#x770B;&#x6807;&#x7B7E;
 git tag
 // &#x521B;&#x5EFA;&#x542B;&#x9644;&#x6CE8;&#x7684;&#x6807;&#x7B7E;
 git tag -a v1.4 -m &apos;my version 1.4&apos;
@@ -763,119 +787,154 @@ git show v1.4
 // &#x628A;&#x6240;&#x6709;tag push&#x5230;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;(&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;push&#x662F;&#x4E0D;&#x4F1A;&#x628A;&#x6807;&#x7B7E;&#x63A8;&#x5230;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5668;)
 git push --tags
 // &#x521B;&#x5EFA;&#x8F7B;&#x91CF;&#x7EA7;&#x6807;&#x7B7E;
-git tag v1.4-1w</p>
-<pre class="language-"><code>
-0. alias
-</code></pre><p>git config --global alias.co checkout
+git tag v1.4-1w
+</code></pre><ul>
+<li>alias</li>
+</ul>
+<pre class="language-"><code>git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.unstage &apos;reset HEAD --&apos;
-git config --global alias.last &apos;log -3 HEAD&apos;</p>
-<pre class="language-"><code>
-0. &#x9ED8;&#x8BA4;&#x7F16;&#x8F91;&#x5668;&#x9009;&#x62E9;
-</code></pre><p>git config --global core.editor vim</p>
-<pre class="language-"><code>
-0. &#x6253;&#x5F00;&#x9AD8;&#x4EAE;
-</code></pre><p>git config --global color.ui true</p>
-<pre class="language-"><code>
-0. &#x67E5;&#x770B;&#x914D;&#x7F6E;&#x4FE1;&#x606F;
-</code></pre><p>git config --list</p>
-<pre class="language-"><code>
-0. &#x8BB0;&#x4F4F;&#x5BC6;&#x7801;1&#x5C0F;&#x65F6;
-</code></pre><p>git config --global credential.helper &apos;cache --timeout 3600&apos;</p>
-<pre class="language-"><code>
-0. Show information about files in the index and the working tree
-</code></pre><p>git ls-files</p>
-<pre class="language-"><code>
-0. &#x6307;&#x5B9A;&#x5408;&#x5E76;&#x7F16;&#x8F91;&#x5668;
-</code></pre><p>git config --global merge.tool vimdiff</p>
-<pre class="language-"><code>
-0. &#x68C0;&#x67E5;&#x5DF2;&#x6709;&#x914D;&#x7F6E;&#x4FE1;&#x606F;
-</code></pre><p>git config --list</p>
-<pre class="language-"><code>
-0. &#x4E0D;&#x9700;&#x8981;`git add`&#xFF0C;&#x76F4;&#x63A5;&#x628A;track&#x7684;&#x6587;&#x4EF6;&#x653E;&#x5230;staged&#x91CC;&#x5E76;&#x63D0;&#x4EA4;
-</code></pre><p>git commit -a</p>
-<pre class="language-"><code>
-0. &#x589E;&#x52A0;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;
-</code></pre><p>git remote add pb git://github.com/paulboone/ticgit.git</p>
-<pre class="language-"><code>0. &#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4FE1;&#x606F;
-</code></pre><p>git remote show origin</p>
-<pre class="language-"><code>
-0. &#x91CD;&#x547D;&#x4EE4;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;
-</code></pre><p>git remote rename</p>
-<pre class="language-"><code>
-0. &#x5217;&#x51FA;&#x73B0;&#x6709;tag
-</code></pre><p>git tag
-git tag -l &apos;v1.4.2.*&apos;</p>
-<pre class="language-"><code>
-0. Git &#x4F7F;&#x7528;&#x7684;&#x6807;&#x7B7E;&#x6709;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF1A;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#xFF08;lightweight&#xFF09;&#x548C;&#x542B;&#x9644;&#x6CE8;&#x7684;&#xFF08;annotated&#xFF09;&#x3002;&#x8F7B;&#x91CF;
+git config --global alias.last &apos;log -3 HEAD&apos;
+</code></pre><ul>
+<li>&#x9ED8;&#x8BA4;&#x7F16;&#x8F91;&#x5668;&#x9009;&#x62E9;</li>
+</ul>
+<pre class="language-"><code>git config --global core.editor vim
+</code></pre><ul>
+<li>&#x6253;&#x5F00;&#x9AD8;&#x4EAE;</li>
+</ul>
+<pre class="language-"><code>git config --global color.ui true
+</code></pre><ul>
+<li>&#x67E5;&#x770B;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</li>
+</ul>
+<pre class="language-"><code>git config --list
+</code></pre><ul>
+<li>&#x8BB0;&#x4F4F;&#x5BC6;&#x7801;1&#x5C0F;&#x65F6;</li>
+</ul>
+<pre class="language-"><code>git config --global credential.helper &apos;cache --timeout 3600&apos;
+</code></pre><ul>
+<li>Show information about files in the index and the working tree</li>
+</ul>
+<pre class="language-"><code>git ls-files
+</code></pre><ul>
+<li>&#x6307;&#x5B9A;&#x5408;&#x5E76;&#x7F16;&#x8F91;&#x5668;</li>
+</ul>
+<pre class="language-"><code>git config --global merge.tool vimdiff
+</code></pre><ul>
+<li>&#x68C0;&#x67E5;&#x5DF2;&#x6709;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</li>
+</ul>
+<pre class="language-"><code>git config --list
+</code></pre><ul>
+<li>&#x4E0D;&#x9700;&#x8981;<code>git add</code>&#xFF0C;&#x76F4;&#x63A5;&#x628A;track&#x7684;&#x6587;&#x4EF6;&#x653E;&#x5230;staged&#x91CC;&#x5E76;&#x63D0;&#x4EA4;</li>
+</ul>
+<pre class="language-"><code>git commit -a
+</code></pre><ul>
+<li>&#x589E;&#x52A0;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</li>
+</ul>
+<pre class="language-"><code>git remote add pb git://github.com/paulboone/ticgit.git
+</code></pre><ul>
+<li>&#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x4FE1;&#x606F;</li>
+</ul>
+<pre class="language-"><code>git remote show origin
+</code></pre><ul>
+<li>&#x91CD;&#x547D;&#x4EE4;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;</li>
+</ul>
+<pre class="language-"><code>git remote rename
+</code></pre><ul>
+<li>&#x5217;&#x51FA;&#x73B0;&#x6709;tag</li>
+</ul>
+<pre class="language-"><code>git tag
+git tag -l &apos;v1.4.2.*&apos;
+</code></pre><ul>
+<li><p>Git &#x4F7F;&#x7528;&#x7684;&#x6807;&#x7B7E;&#x6709;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF1A;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#xFF08;lightweight&#xFF09;&#x548C;&#x542B;&#x9644;&#x6CE8;&#x7684;&#xFF08;annotated&#xFF09;&#x3002;&#x8F7B;&#x91CF;
 &#x7EA7;&#x6807;&#x7B7E;&#x5C31;&#x50CF;&#x662F;&#x4E2A;&#x4E0D;&#x4F1A;&#x53D8;&#x5316;&#x7684;&#x5206;&#x652F;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x5B83;&#x5C31;&#x662F;&#x4E2A;&#x6307;&#x5411;&#x7279;&#x5B9A;&#x63D0;&#x4EA4;&#x5BF9;&#x8C61;&#x7684;&#x5F15;&#x7528;&#x3002;&#x800C;&#x542B;&#x9644;&#x6CE8;&#x6807;
 &#x7B7E;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x5B58;&#x50A8;&#x5728;&#x4ED3;&#x5E93;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x6709;&#x81EA;&#x8EAB;&#x7684;&#x6821;&#x9A8C;&#x548C;&#x4FE1;&#x606F;&#xFF0C;&#x5305;&#x542B;&#x7740;&#x6807;&#x7B7E;&#x7684;&#x540D;&#x5B57;&#xFF0C;
 &#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x5730;&#x5740;&#x548C;&#x65E5;&#x671F;&#xFF0C;&#x4EE5;&#x53CA;&#x6807;&#x7B7E;&#x8BF4;&#x660E;&#xFF0C;&#x6807;&#x7B7E;&#x672C;&#x8EAB;&#x4E5F;&#x5141;&#x8BB8;&#x4F7F;&#x7528;GNU Privacy Guard (GPG) &#x6765;
 &#x7B7E;&#x7F72;&#x6216;&#x9A8C;&#x8BC1;&#x3002;&#x4E00;&#x822C;&#x6211;&#x4EEC;&#x90FD;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x542B;&#x9644;&#x6CE8;&#x578B;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x4EE5;&#x4FBF;&#x4FDD;&#x7559;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF1B;&#x5F53;&#x7136;&#xFF0C;&#x5982;&#x679C;&#x53EA;&#x662F;&#x4E34;
-&#x65F6;&#x6027;&#x52A0;&#x6CE8;&#x6807;&#x7B7E;&#xFF0C;&#x6216;&#x8005;&#x4E0D;&#x9700;&#x8981;&#x65C1;&#x6CE8;&#x989D;&#x5916;&#x4FE1;&#x606F;&#xFF0C;&#x7528;&#x8F7B;&#x91CF;&#x7EA7;&#x6807;&#x7B7E;&#x4E5F;&#x6CA1;&#x95EE;&#x9898;&#x3002;
-
-0. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x542B;&#x9644;&#x6CE8;&#x7C7B;&#x578B;&#x7684;&#x6807;&#x7B7E;
-</code></pre><p>git tag -a v1.4 -m &apos;my version 1.4&apos;
-git tag -a v1.2 9fceb02 // commit&#x6821;&#x9A8C;&#x548C;</p>
-<pre class="language-"><code>
-0. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x6807;&#x7B7E;
-</code></pre><p>git tag v1.4</p>
-<pre class="language-"><code>
-0. &#x67E5;&#x770B;&#x76F8;&#x5E94;&#x6807;&#x7B7E;&#x7684;&#x7248;&#x672C;&#x4FE1;&#x606F;
-</code></pre><p>git show v1.4</p>
-<pre class="language-"><code>
-0. &#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;git push &#x5E76;&#x4E0D;&#x4F1A;&#x628A;&#x6807;&#x7B7E;&#x4F20;&#x9001;&#x5230;&#x8FDC;&#x7AEF;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x53EA;&#x6709;&#x901A;&#x8FC7;&#x663E;&#x5F0F;&#x547D;&#x4EE4;&#x624D;&#x80FD;&#x5206;&#x4EAB;&#x6807;&#x7B7E;&#x5230;&#x8FDC;&#x7AEF;&#x4ED3;&#x5E93;
-</code></pre><p>git push origin v1.5
+&#x65F6;&#x6027;&#x52A0;&#x6CE8;&#x6807;&#x7B7E;&#xFF0C;&#x6216;&#x8005;&#x4E0D;&#x9700;&#x8981;&#x65C1;&#x6CE8;&#x989D;&#x5916;&#x4FE1;&#x606F;&#xFF0C;&#x7528;&#x8F7B;&#x91CF;&#x7EA7;&#x6807;&#x7B7E;&#x4E5F;&#x6CA1;&#x95EE;&#x9898;&#x3002;</p>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x542B;&#x9644;&#x6CE8;&#x7C7B;&#x578B;&#x7684;&#x6807;&#x7B7E;</p>
+</li>
+</ul>
+<pre class="language-"><code>git tag -a v1.4 -m &apos;my version 1.4&apos;
+git tag -a v1.2 9fceb02 // commit&#x6821;&#x9A8C;&#x548C;
+</code></pre><ul>
+<li>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x6807;&#x7B7E;</li>
+</ul>
+<pre class="language-"><code>git tag v1.4
+</code></pre><ul>
+<li>&#x67E5;&#x770B;&#x76F8;&#x5E94;&#x6807;&#x7B7E;&#x7684;&#x7248;&#x672C;&#x4FE1;&#x606F;</li>
+</ul>
+<pre class="language-"><code>git show v1.4
+</code></pre><ul>
+<li>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;git push &#x5E76;&#x4E0D;&#x4F1A;&#x628A;&#x6807;&#x7B7E;&#x4F20;&#x9001;&#x5230;&#x8FDC;&#x7AEF;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x53EA;&#x6709;&#x901A;&#x8FC7;&#x663E;&#x5F0F;&#x547D;&#x4EE4;&#x624D;&#x80FD;&#x5206;&#x4EAB;&#x6807;&#x7B7E;&#x5230;&#x8FDC;&#x7AEF;&#x4ED3;&#x5E93;</li>
+</ul>
+<pre class="language-"><code>git push origin v1.5
 // &#x4E00;&#x6B21;&#x63A8;&#x9001;&#x6240;&#x6709;&#xFF08;&#x672C;&#x5730;&#x65B0;&#x589E;&#x7684;&#xFF09;&#x6807;&#x7B7E;&#x4E0A;&#x53BB;
-git push origin --tags</p>
-<pre class="language-"><code>
-0. &#x7ED9;git&#x52A0;&#x81EA;&#x52A8;&#x8865;&#x5168;&#x529F;&#x80FD;
-</code></pre><p>source ~/.git-completion.bash</p>
-<pre class="language-"><code>
-0. &#x63D0;&#x4EA4;3&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x4F1A;&#x5EFA;&#x7ACB;&#x4E09;&#x4E2A;&#x6587;&#x4EF6;&#x7684;blob&#x5BF9;&#x8C61;&#xFF0C;&#x6587;&#x4EF6;&#x6240;&#x5728;&#x76EE;&#x5F55;&#x7684;tree&#x5BF9;&#x8C61;&#x548C;&#x4E00;&#x4E2A;commit&#x5BF9;&#x8C61;
-![](/attach/git/commit-tree-blob.png)
+git push origin --tags
+</code></pre><ul>
+<li>&#x7ED9;git&#x52A0;&#x81EA;&#x52A8;&#x8865;&#x5168;&#x529F;&#x80FD;</li>
+</ul>
+<pre class="language-"><code>source ~/.git-completion.bash
+</code></pre><ul>
+<li>&#x63D0;&#x4EA4;3&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x4F1A;&#x5EFA;&#x7ACB;&#x4E09;&#x4E2A;&#x6587;&#x4EF6;&#x7684;blob&#x5BF9;&#x8C61;&#xFF0C;&#x6587;&#x4EF6;&#x6240;&#x5728;&#x76EE;&#x5F55;&#x7684;tree&#x5BF9;&#x8C61;&#x548C;&#x4E00;&#x4E2A;commit&#x5BF9;&#x8C61;</li>
+</ul>
+<p><img src="../attach/git/commit-tree-blob.png" alt=""></p>
+<ul>
+<li>&#x5206;&#x652F;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x79FB;&#x52A8;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x6307;&#x5411;commit&#x5BF9;&#x8C61;</li>
+</ul>
+<p><img src="../attach/git/commit-branch.png" alt=""></p>
+<ul>
+<li>HEAD&#x6307;&#x9488;&#x6307;&#x5411;&#x5F53;&#x524D;&#x4F7F;&#x7528;&#x7684;&#x5206;&#x652F;</li>
+</ul>
+<p><img src="../attach/git/HEAD-branch.png" alt=""></p>
+<ul>
+<li>&#x521B;&#x5EFA;&#x5206;&#x652F;testing</li>
+</ul>
+<pre class="language-"><code>git branch testing
+</code></pre><ul>
+<li>&#x5207;&#x6362;&#x5230;testing&#x5206;&#x652F;</li>
+</ul>
+<pre class="language-"><code>git checkout testing
+</code></pre><ul>
+<li>&#x5220;&#x9664;&#x5206;&#x652F;hotfix</li>
+</ul>
+<pre class="language-"><code>git branch -d hotfix
+</code></pre><ul>
+<li>&#x628A;issue53&#x5206;&#x652F;&#x7684;&#x4EE3;&#x7801;&#x5408;&#x5E76;&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;</li>
+</ul>
+<pre class="language-"><code>git merge issue53
+// &#x5982;&#x679C;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x89E3;&#x51B3;&#x5B8C;&#x540E;git add&#x8868;&#x793A;&#x51B2;&#x7A81;&#x89E3;&#x51B3;
+</code></pre><ul>
+<li>&#x5217;&#x8868;&#x5F53;&#x524D;&#x5206;&#x652F;&#x5217;&#x8868;</li>
+</ul>
+<pre class="language-"><code>git branch
 
-0. &#x5206;&#x652F;&#x662F;&#x4E00;&#x4E2A;&#x53EF;&#x79FB;&#x52A8;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x6307;&#x5411;commit&#x5BF9;&#x8C61;
-![](/attach/git/commit-branch.png)
+// &#x8BE6;&#x7EC6;&#x4FE1;&#x606F;
+git branch -v
 
-0. HEAD&#x6307;&#x9488;&#x6307;&#x5411;&#x5F53;&#x524D;&#x4F7F;&#x7528;&#x7684;&#x5206;&#x652F;
-![](/attach/git/HEAD-branch.png)
+// &#x54EA;&#x4E9B;&#x5206;&#x652F;&#x5DF2;&#x7ECF;&#x5408;&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;
+git branch --merged
 
-0. &#x521B;&#x5EFA;&#x5206;&#x652F;testing
-</code></pre><p>git branch testing</p>
-<pre class="language-"><code>
-0. &#x5207;&#x6362;&#x5230;testing&#x5206;&#x652F;
-</code></pre><p>git checkout testing</p>
-<pre class="language-"><code>
-0. &#x5220;&#x9664;&#x5206;&#x652F;hotfix
-</code></pre><p>git branch -d hotfix</p>
-<pre class="language-"><code>
-0. &#x628A;issue53&#x5206;&#x652F;&#x7684;&#x4EE3;&#x7801;&#x5408;&#x5E76;&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;
-</code></pre><p>git merge issue53
-// &#x5982;&#x679C;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x89E3;&#x51B3;&#x5B8C;&#x540E;git add&#x8868;&#x793A;&#x51B2;&#x7A81;&#x89E3;&#x51B3;</p>
-<pre class="language-"><code>
-0. &#x5217;&#x8868;&#x5F53;&#x524D;&#x5206;&#x652F;&#x5217;&#x8868;
-</code></pre><p>git branch</p>
-<p>// &#x8BE6;&#x7EC6;&#x4FE1;&#x606F;
-git branch -v</p>
-<p>// &#x54EA;&#x4E9B;&#x5206;&#x652F;&#x5DF2;&#x7ECF;&#x5408;&#x5230;&#x5F53;&#x524D;&#x5206;&#x652F;
-git branch --merged</p>
-<p>// &#x8FD8;&#x6CA1;&#x5408;&#x5E76;&#x7684;&#x5206;&#x652F;
-git branch --no-merged</p>
-<pre class="language-"><code>
-0. &#x6062;&#x590D;&#x5220;&#x9664;&#x7684;&#x5206;&#x652F;
-&gt; Yes, you should be able to do `git reflog` and find the SHA1 for the commit at the tip of your deleted branch, then just `git checkout [sha]`. And once you&apos;re at that commit, you can just `git checkout -b [branchname]` to make a recreate the branch from there.
-
-0. &#x914D;&#x7F6E;&#x5168;&#x5C40;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x90AE;&#x7BB1;
-</code></pre><p>git config --global user.name &apos;lightxue&apos;
-git config --global user.email &apos;bkmgtp@gmail.com&apos;</p>
-<pre class="language-"><code>
-0. Windows&#x4E0A;pull&#x548C;push&#x4E0D;&#x4E86;&#x7684;&#x95EE;&#x9898;&#x89E3;&#x51B3;
-</code></pre><p>git config --global sendpack.sideband false
-```</p>
-
+// &#x8FD8;&#x6CA1;&#x5408;&#x5E76;&#x7684;&#x5206;&#x652F;
+git branch --no-merged
+</code></pre><ul>
+<li>&#x6062;&#x590D;&#x5220;&#x9664;&#x7684;&#x5206;&#x652F;</li>
+</ul>
+<blockquote>
+<p>Yes, you should be able to do <code>git reflog</code> and find the SHA1 for the commit at the tip of your deleted branch, then just <code>git checkout [sha]</code>. And once you&apos;re at that commit, you can just <code>git checkout -b [branchname]</code> to make a recreate the branch from there.</p>
+</blockquote>
+<ul>
+<li>&#x914D;&#x7F6E;&#x5168;&#x5C40;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x90AE;&#x7BB1;</li>
+</ul>
+<pre class="language-"><code>git config --global user.name &apos;lightxue&apos;
+git config --global user.email &apos;bkmgtp@gmail.com&apos;
+</code></pre><ul>
+<li>Windows&#x4E0A;pull&#x548C;push&#x4E0D;&#x4E86;&#x7684;&#x95EE;&#x9898;&#x89E3;&#x51B3;</li>
+</ul>
+<pre class="language-"><code>git config --global sendpack.sideband false
+</code></pre>
                                 
                                 </section>
                             
@@ -918,7 +977,7 @@ git config --global user.email &apos;bkmgtp@gmail.com&apos;</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Git","level":"4.5","depth":1,"next":{"title":"MySQL","level":"4.6","depth":1,"path":"tools/mysql.md","ref":"tools/mysql.md","articles":[]},"previous":{"title":"GDB","level":"4.4","depth":1,"path":"tools/gdb.md","ref":"tools/gdb.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","-sharing","anchor-navigation-ex"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/git.md","mtime":"2017-08-15T01:51:50.322Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-04-04T20:01:48.236Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Git","level":"4.5","depth":1,"next":{"title":"MySQL","level":"4.6","depth":1,"path":"tools/mysql.md","ref":"tools/mysql.md","articles":[]},"previous":{"title":"GDB","level":"4.4","depth":1,"path":"tools/gdb.md","ref":"tools/gdb.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","-sharing","anchor-navigation-ex"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/git.md","mtime":"2018-05-09T08:25:01.058Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-09T08:34:00.553Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
