@@ -27,7 +27,7 @@ service smb restart
 0. 这样就新建一个samba用户并新建一个目录了
 
 0. 删除samba密码的缓存
-```bat
+```
 ; 查看当前的连接
 net use
 ; 删除

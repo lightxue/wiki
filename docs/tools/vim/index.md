@@ -94,7 +94,7 @@ ls | vim -
 0. `[I`Vim将会显示include文件中匹配这个函数名的一个清单
 
 0. windows下会有找不到pydoc的情况，这时写个bat放到path能找得到的目录下，内容是
-```bat
+```
 @python D:\Python27\Lib\pydoc.py %*
 ```
 

@@ -3,7 +3,7 @@
 http://patohttp://patooftware/taag/
 
 
-```text
+```
 
     / Do you mean that you not only want a \
     | wrong answer, but a certain wrong    |
@@ -19,7 +19,7 @@ http://patohttp://patooftware/taag/
 
 ```
 
-```text
+```
                       \\\|///                 
                     \\  - -  //               
     +JUMPER:         (  @ @  )
@@ -34,7 +34,7 @@ http://patohttp://patooftware/taag/
                        \_)
 ```
 
-```text
+```
 
         \          SORRY            /
          \                         /
@@ -61,7 +61,7 @@ http://patohttp://patooftware/taag/
 
 ```
 
-```text
+```
 //                   _oo0oo_
 //                  o8888888o
 //                  88" . "88
@@ -84,12 +84,12 @@ http://patohttp://patooftware/taag/
 //       本模块已经经过开光处理，绝无可能再产生BUG
 ```
 
-```text
+```
 ⎝≧⏝⏝≦⎠
 ```
 
 
-```text
+```
      _.-^^---....,,--
  _--                  --_
 <                        >)
@@ -113,7 +113,7 @@ http://patohttp://patooftware/taag/
                   { }
 ```
 
-```text
+```
 ..................../´¯/)
 ...................,/¯../
 .................../..../
