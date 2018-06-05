@@ -292,3 +292,11 @@ sudo usermod -aG sudo lightxue
 sudo vi /etc/sudoers
 ```
 
+* 改变`ls`的默认颜色
+
+```sh
+dircolors -p > ~/.dircolors
+# 修改~/.dircolors
+# ~/.bashrc加上下面代码
+[ -e ~/.dircolors  ] && eval $(dircolors -b ~/.dircolors) || eval $(dircolors -b)
+```
