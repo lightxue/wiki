@@ -111,3 +111,9 @@ show variables like '%isola%';
 * 各种`join`的图
 
 ![](/attach/mysql/mysql-joins.png)
+
+* `datetime`转成`date`
+
+```sql
+select cast(create_time as date)
+```
