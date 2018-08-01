@@ -7,7 +7,7 @@
         <title>shell · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="generator" content="GitBook 3.2.2">
         
         
         
@@ -965,6 +965,14 @@ EOM</span>
 <span class="token comment" spellcheck="true"># &#x65B9;&#x6CD5;2</span>
 <span class="token function">sudo</span> <span class="token function">vi</span> /etc/sudoers
 </code></pre>
+<ul>
+<li>&#x6539;&#x53D8;<code>ls</code>&#x7684;&#x9ED8;&#x8BA4;&#x989C;&#x8272;</li>
+</ul>
+<pre class="language-"><code class="lang-sh"><span class="token function">dircolors</span> -p <span class="token operator">&gt;</span> ~/.dircolors
+<span class="token comment" spellcheck="true"># &#x4FEE;&#x6539;~/.dircolors</span>
+<span class="token comment" spellcheck="true"># ~/.bashrc&#x52A0;&#x4E0A;&#x4E0B;&#x9762;&#x4EE3;&#x7801;</span>
+<span class="token punctuation">[</span> -e ~/.dircolors  <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token function">eval</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">dircolors</span> -b ~/.dircolors<span class="token variable">)</span></span> <span class="token operator">||</span> <span class="token function">eval</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">dircolors</span> -b<span class="token variable">)</span></span>
+</code></pre>
 
                                 
                                 </section>
@@ -1008,7 +1016,7 @@ EOM</span>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"shell","level":"4.1","depth":1,"next":{"title":"dd硬盘测试速度","level":"4.1.1","depth":2,"path":"tools/shell/dd-speed-test.md","ref":"tools/shell/dd-speed-test.md","articles":[]},"previous":{"title":"Windows","level":"3.3","depth":1,"path":"system/windows/index.md","ref":"system/windows/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","-sharing","anchor-navigation-ex"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/shell/index.md","mtime":"2018-05-09T08:44:23.466Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-09T08:52:57.157Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"shell","level":"4.1","depth":1,"next":{"title":"dd硬盘测试速度","level":"4.1.1","depth":2,"path":"tools/shell/dd-speed-test.md","ref":"tools/shell/dd-speed-test.md","articles":[]},"previous":{"title":"Windows","level":"3.3","depth":1,"path":"system/windows/index.md","ref":"system/windows/index.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","-sharing","anchor-navigation-ex"],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showLevel":false},"prism":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*"},"file":{"path":"tools/shell/index.md","mtime":"2018-08-01T14:08:00.276Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-08-01T14:11:53.074Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
