@@ -43,6 +43,8 @@
 * [PLL](rubik/pll.md)
 * [二阶](rubik/mini-cube.md)
 * [四阶](rubik/revenge.md)
+* [金字塔](rubik/pyraminx.md)
+* [五魔方](rubik/megaminx.md)
 * [2x2x3](rubik/2x2x3-cube.md)
 
 ### Books
