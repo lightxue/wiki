@@ -1,4 +1,4 @@
-# bash
+# Shell
 
 * 发现find的-print0配上xargs -0不错
 
