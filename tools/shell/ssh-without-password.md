@@ -5,7 +5,7 @@ A机器免密码向B机器登陆，可以在A机器通过ssh在B机器上运行�
 
 ## 步骤
 
-0. 在A机器生成密钥对
+- 在A机器生成密钥对
 ```bash
 a@A:~> ssh-keygen -t rsa
 Generating public/private rsa key pair.
@@ -19,13 +19,13 @@ The key fingerprint is:
 3e:4f:05:79:3a:9f:96:7c:3b:ad:e9:58:37:bc:37:e4 a@A
 ```
 
-0. B机器创建目录~/.ssh
+- B机器创建目录~/.ssh
 ```bash
 a@A:~> ssh b@B mkdir -p .ssh
 b@B's password:
 ```
 
-0. 最后把A机器的公钥追加到B机器的`authorized_keys`里
+- 最后把A机器的公钥追加到B机器的`authorized_keys`里
 ```bash
 a@A:~> cat .ssh/id_rsa.pub | ssh b@B 'cat >> .ssh/authorized_keys'
 b@B's password:
@@ -40,8 +40,8 @@ a@A:~> ssh b@B
 
 不同版本的SSH可能有一些不一样的地方
 
-0. 公钥放在`.ssh/authorized_keys2`
+- 公钥放在`.ssh/authorized_keys2`
 
-0. `.ssh`目录的权限是700
+- `.ssh`目录的权限是700
 
-0. `.ssh/authorized_keys2`的权限是640
+- `.ssh/authorized_keys2`的权限是640

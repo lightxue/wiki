@@ -10,9 +10,9 @@ epoll的接口很简单，只有3个函数
 
 epoll的事件注册函数，它不同与`select()`是在监听事件时告诉内核要监听什么类型的事件，而是在这里先注册要监听的事件类型。第一个参数是`epoll_create()`的返回值，第二个参数表示动作，用三个宏来表示：
 
-0. `EPOLL_CTL_ADD`：注册新的fd到epfd中；
-0. `EPOLL_CTL_MOD`：修改已经注册的fd的监听事件；
-0. `EPOLL_CTL_DEL`：从epfd中删除一个fd；
+- `EPOLL_CTL_ADD`：注册新的fd到epfd中；
+- `EPOLL_CTL_MOD`：修改已经注册的fd的监听事件；
+- `EPOLL_CTL_DEL`：从epfd中删除一个fd；
 
 第三个参数是需要监听的fd，第四个参数是告诉内核需要监听什么事，`struct epoll_event`结构如下：
 ```c
@@ -24,13 +24,13 @@ struct epoll_event {
 
 events可以是以下几个宏的集合：
 
-0. `EPOLLIN `：表示对应的文件描述符可以读（包括对端SOCKET正常关闭）；
-0. `EPOLLOUT`：表示对应的文件描述符可以写；
-0. `EPOLLPRI`：表示对应的文件描述符有紧急的数据可读（这里应该表示有带外数据到来）；
-0. `EPOLLERR`：表示对应的文件描述符发生错误；
-0. `EPOLLHUP`：表示对应的文件描述符被挂断；
-0. `EPOLLET`： 将EPOLL设为边缘触发(Edge Triggered)模式，这是相对于水平触发(Level Triggered)来说的。
-0. `EPOLLONESHOT`：只监听一次事件，当监听完这次事件之后，如果还需要继续监听这个socket的话，需要再次把这个socket加入到EPOLL队列里
+- `EPOLLIN `：表示对应的文件描述符可以读（包括对端SOCKET正常关闭）；
+- `EPOLLOUT`：表示对应的文件描述符可以写；
+- `EPOLLPRI`：表示对应的文件描述符有紧急的数据可读（这里应该表示有带外数据到来）；
+- `EPOLLERR`：表示对应的文件描述符发生错误；
+- `EPOLLHUP`：表示对应的文件描述符被挂断；
+- `EPOLLET`： 将EPOLL设为边缘触发(Edge Triggered)模式，这是相对于水平触发(Level Triggered)来说的。
+- `EPOLLONESHOT`：只监听一次事件，当监听完这次事件之后，如果还需要继续监听这个socket的话，需要再次把这个socket加入到EPOLL队列里
 
 * `int epoll_wait(int epfd, struct *epoll_events, int maxevents, int timeout);`
 
@@ -44,11 +44,11 @@ EPOLL事件有两种模型：
 * Level Triggered (LT)
 
 假如有这样一个例子：
-0. 我们已经把一个用来从管道中读取数据的文件句柄(RFD)添加到epoll描述符
-0. 这个时候从管道的另一端被写入了2KB的数据
-0. 调用`epoll_wait(2)`，并且它会返回RFD，说明它已经准备好读取操作
-0. 然后我们读取了1KB的数据
-0. 调用`epoll_wait(2)`......
+- 我们已经把一个用来从管道中读取数据的文件句柄(RFD)添加到epoll描述符
+- 这个时候从管道的另一端被写入了2KB的数据
+- 调用`epoll_wait(2)`，并且它会返回RFD，说明它已经准备好读取操作
+- 然后我们读取了1KB的数据
+- 调用`epoll_wait(2)`......
 
 Edge Triggered 工作模式：
 

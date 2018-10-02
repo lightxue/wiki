@@ -1,6 +1,6 @@
 # logging使用
 
-0. 日志使用
+- 日志使用
 ```python
 import logging
 
@@ -23,7 +23,7 @@ logger.error('error log')
 logger.critical('critical log')
 ```
 
-0. rotate log
+- rotate log
 ```python
 import logging
 from logging.handlers import RotatingFileHandler
