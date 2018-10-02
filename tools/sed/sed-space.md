@@ -1,4 +1,4 @@
-# sed的pattern space和hold space
+# pattern space和hold space
 
 ## 用途
 
@@ -30,13 +30,13 @@
 
 * 交换第1行和第2行的内容
 
-```sh
+```bash
 sed -n '1{h;n;x;H;x};p' filename
 ```
 
 * 用sed实现tac的功能
 
-```sh
+```bash
 sed -n -e '1!G;h;$p' filename
 sed -e '1!G;h;$!d' filename
 ```
@@ -47,6 +47,7 @@ sed -e '1!G;h;$!d' filename
 
 * 替换所有换行符，解释在[这里](http://stackoverflow.com/questions/1251999/how-can-i-replace-a-newline-n-using-sed)
 
-```sh
+```bash
 sed ':a;N;$!ba;s/\n/ /g'
 ```
+

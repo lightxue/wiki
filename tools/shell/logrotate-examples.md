@@ -22,7 +22,7 @@ Following are the key files that you should be aware of for logrotate to work pr
 
 `/etc/cron.daily/logrotate` – This shell script executes the logrotate command everyday.
 
-```sh
+```bash
 $ cat /etc/cron.daily/logrotate
 #!/bin/sh
 
@@ -36,7 +36,7 @@ exit 0
 
 `/etc/logrotate.conf` – Log rotation configuration for all the log files are specified in this file.
 
-```sh
+```bash
 $ cat /etc/logrotate.conf
 weekly
 rotate 4
@@ -52,7 +52,7 @@ include /etc/logrotate.d
 
 `/etc/logrotate.d` – When individual packages are installed on the system, they drop the log rotation configuration information in this directory. For example, yum log rotate configuration information is shown below.
 
-```sh
+```bash
 $ cat /etc/logrotate.d/yum
 /var/log/yum.log {
     missingok
@@ -67,7 +67,7 @@ $ cat /etc/logrotate.d/yum
 
 If you want to rotate a log file (for example, /tmp/output.log) for every 1KB, create the logrotate.conf as shown below.
 
-```sh
+```bash
 $ cat logrotate.conf
 /tmp/output.log {
         size 1k
@@ -84,21 +84,21 @@ This logrotate configuration has following three options:
 
 Before the logrotation, following is the size of the output.log:
 
-```sh
+```bash
 $ ls -l /tmp/output.log
 -rw-r--r-- 1 bala bala 25868 2010-06-09 21:19 /tmp/output.log
 ```
 
 Now, run the logrotate command as shown below. Option -s specifies the filename to write the logrotate status.
 
-```sh
+```bash
 $ logrotate -s /var/log/logstatus logrotate.conf
 ```
 
 Note : whenever you need of log rotation for some files, prepare the logrotate configuration and run the logroate command manually.
 After the logrotation, following is the size of the output.log:
 
-```sh
+```bash
 $ ls -l /tmp/output*
 -rw-r--r--  1 bala bala 25868 2010-06-09 21:20 output.log.1
 -rwx------ 1 bala bala        0 2010-06-09 21:20 output.log
@@ -120,7 +120,7 @@ Also, if you are having huge log files, you can use: 10 Awesome Examples for Vie
 
 ## 3. Logrotate copytruncate option: Continue to write the log information in the newly created file after rotating the old log file.
 
-```sh
+```bash
 $ cat logrotate.conf
 /tmp/output.log {
          size 1k
@@ -137,7 +137,7 @@ While manipulating log files, you might find the sed substitute, sed delete tips
 
 If you use the compress option as shown below, the rotated files will be compressed with gzip utility.
 
-```sh
+```bash
 $ cat logrotate.conf
 /tmp/output.log {
         size 1k
@@ -150,14 +150,14 @@ $ cat logrotate.conf
 
 Output of compressed log file:
 
-```sh
+```bash
 $ ls /tmp/output*
 output.log.1.gz output.log
 ```
 
 ## 5. Logrotate dateext option: Rotate the old log file with date in the log filename
 
-```sh
+```bash
 $ cat logrotate.conf
 /tmp/output.log {
         size 1k
@@ -171,7 +171,7 @@ $ cat logrotate.conf
 
 After the above configuration, you’ll notice the date in the rotated log file as shown below.
 
-```sh
+```bash
 $ ls -lrt /tmp/output*
 -rw-r--r--  1 bala bala 8980 2010-06-09 22:10 output.log-20100609.gz
 -rwxrwxrwx 1 bala bala     0 2010-06-09 22:11 output.log
@@ -185,7 +185,7 @@ Typically you might use tail -f to view the output of the log file in realtime. 
 
 For doing the rotation monthly once,
 
-```sh
+```bash
 $ cat logrotate.conf
 /tmp/output.log {
         monthly
@@ -197,7 +197,7 @@ $ cat logrotate.conf
 
 Add the weekly keyword as shown below for weekly log rotation.
 
-```sh
+```bash
 $ cat logrotate.conf
 /tmp/output.log {
         weekly
@@ -209,7 +209,7 @@ $ cat logrotate.conf
 
 Add the daily keyword as shown below for every day log rotation. You can also rotate logs hourly.
 
-```sh
+```bash
 $ cat logrotate.conf
 /tmp/output.log {
         daily
@@ -223,7 +223,7 @@ $ cat logrotate.conf
 
 Logrotate allows you to run your own custom shell scripts after it completes the log file rotation. The following configuration indicates that it will execute myscript.sh after the logrotation.
 
-```sh
+```bash
 $ cat logrotate.conf
 /tmp/output.log {
         size 1k
@@ -240,7 +240,7 @@ $ cat logrotate.conf
 
 Logrotate automatically removes the rotated files after a specific number of days.  The following example indicates that the rotated log files would be removed after 100 days.
 
-```sh
+```bash
 $ cat logrotate.conf
 /tmp/output.log {
         size 1k
@@ -255,7 +255,7 @@ $ cat logrotate.conf
 
 You can ignore the error message when the actual file is not available by using this option as shown below.
 
-```sh
+```bash
 $ cat logrotate.conf
 /tmp/output.log {
         size 1k
@@ -268,7 +268,7 @@ $ cat logrotate.conf
 
 ## 10. Logrotate compresscmd and compressext option: Sspecify compression command for the log file rotation
 
-```sh
+```bash
 $ cat logrotate.conf
 /tmp/output.log {
         size 1k

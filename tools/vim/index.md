@@ -136,7 +136,7 @@ ls | vim -
 0. `g;` `g,`，跳到前一个或后一个修改位置
 
 0. ctags生成C++的tags
-```sh
+```bash
 ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 ```
 
@@ -150,7 +150,7 @@ ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 ```
 
 0. 编译Vim74
-```sh
+```bash
 ./configure --with-features=huge \
             --enable-perlinterp \
             --enable-pythoninterp \
@@ -163,24 +163,24 @@ ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 ```
 
 0. vimscript用户手册
-```sh
+```bash
 :help usr_41.txt
 ```
 
 0. 命令模式下`<C-R><C-W>`, 输出当前光标所在的单词
 
 0. 外部命令的输出导到当前的buffer
-```sh
+```bash
 :r !cmd
 ```
 
 0. 从右到左展示，字符为单位左右翻转
-```sh
+```bash
 :set rl!
 ```
 
 0. 列合并(参考[这里](http://stackoverflow.com/questions/10760326/merge-multiple-lines-two-blocks-in-vim/10760494#10760494))
-```sh
+```bash
 把第5-8行的文本作为第1-4行的最后一列
 :5,8del | let l=split(@") | 1,4s/$/\=remove(l,0)/
 ```
@@ -190,7 +190,7 @@ ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
 0. http://vimawesome.com/ 淘插件的好地方
 
 0. 垂直diff
-```sh
+```bash
 vert diffsplit file2
 ```
 

@@ -9,7 +9,7 @@ features:
   details: 呵呵
 - title: 测试
   details: 嗯嗯
-footer: Copyright @ 2018-present Lightxue Xue
+footer: Copyright @ 2018-present Light Xue
 ---
 
 这里是Light Xue的个人维基，零碎地组织着各种知识。

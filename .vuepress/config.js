@@ -1,14 +1,16 @@
+const fs = require('fs')
+const path = require('path')
+
 module.exports = {
     title: 'Knowledge Base',
     description: "Light Xue的个人维基",
-    host: '106.186.126.45',
     themeConfig: {
         nav: [{
             text: '首页',
             link: '/'
         }, {
             text: '编程语言',
-            link: '/languages/',
+            link: '/languages/python/',
         }, {
             text: '操作系统',
             link: '/systems/linux/'
@@ -16,44 +18,66 @@ module.exports = {
             text: '工具',
             link: '/tools/shell/'
         }, {
-            text: '魔方',
-            link: '/rubiks/'
-        }, {
             text: '其它',
-            link: '/others/theory'
+            link: '/others/rubiks/'
         }],
         sidebar: {
             '/languages/': genSidebar('/languages/'),
+            '/systems/': genSidebar('/systems/'),
+            '/tools/': genSidebar('/tools/'),
+            '/others/': genSidebar('/others/'),
         }
     }
 }
 
-function genSidebar(folder) {
-    const fs = require('fs')
-    const path = require('path')
-    const p = path.resolve('.' + folder)
+function genSidebar(dir) {
+    const p = toAbsPath(dir)
 
     let ret = []
-    fs.readdirSync(p).forEach(f => {
-        let title = f, children = ['']
-        const subPath = path.join(p, f)
-        if (!fs.lstatSync(subPath).isDirectory()) {
-            return
+    fs.readdirSync(p).forEach(file => {
+        const subPath = path.join(p, file)
+        if (fs.lstatSync(subPath).isDirectory()) {
+            ret.push(scanDir(path.join(dir, file)))
         }
-        fs.readdirSync(subPath).forEach(file => {
-            if (file === 'index.md') {
-                return
-            }
-            children.push(path.join(folder, f, file))
-        })
-        ret.push({
-            title,
-            collapsable: false,
-            children
-        })
     })
     return ret
 }
 
-const util = require('util')
-console.log(util.inspect(module.exports, {showHidden: false, depth: null}))
+function scanDir(dir) {
+    let title = path.basename(dir)
+    let children = []
+    const p = toAbsPath(dir)
+    fs.readdirSync(p).forEach(file => {
+        if (file === 'index.md') {
+            title = parseTitle(path.join(p, 'index.md'))
+            children.unshift(path.join(dir, '/'))
+        }
+        else {
+            children.push(path.join(dir, file))
+        }
+    })
+    return {
+        title,
+        collapsable: false,
+        children
+    }
+}
+
+function toAbsPath(dir) {
+    return path.resolve('.' + dir)
+}
+
+function parseTitle(filename) {
+    const re = /# +(.+)/
+    const lines = fs.readFileSync(filename).toString().split('\n')
+    for (let i = 0; i < lines.length; i++) {
+        const s = lines[i]
+        if (re.test(s)) {
+            return re.exec(s)[1]
+        }
+    }
+    return 'Unkown'
+}
+
+//const util = require('util')
+//console.log(util.inspect(module.exports, {showHidden: false, depth: null}))

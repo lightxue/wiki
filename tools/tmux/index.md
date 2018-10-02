@@ -1,26 +1,26 @@
 # tmux
 
 0. 创建新session
-```sh
+```bash
 tmux new-session -s basic
 tmux new -s basic
 ```
 
 0. 已有session
-```sh
+```bash
 tmux list-sessions
 tmux ls
 ```
 
 0. attach session
-```sh
+```bash
 tmux attach
 tmux attach -t session
 tmux a -t session
 ```
 
 0. kill session
-```sh
+```bash
 tmux kill-session -t basic
 ```
 

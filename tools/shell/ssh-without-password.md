@@ -6,7 +6,7 @@ A机器免密码向B机器登陆，可以在A机器通过ssh在B机器上运行�
 ## 步骤
 
 0. 在A机器生成密钥对
-```sh
+```bash
 a@A:~> ssh-keygen -t rsa
 Generating public/private rsa key pair.
 Enter file in which to save the key (/home/a/.ssh/id_rsa):
@@ -20,19 +20,19 @@ The key fingerprint is:
 ```
 
 0. B机器创建目录~/.ssh
-```sh
+```bash
 a@A:~> ssh b@B mkdir -p .ssh
 b@B's password:
 ```
 
 0. 最后把A机器的公钥追加到B机器的`authorized_keys`里
-```sh
+```bash
 a@A:~> cat .ssh/id_rsa.pub | ssh b@B 'cat >> .ssh/authorized_keys'
 b@B's password:
 ```
 
 试试能不能ssh免密码访问B机器
-```sh
+```bash
 a@A:~> ssh b@B
 ```
 

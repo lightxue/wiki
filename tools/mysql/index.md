@@ -61,7 +61,7 @@ INSERT INTO tbl_name
 
 * mysql连unix domain socket
 
-```sh
+```bash
 mysql -S /tmp/mysql*.sock
 ```
 

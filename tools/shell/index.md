@@ -2,12 +2,12 @@
 
 * 发现find的-print0配上xargs -0不错
 
-```sh
+```bash
     find . -name "*.cpp" -print0 | xargs -0 grep hello
 ```
 当然上面也可以这么写
 
-```sh
+```bash
     find . name "*.cpp" -exec grep hello {} \;
 ```
 
@@ -56,27 +56,27 @@
 
 * 重新加载fstab
 
-```sh
+```bash
 mount -a
 ```
 
 * screen使用
 
-```sh
+```bash
 screen -ls      # 显示screen列表
 screen -r 编号  # 恢复screen
 ```
 
 * 根据inode删除文件
 
-```sh
+```bash
 ls -i
 find . -inum 782263 -exec rm -i {} \;
 ```
 
 * 查看线程数据的三种方法
 
-```sh
+```bash
 1、top -H
 # 手册中说：-H : Threads toggle
 # 加上这个选项启动top，top一行显示一个线程。否则，它一行显示一个进程。
@@ -92,31 +92,31 @@ find . -inum 782263 -exec rm -i {} \;
 
 * 新建用户
 
-```sh
+```bash
 sudo useradd -s /bin/bash -m -d /home/lightxue -c 'lightxue' -g root lightxue
 ```
 
 * 时区设置
 
-```sh
+```bash
 sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
 * 时间同步
 
-```sh
+```bash
 /usr/sbin/ntpdate us.pool.ntp.org | logger -t NTP
 ```
 
 * 时区设置
 
-```sh
+```bash
 sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
 * 设备uuid
 
-```sh
+```bash
 lsblk -o UUID /dev/sda1
 ```
 
@@ -126,7 +126,7 @@ lsblk -o UUID /dev/sda1
 
 * 删除但是进程还占用着的文件，由此可以找到对应的进程
 
-```sh
+```bash
 lsof | grep deleted
 ```
 
@@ -134,19 +134,19 @@ lsof | grep deleted
 
 * 文件名编码转换
 
-```sh
+```bash
 convmv -f gbk -t utf-8 --notest -r .
 ```
 
 * ipcs查看，ipcrm删除：共享内存、信号量、队列
 
-```sh
+```bash
 convmv -f gbk -t utf-8 --notest -r .
 ```
 
 * 当前shell的pid
 
-```sh
+```bash
 echo $$
 ```
 
@@ -154,27 +154,27 @@ echo $$
 
 * 列出当前目录所有子目录
 
-```sh
+```bash
 ls -d */
 echo */, echo */*/
 ```
 
 * 简单的计算器
 
-```sh
+```bash
 calc(){ awk "BEGIN{ print $*  }" ; }
 calc "8 * 99 / 4"
 ```
 
 * 下载整个网站
 
-```sh
+```bash
 wget --random-wait -r -p -e robots=off -U mozilla http://www.example.com
 ```
 
 * date命令相关
 
-```sh
+```bash
 # 1381235068转成时间字符串，如果不指定格式，+'%Y-%m-%d %H:%M:%S'可以不要
 date -d @1381235068 +'%Y-%m-%d %H:%M:%S'
 # '2013-10-08 20:24:28'转成时间戳
@@ -195,24 +195,24 @@ date +%s
 
 * 提示符
 
-```sh
+```bash
 export PS1="\[\e[31;1m\]64bit_\[\e[31;1m\]\u\[\e[0m\]@\[\e[32;1m\]`/sbin/ifconfig eth1|grep "inet addr:"|cut -d: -f 2|cut -d" " -f1`\[\e[0m\]:\[\e[35;1m\]\w\[\e[0m\]\\$ "
 ```
 * 软件连接最终指向的文件
 
-```sh
+```bash
 readlink -f symbol-link-file-name
 ```
 
 * 本地语言修改
 
-```sh
+```bash
 export LC_ALL=zh_CN.UTF-8
 ```
 
 * 当前脚本所在目录
 
-```sh
+```bash
 cwd=$(dirname ${BASH_SOURCE[0]})
 echo $cwd
 ```
@@ -221,13 +221,13 @@ echo $cwd
 
 * top显示单个进程信息
 
-```sh
+```bash
 top -p `pgrep process-name | tr "\\n" "," | sed 's/,$//'`
 ```
 
 * for loop
 
-```sh
+```bash
 for i in 1 2 3 4 5
 do
    echo "Welcome $i times"
@@ -257,7 +257,7 @@ done
 
 * 用python实现`urldecode`和`urlencode`命令
 
-```sh
+```bash
 $ alias urldecode='python -c "import sys, urllib as ul; \
     print ul.unquote_plus(sys.argv[1])"'
 
@@ -267,13 +267,13 @@ $ alias urlencode='python -c "import sys, urllib as ul; \
 
 * 删除第一行
 
-```sh
+```bash
 tail -n +2 "$FILE"
 ```
 
 * 多行字符串
 
-```sh
+```bash
 read -r -d '' MULTILINE << EOM
 one
 two
@@ -285,7 +285,7 @@ EOM
 
 * 给用户增加sudo权限
 
-```sh
+```bash
 # 方法1
 sudo usermod -aG sudo lightxue
 # 方法2
@@ -294,7 +294,7 @@ sudo vi /etc/sudoers
 
 * 改变`ls`的默认颜色
 
-```sh
+```bash
 dircolors -p > ~/.dircolors
 # 修改~/.dircolors
 # ~/.bashrc加上下面代码
