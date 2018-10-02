@@ -2,7 +2,7 @@
 
 Emacs是神的编辑器，Vim是编辑器之神
 
-![](./img/vim-logo.png)
+<!--![](./img/vim-logo.png)-->
 
 传说中的编辑器学习曲线。都比较容易看懂，但是Emacs的曲线太诡异，没有看明白。
 ![](./img/vim-curves.jpg)
@@ -46,11 +46,13 @@ Emacs是神的编辑器，Vim是编辑器之神
 - normal模式下，!{motion}{program}调用外部程序
 
 - 下面这个命令能反转整个文件的行
+
 ```vim
 :global/^/m 0
 ```
 
 - 统计字数，`g``ctrl + G`，也可用在visual模式下。h count-item可以看到好玩的东西，比如
+
 ```vim
 :%s/\<the\>/&/gn
 ```
@@ -76,10 +78,12 @@ Emacs是神的编辑器，Vim是编辑器之神
 - :set virtualedit=all 可以让光标移动出行末，到空无一物的地方，这样在做表格的时候比较方便
 
 - `ctrl + a`自增，`ctrl + x`自减。
-```vim
+
+-  标准输出到vim。这里的`-`告诉vim从标准输入读取编辑内容。
+```bash
 ls | vim -
 ```
-这里的-告诉vim从标准输入读取编辑内容。
+
 
 - insert模式下`ctrl + t`和`ctrl + d`可以调节缩进
 
@@ -94,7 +98,8 @@ ls | vim -
 - `[I`Vim将会显示include文件中匹配这个函数名的一个清单
 
 - windows下会有找不到pydoc的情况，这时写个bat放到path能找得到的目录下，内容是
-```
+
+```batch
 @python D:\Python27\Lib\pydoc.py %*
 ```
 

@@ -1,5 +1,5 @@
 BASEDIR=$(CURDIR)
-OUTPUTDIR=$(BASEDIR)/_book
+OUTPUTDIR=$(BASEDIR)/.vuepress/dist
 
 GITHUB_PAGES_BRANCH=master
 
@@ -12,7 +12,7 @@ help:
 	@echo '   make init                           initialize wiki evironment           '
 	@echo '   make html                           (re)generate the web site            '
 	@echo '   make clean                          remove the generated files           '
-	@echo '   make serve [PORT=4000]              serve site at http://localhost:8000  '
+	@echo '   make serve                          serve site at http://localhost:8080  '
 	@echo '   make github                         upload the web site via gh-pages     '
 	@echo '   make cdn                            upload the web site to CDN           '
 	@echo '   make release                        upload the web site to github and CDN'
@@ -20,30 +20,25 @@ help:
 	@echo '                                                                            '
 
 init:
-	sudo npm -g install gitbook-cli
+	sudo npm -g install vuepress
 	sudo apt-get install -y ghp-import
-	gitbook install
 
 html:
-	gitbook build
+	vuepress build
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
 
 serve:
-ifdef PORT
-	gitbook serve --port $(PORT)
-else
-	gitbook serve
-endif
+	vuepress dev
 
 publish:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
-	gitbook build
+	vuepress build
 
 github: publish
 	echo 'wiki.lightxue.com' > $(OUTPUTDIR)/CNAME
-	ghp-import -m "Generate Gitbook site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
+	ghp-import -m "Generate Vupress site" -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
 	git push origin $(GITHUB_PAGES_BRANCH)
 
 # 上传到七牛空间

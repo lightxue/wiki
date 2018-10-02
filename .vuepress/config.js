@@ -2,8 +2,11 @@ const fs = require('fs')
 const path = require('path')
 
 module.exports = {
-    title: 'Knowledge Base',
-    description: "Light Xue的个人维基",
+    title: 'Wiki',
+    description: "零散知识整理",
+    head: [
+        ['link', { rel: 'icon', href: '/img/light.jpg' }]
+    ],
     themeConfig: {
         nav: [{
             text: '首页',

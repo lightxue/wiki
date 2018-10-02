@@ -1,4 +1,4 @@
-# git
+# Git
 
 * git文件状态
 
@@ -6,31 +6,31 @@
 
 * 项目初始化
 
-```
+```bash
 git init
 ```
 
 * 增加文件
 
-```
+```bash
 git add README.md
 ```
 
 * 提交
 
-```
+```bash
 git commit -m 'comment'
 ```
 
 * 克隆
 
-```
+```bash
 git clone https://github.com/lightxue/vim_config.git vim_config
 ```
 
 * 查看状态
 
-```
+```bash
 git status
 ```
 
@@ -41,38 +41,38 @@ git status
 
 * 查看unstage的文件的修改部分
 
-```
+```bash
 git diff
 ```
 
 * 查看已提交的文件与上次提交时的快照之间的差异
 
-```
+```bash
 git diff --cached
 git diff --staged
 ```
 
 * 移除，从暂存区移除
 
-```
+```bash
 git rm file
 ```
 
 * 移除跟踪(track)但不删除文件
 
-```
+```bash
 git rm --cached file
 ```
 
 * 重命名
 
-```
+```bash
 git mv filea fileb
 ```
 
 * 查看log
 
-```
+```bash
 git log
 
 // 查看提交内容的diff，这个不错
@@ -96,56 +96,56 @@ git log --graph
 
 * 撤消最后一次提交
 
-```
+```bash
 git commit --amend
 ```
 
 * 取消已经暂存的文件
 
-```
+```bash
 git reset HEAD file
 ```
 
 * 取消对文件的修改
 
-```
+```bash
 git checkout -- file
 ```
 
 * 添加远程仓库
 
-```
+```bash
 git remote add pb git://github.com/paulboone/ticgit.git
 ```
 
 * 远程抓取数据
 
-```
+```bash
 git fetch remote-name
 ```
 
 * 推送数据到远程仓库
 
-```
+```bash
 git push origin master
 ```
 
 * 查看远程仓库信息
 
-```
+```bash
 git remote show remote-name
 ```
 
 * 远程仓库删除和重命名
 
-```
+```bash
 git remote rename remote-name-old remote-name-new
 git remote rm remote-name
 ```
 
 * 标签
 
-```
+```bash
 // 查看标签
 git tag
 // 创建含附注的标签
@@ -160,7 +160,7 @@ git tag v1.4-1w
 
 * alias
 
-```
+```bash
 git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
@@ -171,72 +171,72 @@ git config --global alias.last 'log -3 HEAD'
 
 * 默认编辑器选择
 
-```
+```bash
 git config --global core.editor vim
 ```
 
 * 打开高亮
 
-```
+```bash
 git config --global color.ui true
 ```
 
 * 查看配置信息
 
-```
+```bash
 git config --list
 ```
 
 * 记住密码1小时
 
-```
+```bash
 git config --global credential.helper 'cache --timeout 3600'
 ```
 
 * Show information about files in the index and the working tree
 
-```
+```bash
 git ls-files
 ```
 
 * 指定合并编辑器
 
-```
+```bash
 git config --global merge.tool vimdiff
 ```
 
 * 检查已有配置信息
 
-```
+```bash
 git config --list
 ```
 
 * 不需要`git add`，直接把track的文件放到staged里并提交
 
-```
+```bash
 git commit -a
 ```
 
 * 增加远程仓库
 
-```
+```bash
 git remote add pb git://github.com/paulboone/ticgit.git
 ```
 * 查看远程仓库信息
 
-```
+```bash
 git remote show origin
 ```
 
 * 重命令远程仓库
 
-```
+```bash
 git remote rename
 ```
 
 * 列出现有tag
 
-```
+```bash
 git tag
 git tag -l 'v1.4.2.*'
 ```
@@ -250,26 +250,26 @@ git tag -l 'v1.4.2.*'
 
 * 创建一个含附注类型的标签
 
-```
+```bash
 git tag -a v1.4 -m 'my version 1.4'
 git tag -a v1.2 9fceb02 // commit校验和
 ```
 
 * 创建一个轻量级的标签
 
-```
+```bash
 git tag v1.4
 ```
 
 * 查看相应标签的版本信息
 
-```
+```bash
 git show v1.4
 ```
 
 * 默认情况下，git push 并不会把标签传送到远端服务器上，只有通过显式命令才能分享标签到远端仓库
 
-```
+```bash
 git push origin v1.5
 // 一次推送所有（本地新增的）标签上去
 git push origin --tags
@@ -277,7 +277,7 @@ git push origin --tags
 
 * 给git加自动补全功能
 
-```
+```bash
 source ~/.git-completion.bash
 ```
 
@@ -295,32 +295,32 @@ source ~/.git-completion.bash
 
 * 创建分支testing
 
-```
+```bash
 git branch testing
 ```
 
 * 切换到testing分支
 
-```
+```bash
 git checkout testing
 ```
 
 * 删除分支hotfix
 
-```
+```bash
 git branch -d hotfix
 ```
 
 * 把issue53分支的代码合并到当前分支
 
-```
+```bash
 git merge issue53
 // 如果有冲突，解决完后git add表示冲突解决
 ```
 
 * 列表当前分支列表
 
-```
+```bash
 git branch
 
 // 详细信息
@@ -339,13 +339,13 @@ git branch --no-merged
 
 * 配置全局用户名，邮箱
 
-```
+```bash
 git config --global user.name 'lightxue'
 git config --global user.email 'bkmgtp@gmail.com'
 ```
 
 * Windows上pull和push不了的问题解决
 
-```
+```bash
 git config --global sendpack.sideband false
 ```
