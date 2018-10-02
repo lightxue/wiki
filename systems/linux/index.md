@@ -2,15 +2,15 @@
 
 * 软硬连接
 
-![](/attach/linux/hard_link_soft_link.jpg)
+![](./img/hard_link_soft_link.jpg)
 
 * dup和dup2
 
-![](/attach/linux/fs.dup.png)
+![](./img/fs.dup.png)
 
 * 文件描述符
 
-![](/attach/linux/file_pointer.gif)
+![](./img/file_pointer.gif)
 
 * 除斜线（/）和空字符（ASCII字符\0）以外，文件名可以包含任意的ASCII字符，因为那两个字符被核心当做表示路径名的特殊字符来解释。
 
@@ -30,15 +30,15 @@ sigaction(SIGPIPE, &sig, NULL);
 
 * linux常用工具
 
-![](/attach/linux/linux_tools.png)
+![](./img/linux_tools.png)
 
-![](/attach/linux/linux_observability_tools.png)
+![](./img/linux_observability_tools.png)
 
-![](/attach/linux/linux_observability_sar.png)
+![](./img/linux_observability_sar.png)
 
-![](/attach/linux/linux_benchmarking_tools.png)
+![](./img/linux_benchmarking_tools.png)
 
-![](/attach/linux/linux_tuning_tools.png)
+![](./img/linux_tuning_tools.png)
 
 * Ceph
 

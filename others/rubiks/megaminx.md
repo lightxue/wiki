@@ -2,11 +2,11 @@
 
 https://ruwix.com/twisty-puzzles/megaminx-gigaminx-teraminx-petaminx/
 
-![](/attach/rubik/megaminx-notation.jpg)
+![](./img/megaminx-notation.jpg)
 
 ## 最后一层棱块位置
 
-![](/attach/rubik/megaminx-cycle-last-layer-edges.jpg)
+![](./img/megaminx-cycle-last-layer-edges.jpg)
 
 图案   | 公式
 ---    | ---
@@ -15,7 +15,7 @@ https://ruwix.com/twisty-puzzles/megaminx-gigaminx-teraminx-petaminx/
 
 ## 最后一层角块位置
 
-![](/attach/rubik/megaminx-permute-last-layer-corners.jpg)
+![](./img/megaminx-permute-last-layer-corners.jpg)
 
 图案   | 公式
 ---    | ---
@@ -24,6 +24,6 @@ https://ruwix.com/twisty-puzzles/megaminx-gigaminx-teraminx-petaminx/
 
 ## 最后一层角块方向
 
-![](/attach/rubik/megaminx-orient-last-layer-corners.jpg)
+![](./img/megaminx-orient-last-layer-corners.jpg)
 
 `(R' D' R D) * 2`或`(R' D' R D) * 4`调整URF位置的角块方向

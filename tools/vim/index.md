@@ -2,10 +2,10 @@
 
 Emacs是神的编辑器，Vim是编辑器之神
 
-![](/attach/vim/vim-logo.png)
+![](./img/vim-logo.png)
 
 传说中的编辑器学习曲线。都比较容易看懂，但是Emacs的曲线太诡异，没有看明白。
-![](/attach/vim/vim-curves.jpg)
+![](./img/vim-curves.jpg)
 
 ## 基础知识
 

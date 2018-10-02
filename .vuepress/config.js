@@ -52,6 +52,8 @@ function scanDir(dir) {
             title = parseTitle(path.join(p, 'index.md'))
             children.unshift(path.join(dir, '/'))
         }
+        else if (file === 'img') {
+        }
         else {
             children.push(path.join(dir, file))
         }

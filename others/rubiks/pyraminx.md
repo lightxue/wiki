@@ -2,9 +2,9 @@
 
 https://ruwix.com/twisty-puzzles/pyraminx-triangle-rubiks-cube/
 
-![](/attach/rubik/notation-pyraminx.jpg)
+![](./img/notation-pyraminx.jpg)
 
-![](/attach/rubik/pyraminx-last-layer.jpg)
+![](./img/pyraminx-last-layer.jpg)
 
 图案           | 公式
 ---            | ---

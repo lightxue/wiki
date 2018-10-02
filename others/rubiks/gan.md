@@ -1,5 +1,5 @@
 # gan的公式
 
-![](/attach/rubik/gan1.jpg)
+![](./img/gan1.jpg)
 
-![](/attach/rubik/gan2.jpg)
+![](./img/gan2.jpg)

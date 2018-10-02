@@ -1,8 +1,8 @@
-# Git
+# git
 
 * git文件状态
 
-![](/attach/git/git-status.png)
+![](./img/git-status.png)
 
 * 项目初始化
 
@@ -283,15 +283,15 @@ source ~/.git-completion.bash
 
 * 提交3个文件，会建立三个文件的blob对象，文件所在目录的tree对象和一个commit对象
 
-![](/attach/git/commit-tree-blob.png)
+![](./img/commit-tree-blob.png)
 
 * 分支是一个可移动的指针，指向commit对象
 
-![](/attach/git/commit-branch.png)
+![](./img/commit-branch.png)
 
 * HEAD指针指向当前使用的分支
 
-![](/attach/git/HEAD-branch.png)
+![](./img/HEAD-branch.png)
 
 * 创建分支testing
 
