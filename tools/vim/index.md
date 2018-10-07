@@ -1,6 +1,6 @@
 # Vim
 
-Emacs是神的编辑器，Vim是编辑器之神
+Emacs是神的编辑器，Vim是编辑器之神 :tada:
 
 <!--![](./img/vim-logo.png)-->
 

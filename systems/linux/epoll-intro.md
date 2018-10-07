@@ -1,18 +1,28 @@
-# epoll初步
+# epoll用法
 
 epoll的接口很简单，只有3个函数
 
-* `int epoll_create(int size);`
+## epoll_create
+
+```c
+int epoll_create(int size);
+```
 
 创建一个epoll的句柄，`size`用来告诉内核这个监听的数目一共有多大。这个参数不同于`select()`中的第一个参数，给出最大监听的fd+1的值。需要注意的是，当创建好epoll句柄后，它就是会占用一个fd值，在linux下如果查看/proc/进程id/fd/，是能够看到这个fd的，所以在使用完epoll后，必须调用`close()`关闭，否则可能导致fd被耗尽。
 
-* `int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event);`
+## epoll_ctl
+
+```c
+int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event);
+```
 
 epoll的事件注册函数，它不同与`select()`是在监听事件时告诉内核要监听什么类型的事件，而是在这里先注册要监听的事件类型。第一个参数是`epoll_create()`的返回值，第二个参数表示动作，用三个宏来表示：
 
-- `EPOLL_CTL_ADD`：注册新的fd到epfd中；
-- `EPOLL_CTL_MOD`：修改已经注册的fd的监听事件；
-- `EPOLL_CTL_DEL`：从epfd中删除一个fd；
+类型            | 说明
+---             | ---
+`EPOLL_CTL_ADD` | 注册新的fd到epfd中
+`EPOLL_CTL_MOD` | 修改已经注册的fd的监听事件
+`EPOLL_CTL_DEL` | 从epfd中删除一个fd
 
 第三个参数是需要监听的fd，第四个参数是告诉内核需要监听什么事，`struct epoll_event`结构如下：
 ```c
@@ -24,19 +34,26 @@ struct epoll_event {
 
 events可以是以下几个宏的集合：
 
-- `EPOLLIN `：表示对应的文件描述符可以读（包括对端SOCKET正常关闭）；
-- `EPOLLOUT`：表示对应的文件描述符可以写；
-- `EPOLLPRI`：表示对应的文件描述符有紧急的数据可读（这里应该表示有带外数据到来）；
-- `EPOLLERR`：表示对应的文件描述符发生错误；
-- `EPOLLHUP`：表示对应的文件描述符被挂断；
-- `EPOLLET`： 将EPOLL设为边缘触发(Edge Triggered)模式，这是相对于水平触发(Level Triggered)来说的。
-- `EPOLLONESHOT`：只监听一次事件，当监听完这次事件之后，如果还需要继续监听这个socket的话，需要再次把这个socket加入到EPOLL队列里
+事件           | 说明
+---            | ---
+`EPOLLIN `     | 表示对应的文件描述符可以读（包括对端SOCKET正常关闭）；
+`EPOLLOUT`     | 表示对应的文件描述符可以写；
+`EPOLLPRI`     | 表示对应的文件描述符有紧急的数据可读（这里应该表示有带外数据到来）；
+`EPOLLERR`     | 表示对应的文件描述符发生错误；
+`EPOLLHUP`     | 表示对应的文件描述符被挂断；
+`EPOLLET`      | 将epoll设为边缘触发(Edge Triggered)模式，这是相对于水平触发(Level Triggered)来说的。
+`EPOLLONESHOT` | 只监听一次事件，当监听完这次事件之后，如果还需要继续监听这个socket的话，需要再次把这个socket加入到EPOLL队列里
 
-* `int epoll_wait(int epfd, struct *epoll_events, int maxevents, int timeout);`
+## epoll_wait
+
+```c
+int epoll_wait(int epfd, struct *epoll_events, int maxevents, int timeout);
+```
 
 等待事件的产生，类似于`select()`调用。参数events用来从内核得到事件的集合，`maxevents`告之内核这个events有多大，这个`maxevents`的值不能大于创建`epoll_create()`时的size，参数timeout是超时时间（毫秒，0会立即返回，-1将不确定，也有说法说是永久阻塞）。该函数返回需要处理的事件数目，如返回0表示已超时。
 
----------------------
+## ET与LT的区别
+
 从man手册中，得到ET和LT的具体描述如下
 
 EPOLL事件有两种模型：
@@ -44,25 +61,27 @@ EPOLL事件有两种模型：
 * Level Triggered (LT)
 
 假如有这样一个例子：
-- 我们已经把一个用来从管道中读取数据的文件句柄(RFD)添加到epoll描述符
-- 这个时候从管道的另一端被写入了2KB的数据
-- 调用`epoll_wait(2)`，并且它会返回RFD，说明它已经准备好读取操作
-- 然后我们读取了1KB的数据
-- 调用`epoll_wait(2)`......
+1. 我们已经把一个用来从管道中读取数据的文件句柄(RFD)添加到epoll描述符
+2. 这个时候从管道的另一端被写入了2KB的数据
+3. 调用`epoll_wait(2)`，并且它会返回RFD，说明它已经准备好读取操作
+4. 然后我们读取了1KB的数据
+5. 调用`epoll_wait(2)`......
 
-Edge Triggered 工作模式：
+### Edge Triggered 工作模式
 
-如果我们在第1步将RFD添加到epoll描述符的时候使用了`EPOLLET`标志，那么在第5步调用`epoll_wait(2)`之后将有可能会挂起，因为剩余的数据还存在于文件的输入缓冲区内，而且数据发出端还在等待一个针对已经发出数据的反馈信息。只有在监视的文件句柄上发生了某个事件的时候 ET 工作模式才会汇报事件。因此在第5步的时候，调用者可能会放弃等待仍在存在于文件输入缓冲区内的剩余数据。在上面的例子中，会有一个事件产生在RFD句柄上，因为在第2步执行了一个写操作，然后，事件将会在第3步被销毁。因为第4步的读取操作没有读空文件输入缓冲区内的数据，因此我们在第5步调用 `epoll_wait(2)`完成后，是否挂起是不确定的。 **epoll工作在ET模式的时候，必须使用非阻塞套接口，以避免由于一个文件句柄的阻塞读/阻塞写操作把处理多个文件描述符的任务饿死。最好以下面的方式调用ET模式的epoll接口，在后面会介绍避免可能的缺陷。**
+如果我们在第1步将RFD添加到epoll描述符的时候使用了`EPOLLET`标志，那么在第5步调用`epoll_wait(2)`之后将有可能会挂起，因为剩余的数据还存在于文件的输入缓冲区内，而且数据发出端还在等待一个针对已经发出数据的反馈信息。只有在监视的文件句柄上发生了某个事件的时候 ET 工作模式才会汇报事件。因此在第5步的时候，调用者可能会放弃等待仍在存在于文件输入缓冲区内的剩余数据。在上面的例子中，会有一个事件产生在RFD句柄上，因为在第2步执行了一个写操作，然后，事件将会在第3步被销毁。因为第4步的读取操作没有读空文件输入缓冲区内的数据，因此我们在第5步调用 `epoll_wait(2)`完成后，是否挂起是不确定的。
 
-i    基于非阻塞文件句柄
+epoll工作在ET模式的时候，必须使用非阻塞套接口，以避免由于一个文件句柄的阻塞读/阻塞写操作把处理多个文件描述符的任务饿死。最好以下面的方式调用ET模式的epoll接口，在后面会介绍避免可能的缺陷。
 
-ii   只有当`read(2)`或者`write(2)`返回EAGAIN时才需要挂起，等待。但这并不是说每次`read()`时都需要循环读，直到读到产生一个EAGAIN才认为此次事件处理完成，当`read()`返回的读到的数据长度小于请求的数据长度时，就可以确定此时缓冲中已没有数据了，也就可以认为此事读事件已处理完成。
+1. 基于非阻塞文件句柄
 
-Level Triggered 工作模式
+2. 只有当`read(2)`或者`write(2)`返回`EAGAIN`时才需要挂起，等待。但这并不是说每次`read()`时都需要循环读，直到读到产生一个EAGAIN才认为此次事件处理完成，当`read()`返回的读到的数据长度小于请求的数据长度时，就可以确定此时缓冲中已没有数据了，也就可以认为此事读事件已处理完成。
+
+### Level Triggered 工作模式
 
 相反的，以LT方式调用epoll接口的时候，它就相当于一个速度比较快的`poll(2)`，并且无论后面的数据是否被使用，因此他们具有同样的职能。因为即使使用ET模式的epoll，在收到多个chunk的数据的时候仍然会产生多个事件。调用者可以设定`EPOLLONESHOT`标志，在 `epoll_wait(2)`收到事件后epoll会与事件关联的文件句柄从epoll描述符中禁止掉。因此当`EPOLLONESHOT`设定后，使用带有 `EPOLL_CTL_MOD`标志的`epoll_ctl(2)`处理文件句柄就成为调用者必须作的事情。
 
-然后详细解释ET, LT:
+### ET/LT对比
 
 LT(level triggered)是缺省的工作方式，并且同时支持block和no-block socket.在这种做法中，内核告诉你一个文件描述符是否就绪了，然后你可以对这个就绪的fd进行IO操作。如果你不作任何操作，内核还是会继续通知你的，所以，这种模式编程出错误可能性要小一点。传统的select/poll都是这种模型的代表．
 
@@ -136,4 +155,10 @@ ssize_t socket_send(int sockfd, const char* buffer, size_t buflen)
     return tmp;
 }
 ```
+
+## 使用注意
+
+* 阻塞的socket在`epoll_wait`后调用`accept`，在`epoll_wait`返回到accept调用这段时间，服务器收到rst报文，会导致调用accept阻塞，直到下一个连接的到来。
+
+* stale event
 

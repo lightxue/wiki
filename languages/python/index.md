@@ -1,54 +1,26 @@
 # Python
 
-* 最近经常在linux执行python程序，比如./server.py，会提示“: No such file or directory”，令人不解。原来是换行符是dos的话就会这样，改成unix换行符就没有问题了
+## Syntax
 
-* datetime类型对象和1970年以来的秒数互转，datetime.datetime.now()的返回值是datetime对象，time.time()返回的是1970年到现在的秒数。补充一下，UTC是世界协调时间(对于UTC这个名字的来源无力吐槽，详见维基百科)，虽然GMT时间不再用，但我YY可以把UTC和GMT等同。
+* [字符串的`%`和`.format()`格式化](https://pyformat.info)
 
+* `is` will return `True` if two variables point to the same object, `==` if the objects referred to by the variables are equal.
+
+* id(object)唯一标识一个对象
+
+* 变量作用域：LEGB(Local->函数，def和lambda；Enclosing->闭包，def和lambda；Global->全局，在module里；Buid-in->内置)
+
+* `class.__mro__`继承关系，方法调用顺序
+
+* `__all__`，列表或元组，指出该模块import的时候可以使用哪些对象
+
+* 正无穷和负无穷
 ```python
-import datetime
-import time
-
-time.mktime(datetime.datetime.now().timetuple())
-datetime.datetime.fromtimestamp(time.time())
-```
-
-* time、datetime、str互转
-
-```python
-# 把datetime转成字符串
-def datetime_toString(dt):
-    return dt.strftime("%Y-%m-%d %H:%M:%S")
-
-# 把字符串转成datetime
-def string_toDatetime(string):
-    return datetime.datetime.strptime(string, "%Y-%m-%d %H:%M:%S")
-
-# 把字符串转成时间戳形式
-def string_toTimestamp(strTime):
-    return time.mktime(string_toDatetime(strTime).timetuple())
-
-# 把时间戳转成字符串形式
-def timestamp_toString(stamp):
-    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(stamp))
-
-# 把datetime类型转外时间戳形式
-def datetime_toTimestamp(dateTim):
-    return time.mktime(dateTim.timetuple())
-
-def timestamp_toDatetime(timestamp):
-    return datetime.datetime.fromtimestamp(timestamp)
-```
-
-* urllib2.unquote(url)
-
-* 程序环境变量
-
-```python
-os.environ
+float('Inf')
+float('-Inf')
 ```
 
 * 子类初始化父类
-
 ```python
 # new style class也能用这种方法
 class B:
@@ -71,86 +43,7 @@ class C(B):
         super(C, self).__init__(s)
 ```
 
-* xml转成dict
-
-```python
-def xml2dict(node, dic = {}):
-    dic[node.tag] = ndic = {}
-    [xml2dict(child, ndic) for child in node.getchildren() if child != node]
-    ndic['text'] = node.text.strip()
-    return dic
-
-from xml.etree import cElementTree as ET
-tree = ET.parse('test.xml')
-print xml2dict(tree.getroot())
-```
-
-* ini to dict
-
-```python
-cf = ConfigParser.ConfigParser()
-cf.read(filename)
-return dict(cf.__dict__['_sections'].copy()) #里面有的value是orderdict
-```
-
-* python式enum
-
-```python
-ALL_TYPES = (
-    TOP_LEVEL,  # The type of the 'Google Chrome' folder.
-    APPS,
-    APP_NOTIFICATION,
-    APP_SETTINGS,
-    AUTOFILL,
-    AUTOFILL_PROFILE,
-    BOOKMARK,
-    EXTENSIONS,
-    HISTORY_DELETE_DIRECTIVE,
-    NIGORI,
-    PASSWORD,
-    PREFERENCE,
-    SEARCH_ENGINE,
-    SESSION,
-    THEME,
-    TYPED_URL,
-    EXTENSION_SETTINGS) = range(17)
-```
-
-* `is` will return `True` if two variables point to the same object, `==` if the objects referred to by the variables are equal.
-
-* 计算md5和sha1
-
-```python
-import hashlib
-
-md5 = hashlib.md5()
-md5.update('string to digest')
-print md5.hexdigest()
-
-sha = hashlib.sha1()
-sha.update('string to digest')
-print sha.hexdigest()
-```
-
-* base64编解码
-
-```python
-import base64
-s = 'this is a text'
-encstr = base64.encodestring(s)
-decstr = base64.decodestring(encstr)
-```
-
-* 随机字符
-
-```python
-import os
-length = 10
-print os.urandom(length)
-```
-
 * getter and setter，不要在构造函数里用这个伪变量，可能会把这个函数覆盖
-
 ```python
 class C:
     def __init__:
@@ -164,8 +57,136 @@ class C:
         self._channel = channel
 ```
 
-* 脚本所在位置
+## Library
 
+* urllib2.unquote(url)
+
+* 进程环境变量
+```python
+os.environ
+```
+
+* any不很错
+```python
+# ugly
+if needle.endswith('ly') or needle.endswith('ed') or 
+    needle.endswith('ing') or needle.endswith('ers'):
+    print('Is valid')
+else:
+    print('Invalid')
+
+# pretty
+if any([needle.endswith(e) for e in ('ly', 'ed', 'ing', 'ers')]):
+    print('Is valid')
+else:
+    print('Invalid')
+
+# better
+if needle.endswith(('ly', 'ed', 'ing', 'ers')):
+    print('Is valid')
+else:
+    print('Invalid')
+```
+
+* [`strftime`时间格式化字符串说明](http://strftime.org)
+
+* 给utf8文件写入BOM
+
+```
+import codecs
+fd.write(codecs.BOM_UTF8)
+
+# 或编码选择'utf-8-sig'
+```
+
+* mysql按列名取值
+```python
+cursor = conn.cursor(MySQLdb.cursors.DictCursor)
+cursor.execute("SELECT name, category FROM animal")
+result_set = cursor.fetchall()
+for row in result_set:
+    print "%s, %s" % (row["name"], row["category"])
+```
+
+### 实用的`codec`
+
+Codec          | Aliases           | Purpose
+---            | ---               | ---
+ascii          | 646, us-ascii     | English
+gb2312         | chinese           | Simplified Chinese
+gbk            | 936, cp936, ms936 | Unified Chinese
+utf_8          | U8, UTF, utf8     | all languages
+unicode_escape |                   | Encoding suitable as the contents of a Unicode literal in ASCII-encoded Python source code, except that quotes are not escaped. Decodes from Latin-1 source code. Beware that Python source code actually uses UTF-8 by default.
+string_escape  |                   | Produce a string that is suitable as string literal in Python source code(Python 2)
+base64_codec   | base64, base_64   |
+bz2_codec      | bz2               | Compress the operand using bz2 | bz2.compress() / bz2.decompress()
+hex_codec      | hex               | Convert operand to hexadecimal representation, with two digits per byte
+zlib_codec     | zip, zlib         | Compress the operand using gzip
+rot_13         | rot13             | Returns the Caesar-cypher encryption of the operand
+
+## Tips & tricks
+
+* 在交互界面里，`_`保存了最后打印的变量
+
+* 命令行执行程序，比如./server.py，如果提示“: No such file or directory”，可能是因为换行符不是unix格式的
+
+* xml转成dict
+```python
+def xml2dict(node, dic = {}):
+    dic[node.tag] = ndic = {}
+    [xml2dict(child, ndic) for child in node.getchildren() if child != node]
+    ndic['text'] = node.text.strip()
+    return dic
+
+from xml.etree import cElementTree as ET
+tree = ET.parse('test.xml')
+print xml2dict(tree.getroot())
+```
+
+* Python 2 修改默认的unicode和str互转的解码格式
+```python
+import sys
+
+reload(sys)
+sys.setdefaultencoding('UTF-8')
+```
+
+* ini to dict
+```python
+cf = ConfigParser.ConfigParser()
+cf.read(filename)
+return dict(cf.__dict__['_sections'].copy()) #里面有的value是orderdict
+```
+
+* 计算md5和sha1
+```python
+import hashlib
+
+md5 = hashlib.md5()
+md5.update('string to digest')
+print md5.hexdigest()
+
+sha = hashlib.sha1()
+sha.update('string to digest')
+print sha.hexdigest()
+```
+
+* base64编解码
+```python
+import base64
+s = 'this is a text'
+encstr = base64.encodestring(s)
+decstr = base64.decodestring(encstr)
+```
+
+* 随机字符
+```python
+import os
+length = 10
+print os.urandom(length)
+```
+
+* 程序文件所在路径
 ```python
 __file__
 
@@ -177,7 +198,6 @@ print frameinfo.filename, frameinfo.lineno
 ```
 
 * 异常所在的行号
-
 ```python
 import sys, os
 
@@ -191,9 +211,8 @@ except Exception as e:
 ```
 
 * 列表拷贝
-
 ```python
-    new_list = old_list[:] # 可语性不太好
+    new_list = old_list[:] # 可读性不太好
 
     new_list = list(old_list) # 这个很直观
 
@@ -207,7 +226,6 @@ except Exception as e:
 ```
 
 * 列表清空
-
 ```python
     old_list = [1, 2, 3, 4]
 
@@ -219,58 +237,35 @@ except Exception as e:
     del new_list[:]
 ```
 
-* 字典格式化字符串
-
-```python
-    d = {'name' : 'lightxue', 'gender' : 'male'}
-    print 'your name is %(name)s, gender is %(gender)s' % d
-```
-
-* id(object)唯一标识一个对象
-
-* 变量作用域：LEGB(Local->函数，def和lambda；Enclosing->闭包，def和lambda；Global->全局，在module里；Buid-in->内置)
-
-* binary <-> hex string
-
-```python
->>> s = '\x01\xff'
->>> s.encode('hex_codec')
-'01ff'
->>> s.encode('hex_codec').decode('hex_codec')
-'\x01\xff'
-```
-
 * 矩阵转置
-
 ```python
 arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
 print map(list, zip(*arr))
 ```
 
-* unicode unescape
-
+* 列表分成n个元素一组
 ```python
-s = r'\u751f\u547d'
-print s.decode('unicode-escape')
+>>> l = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8]
+>>> zip(*([iter(l)] * 3))
+[(3, 1, 4), (1, 5, 9), (2, 6, 5), (3, 5, 8)]
 ```
 
-* string unescape
-
+* 找出文件最长行
 ```python
-s = r'\xe7\x94\x9f\xe5\x91\xbd'
-print s.decode('string-escape')
+max(open('test.txt'), key=len)
 ```
 
-* list有函数叫count，比较实用
+* 整数所有数字相加之和
+```python
+sum(map(int, str(n)))
+```
 
 * 显示某个文件的汇编代码
-
 ```python
 python -m dis file.py
 ```
 
 * 看函数/类的汇编代码
-
 ```python
 #!/usr/bin/env python
 # encoding: utf-8
@@ -297,7 +292,6 @@ if __name__ == '__main__':
 ```
 
 * 用dis调试
-
 ```python
 #!/usr/bin/env python
 # encoding: utf-8
@@ -318,7 +312,6 @@ except:
 ```
 
 * 把py编译成pyc
-
 ```python
 python -m py_compile file.py
 ```
@@ -328,21 +321,7 @@ python -m py_compile file.py
 #define CO_MAXBLOCKS 20 /* Max static block nesting within a function */
 ```
 
-* 合并两个dict
-```c
-d = {'a' : 1, 'b' : 2}
-d.update({'a' : 4, 'c' : 3})
-print d
-#{'a' : 4, 'b' : 2, 'c' : 3}
-```
-
-* dict.setdefault非常实用
-
-* 在交互界面里，`_`保存了最后打印的变量
-
-* `class.__mro__`继承关系，方法调用顺序
-
-* proto buf的encoder.py里的一段注释
+* protobuf的encoder.py里的一段性能优化的注释
 ```
 * We copy any needed global functions to local variables, so that we do not need
   to do costly global table lookups at runtime.
@@ -362,71 +341,42 @@ print d
   result of the last statement.  It looks funny but it helps.
 ```
 
-* py文件编译成pyc
-```
-python -m py_compile file.py
-```
+### 时间戳操作
 
-* any不很错
-
+TODO 
+* datetime类型对象和1970年以来的秒数互转，datetime.datetime.now()的返回值是datetime对象，time.time()返回的是1970年到现在的秒数。补充一下，UTC是世界协调时间(对于UTC这个名字的来源无力吐槽，详见维基百科)，虽然GMT时间不再用，但我YY可以把UTC和GMT等同。
 ```python
-# ugly
-if needle.endswith('ly') or needle.endswith('ed') or 
-    needle.endswith('ing') or needle.endswith('ers'):
-    print('Is valid')
-else:
-    print('Invalid')
+import datetime
+import time
 
-# pretty
-if any([needle.endswith(e) for e in ('ly', 'ed', 'ing', 'ers')]):
-    print('Is valid')
-else:
-    print('Invalid')
-
-# better
-if needle.endswith(('ly', 'ed', 'ing', 'ers')):
-    print('Is valid')
-else:
-    print('Invalid')
+time.mktime(datetime.datetime.now().timetuple())
+datetime.datetime.fromtimestamp(time.time())
 ```
 
-* 列表分成n个元素一组
-
+* time、datetime、str互转
 ```python
->>> l = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8]
->>> zip(*([iter(l)] * 3))
-[(3, 1, 4), (1, 5, 9), (2, 6, 5), (3, 5, 8)]
-```
+# 把datetime转成字符串
+def datetime_toString(dt):
+    return dt.strftime("%Y-%m-%d %H:%M:%S")
 
-* 找出文件最长行
+# 把字符串转成datetime
+def string_toDatetime(string):
+    return datetime.datetime.strptime(string, "%Y-%m-%d %H:%M:%S")
 
-```python
-max(open('test.txt'), key=len)
-```
+# 把字符串转成时间戳形式
+def string_toTimestamp(strTime):
+    return time.mktime(string_toDatetime(strTime).timetuple())
 
-* 整数所有数字相加之和
+# 把时间戳转成字符串形式
+def timestamp_toString(stamp):
+    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(stamp))
 
-```python
-sum(map(int, str(n)))
-```
+# 把datetime类型转外时间戳形式
+def datetime_toTimestamp(dateTim):
+    return time.mktime(dateTim.timetuple())
 
-* 正无穷和负无穷
-
-```python
-float('Inf')
-float('-Inf')
-```
-
-* `__all__`，列表或元组，指出该模块import的时候可以使用哪些对象
-
-* 显示import指定目录的包
-
-```python
-# import当前目录的包
-from . import tasks
-from .log import logger
-# 上一级目录的包
-from .. import tasks
+def timestamp_toDatetime(timestamp):
+    return datetime.datetime.fromtimestamp(timestamp)
 ```
 
 * [Why are Python strings immutable?]
@@ -444,42 +394,13 @@ from .. import tasks
 >        the value 8 to anything else, and in Python, no amount of
 >        activity will change the string “eight” to anything else.
 
-* 修改默认的ascii编码转换unicode和str
-
-```python
-import sys
-reload(sys)
-sys.setdefaultencoding('UTF-8')
-```
-
-* 给utf8文件写入BOM
-
-```
-import codecs
-fd.write(codecs.BOM_UTF8)
-
-# 或编码选择'utf-8-sig'
-```
-
 * 神奇的`__debug__`变量能实现`#ifdef`，看[这里](http://stackoverflow.com/questions/12524570/how-do-you-implement-ifdef-in-python)
 
-* 修改默认的unicode和str互转的解码格式
-
+* Python 2 修改默认的ascii编码转换unicode和str
 ```python
 import sys
-
 reload(sys)
 sys.setdefaultencoding('UTF-8')
-```
-
-* mysql按列名取值
-
-```python
-cursor = conn.cursor(MySQLdb.cursors.DictCursor)
-cursor.execute("SELECT name, category FROM animal")
-result_set = cursor.fetchall()
-for row in result_set:
-    print "%s, %s" % (row["name"], row["category"])
 ```
 
 * pip源改成阿里云的镜像源
@@ -500,11 +421,6 @@ ipython3 kernelspec install-self
 ```
 
 * jsonp转json
-
 ```python
 apijson = jsonp[ jsonp.index("(") + 1 : jsonp.rindex(")") ]
 ```
-
-* `str.format`文档 https://pyformat.info
-
-* `strftime`文档 http://strftime.org

@@ -1,10 +1,6 @@
 # MySQL
 
-* 加了\G，列名就变成竖着放的。
-
-```sql
-select * from table \G
-```
+## 小技巧
 
 * 显示字符集设置
 
@@ -21,6 +17,43 @@ set character_set_client = utf8     -- 用来设置客户端送给mysql服务器
 set character_set_results = utf8    -- 服务器返回查询结果时使用的字符集
 set character_set_connection = utf8 -- mysql服务器把客户端传来的数据，从character_set_client字符集转换成character_set_connection字符集
 ```
+
+* mysql把结果输出到文件
+
+    * 方案1，在shell里
+
+    ```sh
+    echo "select * from database.tbl_name;" | mysql > file_name
+    ```
+
+    * 方案2，在mysql里
+
+    ```sql
+    -- 文件会存在数据所在的位置，在datadir变量中，show variables like '%datadir%'可以看到，在/etc/my.conf里的datadir可配置
+    select * INTO OUTFILE 'file_name' from tbl_name;
+    ```
+
+* `last_insert_id`只会返回当前链接的insert id，多链接并发操作不会互相影响。`last_insert_id`只会返回自动生成的id，比如`auto-increment`，自己插入的id不算。
+
+* 查询当前事务级别
+
+```sql
+show variables like '%isola%';
+```
+
+```sql
+select cast(create_time as date)
+```
+
+* 查找多个key
+
+```sql
+SELECT *
+FROM tbl_name
+WHERE col_name IN (1, 2, 3, 4, 5);
+```
+
+## SQL语句
 
 * 数据基本操作
 
@@ -58,28 +91,6 @@ INSERT INTO tbl_name
   ON DUPLICATE KEY UPDATE col_name2=1;
 ```
 
-
-* mysql连unix domain socket
-
-```bash
-mysql -S /tmp/mysql*.sock
-```
-
-* mysql把结果输出到文件
-
-    * 方案1，在shell里
-
-    ```sh
-    echo "select * from database.tbl_name;" | mysql > file_name
-    ```
-
-    * 方案2，在mysql里
-
-    ```sql
-    -- 文件会存在数据所在的位置，在datadir变量中，show variables like '%datadir%'可以看到，在/etc/my.conf里的datadir可配置
-    select * INTO OUTFILE 'file_name' from tbl_name;
-    ```
-
 * 自动更新时间
 
 ```sql
@@ -92,28 +103,16 @@ CREATE TABLE `t_table`
 
 ```
 
-* `last_insert_id`只会返回当前链接的insert id，多链接并发操作不会互相影响。`last_insert_id`只会返回自动生成的id，比如`auto-increment`，自己插入的id不算。
-
-* 查找多个key
-
-```sql
-SELECT *
-FROM tbl_name
-WHERE col_name IN (1, 2, 3, 4, 5);
-```
-
-* 查询当前事务级别
-
-```sql
-show variables like '%isola%';
-```
-
 * 各种`join`的图
 
 ![](./img/mysql-joins.png)
 
 * `datetime`转成`date`
 
-```sql
-select cast(create_time as date)
+## 命令行
+
+* mysql连unix domain socket
+
+```bash
+mysql -S /tmp/mysql*.sock
 ```

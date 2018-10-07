@@ -30,6 +30,9 @@ module.exports = {
             '/tools/': genSidebar('/tools/'),
             '/others/': genSidebar('/others/'),
         }
+    },
+    markdown: {
+        lineNumbers: false
     }
 }
 

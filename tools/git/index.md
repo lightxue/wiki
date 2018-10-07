@@ -1,5 +1,7 @@
 # Git
 
+## 基本操作
+
 * git文件状态
 
 ![](./img/git-status.png)
@@ -20,6 +22,12 @@ git add README.md
 
 ```bash
 git commit -m 'comment'
+```
+
+* 不需要`git add`，直接把track的文件放到staged里并提交
+
+```bash
+git commit -a
 ```
 
 * 克隆
@@ -76,10 +84,10 @@ git mv filea fileb
 git log
 
 // 查看提交内容的diff，这个不错
-git -p
+git log -p
 
 // 最近两次更新
-git -2
+git log -2
 
 // 增改行数统计
 git log --stat
@@ -112,6 +120,64 @@ git reset HEAD file
 git checkout -- file
 ```
 
+## 标签
+
+```bash
+// 查看标签
+git tag
+// 创建含附注的标签
+git tag -a v1.4 -m 'my version 1.4'
+// 查看标签的版本信息
+git show v1.4
+// 把所有tag push到远程仓库(默认情况push是不会把标签推到远程服务器)
+git push --tags
+// 创建轻量级标签
+git tag v1.4-1w
+```
+
+* 列出现有tag
+
+```bash
+git tag
+git tag -l 'v1.4.2.*'
+```
+
+* Git 使用的标签有两种类型：轻量级的（lightweight）和含附注的（annotated）。轻量
+级标签就像是个不会变化的分支，实际上它就是个指向特定提交对象的引用。而含附注标
+签，实际上是存储在仓库中的一个独立对象，它有自身的校验和信息，包含着标签的名字，
+电子邮件地址和日期，以及标签说明，标签本身也允许使用GNU Privacy Guard (GPG) 来
+签署或验证。一般我们都建议使用含附注型的标签，以便保留相关信息；当然，如果只是临
+时性加注标签，或者不需要旁注额外信息，用轻量级标签也没问题。
+
+* 创建一个含附注类型的标签
+
+```bash
+git tag -a v1.4 -m 'my version 1.4'
+git tag -a v1.2 9fceb02 // commit校验和
+```
+
+* 创建一个轻量级的标签
+
+```bash
+git tag v1.4
+```
+
+* 查看相应标签的版本信息
+
+```bash
+git show v1.4
+```
+
+* 默认情况下，git push 并不会把标签传送到远端服务器上，只有通过显式命令才能分享标签到远端仓库
+
+```bash
+git push origin v1.5
+// 一次推送所有（本地新增的）标签上去
+git push origin --tags
+```
+
+## 远程仓库
+
 * 添加远程仓库
 
 ```bash
@@ -143,20 +209,7 @@ git remote rename remote-name-old remote-name-new
 git remote rm remote-name
 ```
 
-* 标签
-
-```bash
-// 查看标签
-git tag
-// 创建含附注的标签
-git tag -a v1.4 -m 'my version 1.4'
-// 查看标签的版本信息
-git show v1.4
-// 把所有tag push到远程仓库(默认情况push是不会把标签推到远程服务器)
-git push --tags
-// 创建轻量级标签
-git tag v1.4-1w
-```
+## 配置
 
 * alias
 
@@ -211,75 +264,20 @@ git config --global merge.tool vimdiff
 git config --list
 ```
 
-* 不需要`git add`，直接把track的文件放到staged里并提交
-
-```bash
-git commit -a
-```
-
-* 增加远程仓库
-
-```bash
-git remote add pb git://github.com/paulboone/ticgit.git
-```
-* 查看远程仓库信息
-
-```bash
-git remote show origin
-```
-
-* 重命令远程仓库
-
-```bash
-git remote rename
-```
-
-* 列出现有tag
-
-```bash
-git tag
-git tag -l 'v1.4.2.*'
-```
-
-* Git 使用的标签有两种类型：轻量级的（lightweight）和含附注的（annotated）。轻量
-级标签就像是个不会变化的分支，实际上它就是个指向特定提交对象的引用。而含附注标
-签，实际上是存储在仓库中的一个独立对象，它有自身的校验和信息，包含着标签的名字，
-电子邮件地址和日期，以及标签说明，标签本身也允许使用GNU Privacy Guard (GPG) 来
-签署或验证。一般我们都建议使用含附注型的标签，以便保留相关信息；当然，如果只是临
-时性加注标签，或者不需要旁注额外信息，用轻量级标签也没问题。
-
-* 创建一个含附注类型的标签
-
-```bash
-git tag -a v1.4 -m 'my version 1.4'
-git tag -a v1.2 9fceb02 // commit校验和
-```
-
-* 创建一个轻量级的标签
-
-```bash
-git tag v1.4
-```
-
-* 查看相应标签的版本信息
-
-```bash
-git show v1.4
-```
-
-* 默认情况下，git push 并不会把标签传送到远端服务器上，只有通过显式命令才能分享标签到远端仓库
-
-```bash
-git push origin v1.5
-// 一次推送所有（本地新增的）标签上去
-git push origin --tags
-```
-
 * 给git加自动补全功能
 
 ```bash
 source ~/.git-completion.bash
 ```
+
+* 配置全局用户名，邮箱
+
+```bash
+git config --global user.name 'lightxue'
+git config --global user.email 'bkmgtp@gmail.com'
+```
+
+## 分支
 
 * 提交3个文件，会建立三个文件的blob对象，文件所在目录的tree对象和一个commit对象
 
@@ -337,12 +335,7 @@ git branch --no-merged
 
 > Yes, you should be able to do `git reflog` and find the SHA1 for the commit at the tip of your deleted branch, then just `git checkout [sha]`. And once you're at that commit, you can just `git checkout -b [branchname]` to make a recreate the branch from there.
 
-* 配置全局用户名，邮箱
-
-```bash
-git config --global user.name 'lightxue'
-git config --global user.email 'bkmgtp@gmail.com'
-```
+## 技巧
 
 * Windows上pull和push不了的问题解决
 

@@ -1,4 +1,4 @@
-# dd测试磁盘的速度
+# 磁盘读写压测
 
 首先要了解两个特殊的设备：
 
@@ -6,19 +6,19 @@
 
 /dev/zero：产生字符
 
-## 测试磁盘写能力
+## 压测磁盘写速度
 
 `time dd if=/dev/zero of=/test.dbf bs=8k count=300000`
 
 因为/dev/zero是一个伪设备，它只产生空字符流，对它不会产生IO，所以，IO都会集中在of文件中，of文件只用于写，所以这个命令相当于测试磁盘的写能力。
 
-## 测试磁盘读能力
+## 压测磁盘读速度
 
 `time dd if=/dev/sdb1 of=/dev/null bs=8k`
 
 因为/dev/sdb1是一个物理分区，对它的读取会产生IO，/dev/null是伪设备，相当于黑洞，of到该设备不会产生IO，所以，这个命令的IO只发生在/dev/sdb1上，也相当于测试磁盘的读能力。
 
-## 测试同时读写能力
+## 压测同时读写速度
 
 `time dd if=/dev/sdb1 of=/test1.dbf bs=8k`
 
