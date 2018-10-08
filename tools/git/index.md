@@ -303,6 +303,12 @@ git branch testing
 git checkout testing
 ```
 
+* 切换到远程分支
+
+```bash
+git checkout -b testing origin/testing
+```
+
 * 删除分支hotfix
 
 ```bash
