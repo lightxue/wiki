@@ -8,6 +8,8 @@ pygmentize -O full,style=colorful -f rtf test.py | pbcopy
 
 ## 快捷键
 
+[官方文档](https://support.apple.com/en-hk/HT201236)
+
 图标 | 键名
 ---  | ---
 ⌘    | Command (Cmd)
