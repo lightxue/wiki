@@ -126,7 +126,7 @@ done < filename
 这种写法能解决上述问题
 
 ```bash
-while IFS="" read -r p || [ -n "$p" ] # -r 阻止read解析反斜杠
+while IFS="" read -r p || [ -n "$p" ]# -r 阻止解析反斜杠，[ -n "$p" ]保证最后一行被读到
 do
     printf '%s\n' "$p"
 done < filename
@@ -135,12 +135,11 @@ done < filename
 类似[这种](https://unix.stackexchange.com/questions/107800/using-while-loop-to-ssh-to-multiple-servers)情况，循环内的命令会吃掉标准输入的内容。这时文件重定向给另一个fd即可
 
 ```bash
-while IFS= read -r -u 9 line; do # -u 阻止解析反斜杠
+while IFS= read -r -u 9 line; do # -u 指定读的fd
   cat > ignoredfile
   printf '%s\n' "$line"
 done 9< "$file"
 
-# Note that read -u is not portable to every shell. Use a redirect to ensure it works in any POSIX compliant shell:
 # -u 可移植性不好。重定向符合POSIX规范的shell
 while IFS= read -r line <&9; do
   cat > ignoredfile
