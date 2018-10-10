@@ -1,41 +1,23 @@
 # Bash
 
-## 条件语句
-
-TODO
-
-## for循环
+## read
 
 ```bash
-for i in 1 2 3 4 5
-do
-   echo "Welcome $i times"
-done
-
-for i in {1..5}
-do
-   echo "Welcome $i times"
-done
-
-echo "Bash version ${BASH_VERSION}..."
-for i in {0..10..2}
-  do
-     echo "Welcome $i times"
- done
-
-for i in $(seq 1 2 20)
-do
-   echo "Welcome $i times"
-done
-
-for (( c=1; c<=5; c++ ))
-do
-   echo "Welcome $c times"
-done
+read var1
+read var1 var2 var3 ... # 按空格切分输入
 ```
 
-## while
+例子
 
-TODO
+```bash
 
+read -p 'Username: ' uservar  # -p 指定prompt
+read -sp 'Password: ' passvar # -s 不回显输入内容
+echo
+echo Thankyou $uservar we now have your login details
+```
+
+## 精品文章
+
+* 简洁的教程：[Ryans Tutorials](https://ryanstutorials.net/bash-scripting-tutorial/)
 
