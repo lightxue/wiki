@@ -1,5 +1,15 @@
 # JavaScript
 
+## console.log
+
+```javascript
+const util = require('util')
+
+console.log(util.inspect(myObject, {showHidden: false, depth: null}))
+// alternative shortcut
+console.log(util.inspect(myObject, false, null, true)) /* enable colors */
+```
+
 ## `call` vs `apply` vs `bind`
 
 ```javascript
@@ -48,15 +58,5 @@ handler.deleteProperty()           | A trap for the delete operator.
 handler.ownKeys()                  | A trap for Object.getOwnPropertyNames and Object.getOwnPropertySymbols.
 handler.apply()                    | A trap for a function call.
 handler.construct()                | A trap for the new operator.
-
-# console.log
-
-```javascript
-const util = require('util')
-
-console.log(util.inspect(myObject, {showHidden: false, depth: null}))
-// alternative shortcut
-console.log(util.inspect(myObject, false, null, true)) /* enable colors */
-```
 
 
