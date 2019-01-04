@@ -78,6 +78,8 @@ ALTER TABLE tbl_name RENAME COLUMN old_name to new_name;
 ALTER TABLE tbl_name CHANGE COLUMN old_name new_name tinyint NOT NULL DEFAULT '0';
 -- 表增加索引
 ALTER TABLE tbl_name ADD INDEX idx_name(col1, col2, col2);
+-- 表增加唯一索引
+ALTER TABLE tbl_name ADD UNIQUE idx_name(col1, col2, col2);
 -- 表修改引擎
 ALTER TABLE tbl_name ENGINE=InnoDB;
 ```
