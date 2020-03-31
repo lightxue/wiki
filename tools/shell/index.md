@@ -270,3 +270,8 @@ dircolors -p > ~/.dircolors
 # ~/.bashrc加上下面代码
 [ -e ~/.dircolors  ] && eval $(dircolors -b ~/.dircolors) || eval $(dircolors -b)
 ```
+
+* 搜索中文
+```bash
+grep -P '[\p{Han}]'
+```
