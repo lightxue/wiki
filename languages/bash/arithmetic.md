@@ -92,20 +92,40 @@ a=$(( 4 * 5 ))
 echo $a # 20
 ```
 
-## 字符串长度
+## 字符串操作
 
 语法
 
 ```bash
-${#variable}
-```
+s='Hello World'
 
-例子
+${#string} # len(stirng)
+echo ${#s} # 11
 
-```bash
-a='Hello World'
-echo ${#a} # 11
+${string:position} # string[position:]
+${string:position:length} # string[position:position+length]
+echo ${s:6} # World
+echo ${s:6:2} # Wo
 
-b=4953
-echo ${#b} # 4
+${string#substring} # 删除前面开始的最短匹配
+${string%substring} # 删除末尾的最短匹配
+echo ${s#Hel} # lo World
+echo ${s#*l}  # lo World
+echo ${s%ld}  # Hello Wor
+echo ${s%l*}  # Hello Wor
+
+${string#substring} # 删除前面开始的最长匹配
+${string%substring} # 删除末尾的最长匹配
+echo ${s##Hel} # lo World
+echo ${s##*l}  # d
+echo ${s%%ld}  # Hello Wor
+echo ${s%%l*}  # He
+
+${string-default} # 如果变量不存在，给默认值
+${string:-default} # 如果变量不存在或空字符串，给默认值
+empty=''
+echo ${null-hello}   # hello
+echo ${empty-hello}  #
+echo ${null:-hello}  # hello
+echo ${empty:-hello} # hello
 ```
