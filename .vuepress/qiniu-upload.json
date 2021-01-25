@@ -1,0 +1,8 @@
+{
+   "src_dir"            :   ".vuepress/dist",
+   "bucket"             :   "light-wiki",
+   "ignore_dir"         :   false,
+   "overwrite"          :   true,
+   "rescan_local"       :   true
+}
+

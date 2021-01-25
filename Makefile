@@ -3,7 +3,7 @@ OUTPUTDIR=$(BASEDIR)/.vuepress/dist
 
 GITHUB_PAGES_BRANCH=master
 
-QINIU_CONFIG=config/qiniu-upload.json
+QINIU_CONFIG=.vuepress/qiniu-upload.json
 
 help:
 	@echo "Makefile for Light Xue's personal wiki                                      "
