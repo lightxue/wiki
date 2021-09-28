@@ -58,6 +58,12 @@ awk 'NF > 4 {for (i=4; i<=NF; i++) {printf $i" "} printf "\n"}' file.txt
 awk -F, 'NR==FNR {r[$1] = $0; next} {print r[$1]}' file1 file2 > file3
 ```
 
+* 打印第1、2列以外的列
+
+```bash
+awk '$1=$2=""; {print $0}' file.txt
+```
+
 ## 内置变量
 
 | 变量名      | 作用                                                                          |

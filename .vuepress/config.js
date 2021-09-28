@@ -15,8 +15,8 @@ module.exports = {
             text: '编程语言',
             link: '/languages/python/',
         }, {
-            text: '操作系统',
-            link: '/systems/linux/'
+            text: '基础知识',
+            link: '/basic/os/'
         }, {
             text: '工具',
             link: '/tools/shell/'
@@ -26,14 +26,19 @@ module.exports = {
         }],
         sidebar: {
             '/languages/': genSidebar('/languages/'),
-            '/systems/': genSidebar('/systems/'),
+            '/basic/': genSidebar('/basic/'),
             '/tools/': genSidebar('/tools/'),
             '/others/': genSidebar('/others/'),
         }
     },
     markdown: {
         lineNumbers: false
-    }
+    },
+    plugins: {
+        '@maginapp/vuepress-plugin-katex': {
+          delimiters: 'dollars'
+        }
+    },
 }
 
 function genSidebar(dir) {
