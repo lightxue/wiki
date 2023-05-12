@@ -87,7 +87,11 @@ module.exports = {
       // excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
     // }],
 
-    ['@maginapp/katex', { delimiters: 'dollars' }],
+    ['@maginapp/katex', {
+      delimiters: 'dollars',
+      katexOptions: {
+        strict: false
+      }}],
 
     // [
       // 'vuepress-plugin-baidu-tongji', // 百度统计
